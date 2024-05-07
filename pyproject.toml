@@ -4,5 +4,5 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "Aligning Big Brains and Atlases - ABBA"
-authors = [{name = "BIOP - EPFL", email = ""}]
+authors = [{name = "BIOP - EPFL", email = "nicolas.chiaruttini@epfl.ch"}]
 dynamic = ["version", "description"]
