@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'ABBA-Documentation'
+copyright = '2024, BIOP-EPFL'
+author = 'BIOP-EPFL'
 
-release = '0.1'
-version = '0.1.0'
+release = '0.8'
+version = '0.8.0'
 
 # -- General configuration
 
@@ -17,7 +17,11 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx_search.extension',
+    'myst_parser'
 ]
+
+master_doc = "contents"
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -33,3 +37,22 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+myst_enable_extensions = [
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
+
+source_suffix = ['.rst', '.md']
