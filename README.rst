@@ -1,4 +1,4 @@
 ABBA Documentation
 =======================================
 
-https://readthedocs.org/projects/abba-documentation/
+https://abba-documentation.readthedocs.io/en/latest/
