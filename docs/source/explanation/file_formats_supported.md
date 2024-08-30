@@ -10,12 +10,14 @@ This section deals with the file formats requirements.
 While ABBA can open files directly, it is highly recommended to package all files from a single animal into a QuPath project, as explained in the [create QuPath dataset section](../tutorial/0_create_qupath_dataset.md).
 :::
 
-In short ABBA can use any Bio-Formats supported file format], ideally multi-resolution, and calibrated. It can also stream images for an OMERO database.
+In short ABBA can use any Bio-Formats supported file format, ideally multi-resolution, and calibrated. It can also stream images for an OMERO database.
 
 ## 1. Any Bio-Formats supported file format,
 All Bio-Formats readable file formats are supported. You can check in the [Bio-Formats documentation](https://bio-formats.readthedocs.io/en/latest/supported-formats.html) if your files are supported.
 
-NB: Files which can be opened **only** via [OpenSlide](https://openslide.org/) in QuPath are not supported.
+:::{warning}
+Files which can be opened **only** via [OpenSlide](https://openslide.org/) in QuPath are not supported.
+:::
 
 Besides Bio-Formats compatibility, there are two 'classical requirements' for an optimal use of ABBA:
 
@@ -32,15 +34,15 @@ If your images are not pyramidal, we advise to convert your files to pyrimadal O
 - [Kheops](https://github.com/BIOP/ijp-kheops) Fiji plugin ,
 - [NGFF converter by Glencoe](https://www.glencoesoftware.com/products/ngff-converter/) (!n5 not supported, choose OME-TIFF).
 
-Alternatively, if you have access to an OMERO database, you can upload your images to OMERO, and the pyramidal levels will by computed by the server.
+Alternatively, if you have access to an OMERO database, you can upload your images to OMERO, and the pyramidal levels will be computed by the server.
 
-RGB images as well as fluorescent 8-bits and 16-bits images have been successfully tested.
+RGB images as well as fluorescent 8-bits and 16-bits images have been successfully tested. 16-bit RGB images can work, but you need to check `split RGB channels` on import, and each RGB component is viewed as an independent channel.
 
 ## 3. and calibrated.
 
 All files need to be properly calibrated (microns, millimeters, etc, but not pixels!). ABBA takes advantage of the  calibration to set appropriate registration parameters. To know if your images are properly calibrated, you can for instance open them in QuPath, using a Bio-Formats image server, and check that the pixel size is set and correct.
 
-If your images are uncalibrated, ABBA will assume that each pixel has a size of 1mm, which will lead to gigantic images. To correct for this issue, you can re-save your images with the proper metadata and make sure that the metadata is recognized by bio-formats. This can be done with [Kheops](https://github.com/BIOP/ijp-kheops), which offers an option to override the pixel size while an OME-TIFF version is re-exported.
+If your images are uncalibrated, ABBA will assume that each pixel has a size of 1um, an assumption which has no reason to be correct. To correct for this issue, you can re-save your images with the proper metadata and make sure that the metadata is recognized by bio-formats. This can be done with [Kheops](https://github.com/BIOP/ijp-kheops), which offers an option to override the pixel size while an OME-TIFF version is re-exported.
 
 If you want to avoid the conversion step and keep using uncalibrated files, you can assemble your files in a QuPath  project, then [set each image pixel size](https://qupath.readthedocs.io/en/0.5/docs/starting/first_steps.html#setting-the-pixel-size). ABBA will then read the QuPath metadata, and ignore the original bio-formats metadata.
 
@@ -91,4 +93,4 @@ Now, using ABBA, the easiest way is again to make a QuPath project with Bio-Form
 
 While other sources from other image loaders should work almost 'out of the box', there is no very direct way to do that because it's not in the GUI of ABBA. If you need other sources coming from different loaders, please write an issue on GitHub or open a post on the forum.
 
-One option is to open an xml bdv dataset with BigDataViewer-Playground and drag and drop sources into ABBA's BigDataViewer Playground window.
+(One option is to open an xml bdv dataset with BigDataViewer-Playground and drag and drop sources into ABBA's BigDataViewer Playground window.)

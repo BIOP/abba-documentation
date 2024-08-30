@@ -46,7 +46,7 @@ Be aware that you need an internet connection if you run the installer because a
 ## Option 2 - Installing ABBA plugin in Fiji
 
 ### 1. Download and install Fiji
-If you do not have Fiji already, download it and install it at [fiji.sc](https://fiji.sc/).
+If you do not have Fiji already, download it and install it from [fiji.sc](https://fiji.sc/).
 
 ### 2. Activate the PTBIOP update site
 * Click `Help > Update... > Manage update sites`
@@ -95,7 +95,7 @@ Once elastix is installed, you can run [the following script](https://gist.githu
 
 ### 5. Installing DeepSlice locally (optional)
 
-It is always possible to use the web interface of DeepSlice, without any further installation. However, it is convenient to have it installed locally since it will require less user manipulation and enable the registration procedure to be fully automated.
+It is possible to use the web interface of DeepSlice, without any further installation. However, it is convenient to have it installed locally since it will require less user manipulation and enable the registration procedure to be fully automated.
 
 To install DeepSlice locally, please follow the instructions specified in the [BIOP wrappers repository](https://github.com/BIOP/ijl-utilities-wrappers#deepslice). In brief, the installation consists of:
 * installing miniforge
@@ -110,7 +110,7 @@ ABBA is available as a [PyPI dependency](https://pypi.org/project/abba-python/).
 # QuPath + ABBA extension installation
 
 1. Install [QuPath](https://qupath.github.io/)
-2. Download [QuPath's ABBA extension zip file](https://github.com/BIOP/qupath-extension-abba/releases/latest) (named `qupath-extension-warpy-x.y.z.zip`)
+2. Download [QuPath's ABBA extension zip file](https://github.com/BIOP/qupath-extension-abba/releases/latest) (named `qupath-extension-abba-x.y.z.zip`)
 3. Unzip it
 4. Drag and drop the jar files it contains into QuPath's main graphical user interface
 
@@ -118,7 +118,7 @@ ABBA is available as a [PyPI dependency](https://pypi.org/project/abba-python/).
 If you want to work on data from an OMERO database, install the [QuPath OMERO RAW extension](https://github.com/BIOP/qupath-extension-biop-omero). Please check its [readme](https://github.com/BIOP/qupath-extension-biop-omero/blob/omero-raw/README.md) for installation instructions.
 :::
 
-5. Restart QuPath. In `Extensions>Managed extensions` you should see the following extensions installed:
+5. Restart QuPath. In `Extensions>Manage extensions` you should see the following extensions installed:
 * ABBA
 * Image Combiner Warpy
 * Warpy

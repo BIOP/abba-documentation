@@ -1,10 +1,10 @@
-# ABBA state file and registration formats
+# ABBA state file and transformation specifications
 
 ## ABBA state files
 
 First of all, state files with the `.abba` extensions are zipped files. You can unzip them to explore what's inside (debug an issue and potentially edit them).
 
-Here are the files you will usually see:
+Here are the files you will usually find within the archive:
 
 * `_bdvdataset_0.xml`
 * `sources.json`
@@ -15,10 +15,9 @@ The file `_bdvdataset_0.xml` contains the definition of a BigDataViewer dataset.
 
 Because an ABBA state file can combine several bdv dataset, you may find several bdv dataset files, each with a different index (`_bdvdataset_0.xml`, `_bdvdataset_1.xml`, etc.).
 
-----
-:warning: This file may contain references to absolute file paths. As of ABBA v0.5+, depending on the BDV backend and if used with a GUI, the user will be asked for updated file paths if the absolute path is not valid anymore. In some rare cases (old state file, non standard backend), you may still have to edit this file manually to fix state opening issues
-
-----
+:::{warning}
+This file may contain references to absolute file paths. As of ABBA v0.5+, depending on the BDV backend and if used with a GUI, the user will be asked for updated file paths if the absolute path is not valid anymore. In some rare cases (old state file, non standard backend), you may still have to edit this file manually to fix state opening issues
+:::
 
 ### File `sources.json`
 
@@ -44,7 +43,9 @@ The file `sources.json` just serves to re-index uniquely the sources coming from
 ```
 
 ----
-:bulb: in older versions of ABBA, `datalocation` was using absolute path, which was the cause of many issues whereby users couldn't open their state file anymore. This issue is solved now because the `.abba` state file zips together the `sources.json` and `_bdvdataset_{i}.xml` file. These files are thus always expected to be in the same zip (= `.abba`) file.
+:::{note}
+in older versions of ABBA, `datalocation` was using absolute path, which was the cause of many issues whereby users couldn't open their state file anymore. This issue is solved now because the `.abba` state file zips together the `sources.json` and `_bdvdataset_{i}.xml` file. These files are thus always expected to be in the same zip (= `.abba`) file.
+:::
 
 ----
 
@@ -170,7 +171,7 @@ The major kinds are presented in the list below. These actions are Java classes 
 }
 ```
 
-#### [KeySliceOffAction]([KeySliceOnAction](https://github.com/BIOP/ijp-imagetoatlas/blob/master/src/main/java/ch/epfl/biop/atlas/aligner/KeySliceOffAction.java):
+#### [KeySliceOffAction](https://github.com/BIOP/ijp-imagetoatlas/blob/master/src/main/java/ch/epfl/biop/atlas/aligner/KeySliceOffAction.java):
 
 ```
 {
@@ -192,10 +193,9 @@ The `InvertibleRealTransformSequence` object contains a sequence of `InvertibleR
 * `AffineTransform3D` for affine 3D transformation
 * `ThinplateSplineTransform` for splines transformation
 
-----
-:bulb: There are other kinds of transformation which are 'helper' transformation or wrappers. For instance, while spline `ThinplateSplineTransform` transformations can be 3D, they non-invertible 2D transformations in ABBA. To make them invertible, they have to be wrapped within `WrappedIterativeInvertibleRealTransform` objects. A `WrappedIterativeInvertibleRealTransform` contains an optimizer that can invert its inner transform (with a target precision). Since ABBA expects 3D transformation where the third is usually unchanged, 2D transformations have to be wrapped in a `Wrapped2DTransformAs3D` objects that apply the inner 2D transformation for the first two dimensions and that lets the third dimension unchanged.
-
-----
+:::{note}
+There are other kinds of transformation which are 'helper' transformation or wrappers. For instance, while spline `ThinplateSplineTransform` transformations can be 3D, they are non-invertible 2D transformations in ABBA. To make them invertible, they have to be wrapped within `WrappedIterativeInvertibleRealTransform` objects. A `WrappedIterativeInvertibleRealTransform` contains an optimizer that can invert its inner transform (with a target precision). Since ABBA expects 3D transformation where the third is usually unchanged, 2D transformations have to be wrapped in a `Wrapped2DTransformAs3D` objects that apply the inner 2D transformation for the first two dimensions and that lets the third dimension unchanged.
+:::
 
 A json transform file will fit this structure:
 

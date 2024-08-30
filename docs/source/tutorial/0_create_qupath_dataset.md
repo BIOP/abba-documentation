@@ -25,26 +25,24 @@ As in the recommended workflow, you first need to create a QuPath project that c
 
 To learn how to do that, please check the relevant part of the QuPath documentation: https://qupath.readthedocs.io/en/latest/docs/tutorials/projects.html
 
-Briefly, setting-up a project is as follow:
-* (you can dowload a [demo dataset](demo_dataset.md))
+Briefly, setting-up a project is as follows:
+* (you can download a [demo dataset](demo_dataset.md))
 * create a project by dragging and dropping an empty folder into QuPath's GUI
 * drag and drop your images to append them into this QuPath project
 * select `Bio-Formats builder` and then click Import
 
 :::{note}
-If you use OMERO, you can directly append your images by browsing your OMERO server.
+You can also work with OMERO images, as long as they are loaded through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero). Once the extension is installed, you can directly add your images by browsing your OMERO server:
 `Extensions > OMERO-RAW > Browse server...`
 :::
-
-Note: you can also work with OMERO images, as long as they are loaded through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero).
 
 ![creating a project with slices in QuPath](/assets/gif/qupath_create_project.gif)
 
 :::{warning}
-All files need to be properly calibrated (microns, millimeters, etc, but **not pixels!**). Check on the `Image` tab of QuPath that you have a proper physical unit specified for your images, and not pixels! If that's not the case, you should specify the correct pixel size **NOW! (= BEFORE importing the project into Fiji's ABBA plugin)**. Otherwise, the images will look gigantic because 1 pixel is assumed to be 1 millimeter...
+All files need to be properly calibrated (microns, millimeters, etc, but **not pixels!**). Check on the `Image` tab of QuPath that you have a proper physical unit specified for your images, and not pixels! If that's not the case, you should specify the correct pixel size **NOW! (= BEFORE importing the project into Fiji's ABBA plugin)**. Otherwise, the images will be wrongly scaled.
 :::
 
-![image calibration in QuPath](/assets/img/qupath_image_calibration.png)
+[image calibration in QuPath](/assets/img/qupath_image_calibration.png)
 
 ---
 
