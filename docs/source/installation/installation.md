@@ -66,7 +66,7 @@ If you do not have Fiji already, download it and install it at [fiji.sc](https:/
 
 For automated 2D in-plane registration, ABBA uses the [elastix](https://github.com/SuperElastix/elastix) software, which is independent of Fiji. To use it, elastix should be installed, and its executable location (elastix and transformix) should be specified in Fiji.
 
-* Download the [release 5.0.1 of elastix for your OS](https://github.com/SuperElastix/elastix/releases/tag/5.0.1). This documentation has been tested for elastix 5.0.1. The version [5.1.0 currently fails](https://github.com/BIOP/ijp-imagetoatlas/issues/171)!
+* Download the [release 5.2.0 of elastix for your OS](https://github.com/SuperElastix/elastix/releases/tag/5.2.0).
 
 * Unzip it somewhere convenient ( `C` drive on windows; `Applications` for Mac )
 
