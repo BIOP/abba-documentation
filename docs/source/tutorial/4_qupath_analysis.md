@@ -72,7 +72,6 @@ getDetectionObjects().forEach(detection -> {
     ml.putMeasurement("Atlas_Z", atlasCoordinates.getDoublePosition(2) )
 })
 
-import qupath.ext.biop.warpy.Warpy
 import net.imglib2.RealPoint
 import qupath.lib.measurements.MeasurementList
 import qupath.ext.biop.abba.AtlasTools
