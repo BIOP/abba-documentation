@@ -5,7 +5,7 @@ ABBA is a set of software component which allows to register images of thin seri
 
 ABBA consists of a `Fiji <https://fiji.sc/>`_ plugin for the registration part, which is best used in conjunction with `QuPath <https://qupath.github.io>`_. Typically, a set of serial sections is defined as a QuPath project, that is registered within Fiji. The registration results are imported back into QuPath for downstream processing (cell detection and classification, cell counting per region, etc.).
 
-Available atlases are the `3D mouse Allen Brain atlas <http://atlas.brain-map.org/atlas?atlas=602630314)>`_, and the `Waxholm Space Atlas of the Sprague Dawley Rat Brain <https://www.nitrc.org/projects/whs-sd-atlas>`_. Depending on the way you install ABBA, you may also use all `BrainGlobe atlases <https://brainglobe.info/documentation/bg-atlasapi/index.html>`_.
+Available atlases are the `3D mouse Allen Brain atlas <http://atlas.brain-map.org/atlas?atlas=602630314)>`_, and the `Waxholm Space Atlas of the Sprague Dawley Rat Brain <https://www.nitrc.org/projects/whs-sd-atlas>`_. Depending on the way you install ABBA, you may also use all `BrainGlobe atlases <https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html>`_.
 
 
 .. raw:: html
@@ -22,7 +22,10 @@ If you want to check a short presentation of who the biop is and what are ABBA's
 
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPCf8GXPFr8STRMw7zyeIjI2WQzBuY2oHBpG8qZjwzWYQzUTOB4IO5yJN90uWGqIb-OFI5ErWr3YZA/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="560" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-Check out the side bar to go through the documentation.
+Citation
+========
+
+`A preprint is available at https://doi.org/10.1101/2024.09.06.611625 <https://doi.org/10.1101/2024.09.06.611625>`_
 
 
 

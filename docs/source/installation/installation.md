@@ -1,101 +1,107 @@
 # Installation
 
-ABBA consists of a Fiji plugin, an extension for QuPath, and it can communicate with external components to automate the registration process.
+ABBA comprises a Fiji plugin, an extension for QuPath, and external software for automating the registration process.
 
 :::{hint}
-The QuPath extension, and in general, the use of QuPath is optional in ABBA but strongly encouraged. It will be helpful to define the dataset and it'll particularly useful for post-registration analysis.
+The QuPath extension, while optional, is highly recommended. It simplifies dataset definition and post-registration analysis.
 :::
 
 # Fiji + ABBA plugin installation
 
-:::{tip}
-If you are using Windows, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/).
-:::
+:::{tip} For Windows users, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/), which simplifies the installation process. :::
 
-ABBA is a Fiji plugin that can be installed easily, however, a bare ABBA will lack key features. In particular ABBA is supposed to interact with these components:
+ABBA can be installed as a Fiji plugin, but additional components are needed to unlock its full functionality. In particular, ABBA performs best with the following components:
 
-* [DeepSlice](https://www.deepslice.com.au/): a deep-learning registration method that automatically register coronal sections to mouse and rat brain atlases
-* [elastix/transformix](https://github.com/SuperElastix/elastix): the software that automates 2D in-plane registration
-* [BrainGlobe](https://brainglobe.info/documentation/bg-atlasapi/index.html): a python library that standardized a set of atlases, and the way to access their data
+* [DeepSlice](https://www.deepslice.com.au/): A deep-learning-based method for automatic registration of coronal sections to mouse and rat brain atlases.
+* [elastix/transformix](https://github.com/SuperElastix/elastix): Software used for automating 2D in-plane registration.
+* [BrainGlobe](https://brainglobe.info/about.html): A Python library that standardizes access to various brain atlases.
 
-There are 3 main ways to install ABBA, that correspond to different parts of the documentation:
-* Using an installer (available for Windows only)
-* Using [Fiji](https://fiji.sc/)
-* Using python with a pip dependency [abba_python](https://pypi.org/project/abba-python/)
+There are three primary ways to install ABBA, each corresponding to different setups:
+* Using the Windows standalone installer
+* Using [Fiji](https://fiji.sc/) (available for Windows, macOS, and Linux)
+* Using Python with a pip dependency [abba_python](https://pypi.org/project/abba-python/)
 
-Here's a summary of the supported functionality depending on how ABBA is installed and on the OS:
+The table below summarizes the functionality available for each installation method across different operating systems:
 
-|                                                                          | Headless | GUI | Mouse and Rat atlases | Brainglobe Atlases | DeepSlice (Local) |
-|--------------------------------------------------------------------------|----------|-----|-----------------------|--------------------|-------------------|
-| Opt 1. ABBA installer (Win only)                                         | [x]      | [x] | [x]                   | [x]                | [x]               |
-| Opt 2. Fiji + PTBIOP update site (Win, Mac, Linux)                       | [x]      | [x] | [x]                   |                    |                   |
-| Opt 2. Fiji + PTBIOP update site + DeepSlice conda env (Win, Mac, Linux) | [x]      | [x] | [x]                   |                    | [x]               |
-| Opt 3. abba_python (Win, Linux)                                          | [x]      | [x] | [x]                   | [x]                |                   |
-| Opt 3. abba_python + DeepSlice conda env (Win, Linux)                    | [x]      | [x] | [x]                   | [x]                | [x]               |
-| Opt 3. abba_python (Mac)                                                 | [x]      |     | [x]                   | [x]                |                   |
-| Opt 3. abba_python + DeepSlice conda env (Mac)                           | [x]      |     | [x]                   | [x]                | [x]               |
+| Installation mode                                                                       | Headless | GUI | Mouse/Rat atlas | Brainglobe Atlas | DeepSlice (Local) |
+|-----------------------------------------------------------------------------------------|----------|-----|-----------------|------------------|-------------------|
+| Opt 1. ABBA installer <br/>(Win)                                                        | [x]      | [x] | [x]             | [x]              | [x]               |
+| Opt 2. Fiji <br/>+ PTBIOP update site <br/>(Win, Mac, Linux)                            | [x]      | [x] | [x]             |                  |                   |
+| Opt 2. Fiji <br/>+ PTBIOP update site <br/>+ DeepSlice conda env <br/>(Win, Mac, Linux) | [x]      | [x] | [x]             |                  | [x]               |
+| Opt 3. abba_python <br/>(Win, Linux)                                                    | [x]      | [x] | [x]             | [x]              |                   |
+| Opt 3. abba_python <br/>+ DeepSlice conda env <br/>(Win, Linux)                         | [x]      | [x] | [x]             | [x]              | [x]               |
+| Opt 3. abba_python <br/>(Mac)                                                           | [x]      |     | [x]             | [x]              |                   |
+| Opt 3. abba_python <br/>+ DeepSlice conda env <br/>(Mac)                                | [x]      |     | [x]             | [x]              | [x]               |
 
-## Option 1 - Installing ABBA plugin with an installer (Windows only)
+## Option 1 - Installing the ABBA plugin using the Windows installer
 
-This possibility is the easiest one. It is available only if you are working with windows:
+This is the simplest option, available only for Windows users.
 
 [https://github.com/BIOP/ijp-imagetoatlas/releases/latest](https://github.com/BIOP/ijp-imagetoatlas/releases/latest)
 
-Be aware that you need an internet connection if you run the installer because at some point in the process some dependencies have to be downloaded from PyPI ([deepslice](https://pypi.org/project/DeepSlice/), [abba-python](https://pypi.org/project/abba-python/), [brainglobe-api](https://pypi.org/project/brainglobe-atlasapi/)). Also, the first time you run ABBA, you will have to download the atlas you'd like to use from internet.
+Requirements:
 
-## Option 2 - Installing ABBA plugin in Fiji
+* An internet connection is required during installation to download necessary dependencies from PyPI, including [deepslice](https://pypi.org/project/DeepSlice/), [abba-python](https://pypi.org/project/abba-python/), and [brainglobe-api](https://pypi.org/project/brainglobe-atlasapi/).
+* The first time you run ABBA, you will need to download the atlas you intend to use.
 
-### 1. Download and install Fiji
-If you do not have Fiji already, download it and install it from [fiji.sc](https://fiji.sc/).
+## Option 2 - Installing the ABBA plugin in Fiji
 
-### 2. Activate the PTBIOP update site
+### Step 1. Download and install Fiji
+If Fiji is not already installed, download and install it from [fiji.sc](https://fiji.sc/).
+
+### Step 2. Activate the PTBIOP update site
 * Click `Help > Update... > Manage update sites`
-* Tick the checkbox `PTBIOP`
-* Click `Apply and close`
-* Click `Apply changes`
-* Close and restart Fiji
+* Check the box for `PTBIOP`
+* Click `Apply and close` then `Apply changes`
+* Restart Fiji
 
-### 3. If you use OMERO, activate the OMERO 5.5-5.6 update site
+### Step 3. (Optional) Activate the OMERO 5.5-5.6 update site
 * Click `Help > Update... > Manage update sites`
 * Tick the checkbox `OMERO 5.5-5.6`
-* Click `Apply and close`
-* Click `Apply changes`
-* Close and restart Fiji
+* Click `Apply and close` then `Apply changes`
+* Restart Fiji
 
-### 4. Install elastix/transformix
+### Step 4. Install elastix/transformix
 
-For automated 2D in-plane registration, ABBA uses the [elastix](https://github.com/SuperElastix/elastix) software, which is independent of Fiji. To use it, elastix should be installed, and its executable location (elastix and transformix) should be specified in Fiji.
+ABBA relies on  [elastix](https://github.com/SuperElastix/elastix) for 2D in-plane registration. Elastix is independent of Fiji and must be installed separately.
 
-* Download the [release 5.2.0 of elastix for your OS](https://github.com/SuperElastix/elastix/releases/tag/5.2.0).
-
-* Unzip it somewhere convenient ( `C` drive on windows; `Applications` for Mac )
+* Download [elastix version 5.2.0](https://github.com/SuperElastix/elastix/releases/tag/5.2.0) for your operating system.
+* Extract it to a convenient location (`C:` on Windows, `Applications` on macOS).
 
 #### Windows
 
-For windows users, you also need to install [Visual C++ redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170), (choose `vc_redist.x64.exe` for a 64-bit system).
+Install [Visual C++ redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170), (choose `vc_redist.x64.exe` for a 64-bit system). 
+
+:::{warn}
+If you are updating Fiji and switches from elastix 5.0.1 to elastix 5.2.0, make sure you have the latest version installed. Otherwise elastix will not work.
+:::
 
 #### Mac
 
-Fiji will be calling the elastix executables, which are recognized as ‘unknown developers’ by Mac OS. Thus you need to [make security exceptions for both elastix and transformix](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) to avoid clicking indefinitely on the OS warning messages.
+Since macOS treats elastix and transformix as software from "unknown developers," you need to [create security exceptions](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) for both executables to bypass repeated warnings.
 
 #### Linux
-Nothing particular should be required for linux system.
 
-#### Indicate `elastix` and `transformix` executable location in Fiji:
+No special steps are required.
 
-For all OSes, once elastix is installed, please run Fiji, then execute `Plugins › BIOP › Set and Check Wrappers`. You will need to indicate the proper location of executable files, for instance:
+
+### Step 5. Set `elastix` and `transformix` Paths in Fiji
+
+* Run Fiji and execute `Plugins › BIOP › Set and Check Wrappers`.
+* Specify the paths for the elastix and transformix executables. For instance:
 
 ![Setting elastix and transformix path in Fiji](../assets/img/fiji_elastix_transformix_path.png)
 
-This message should show up in the ImageJ console (and maybe errors for other wrappers, but that's not important):
-* `[INFO] Transformix	->	set :-)`
-* `Elastix	->	set :-)`
+You should see confirmation messages like:
 
-Once elastix is installed, you can run [the following script](https://gist.github.com/NicoKiaru/b91f9f3f0069b765a49b5d4629a8b1c7) in Fiji to test elastix functionality. Save the linked file with a `.groovy` extension, open it in Fiji, and run it.
+* [INFO] Transformix -> set :-)
+* Elastix -> set :-)
 
-### 5. Installing DeepSlice locally (optional)
+To verify elastix is working, you can run [this test script](https://gist.github.com/NicoKiaru/b91f9f3f0069b765a49b5d4629a8b1c7) in Fiji. Save the file with a .groovy extension, open it in Fiji, and run it.
 
-It is possible to use the web interface of DeepSlice, without any further installation. However, it is convenient to have it installed locally since it will require less user manipulation and enable the registration procedure to be fully automated.
+### Step 6. (Optional) Installing DeepSlice locally
+
+While you can use the web-based DeepSlice interface, installing it locally can streamline the registration process.
 
 To install DeepSlice locally, please follow the instructions specified in the [BIOP wrappers repository](https://github.com/BIOP/ijl-utilities-wrappers#deepslice). In brief, the installation consists of:
 * installing miniforge
@@ -105,22 +111,22 @@ To install DeepSlice locally, please follow the instructions specified in the [B
 
 ## Option 3 - Installing ABBA plugin in python
 
-ABBA is available as a [PyPI dependency](https://pypi.org/project/abba-python/). If you want to use this dependency, please check the installation instruction and startup command in the [readme of abba_python](https://pypi.org/project/abba-python/).
+ABBA is available as a [PyPI dependency](https://pypi.org/project/abba-python/). For installation instructions and startup commands, refer to the [abba_python README](https://pypi.org/project/abba-python/).
 
 # QuPath + ABBA extension installation
 
-1. Install [QuPath](https://qupath.github.io/)
-2. Download [QuPath's ABBA extension zip file](https://github.com/BIOP/qupath-extension-abba/releases/latest) (named `qupath-extension-abba-x.y.z.zip`)
-3. Unzip it
-4. Drag and drop the jar files it contains into QuPath's main graphical user interface
+1. Install [QuPath](https://qupath.github.io/).
+2. Download the latest [ABBA extension zip file](https://github.com/BIOP/qupath-extension-abba/releases/latest) (named `qupath-extension-abba-x.y.z.zip`).
+3. Unzip it.
+4. Drag and drop the .jar files into QuPath's main window.
 
 :::{note}
-If you want to work on data from an OMERO database, install the [QuPath OMERO RAW extension](https://github.com/BIOP/qupath-extension-biop-omero). Please check its [readme](https://github.com/BIOP/qupath-extension-biop-omero/blob/omero-raw/README.md) for installation instructions.
+If you're using OMERO for your data, you'll need the [QuPath OMERO RAW extension](https://github.com/BIOP/qupath-extension-biop-omero). Follow the [installation guide](https://github.com/BIOP/qupath-extension-biop-omero/blob/omero-raw/README.md).
 :::
 
-5. Restart QuPath. In `Extensions>Manage extensions` you should see the following extensions installed:
+5. Restart QuPath. You should now see the following extensions under `Extensions>Manage extensions`:
 * ABBA
 * Image Combiner Warpy
 * Warpy
 * OMERO BIOP
-
+* 

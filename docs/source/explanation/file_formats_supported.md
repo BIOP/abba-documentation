@@ -23,7 +23,7 @@ Besides Bio-Formats compatibility, there are two 'classical requirements' for an
 
 ## 2. ideally multi-resolution (Bio-Formats supported),
 
-Brain slices are usually very big 2d images and ABBA has been designed to work with such images. To do so, it relies on [tiled pyramidal file formats](https://qupath.readthedocs.io/en/0.4/docs/intro/formats.html): a file contains not only its data at the highest resolution, but also  pre-computed downsampled versions of itself.
+Brain slices are usually very big 2d images and ABBA has been designed to work with such images. To do so, it relies on [tiled pyramidal file formats](https://qupath.readthedocs.io/en/0.5/docs/intro/formats.html): a file contains not only its data at the highest resolution, but also  pre-computed downsampled versions of itself.
 To know if Bio-Formats supports a potential multi-resolution file format, check whether [the `Pyramid` column](https://bio-formats.readthedocs.io/en/latest/supported-formats.html) is checked.
 
 If files are pyramidal, ABBA can load only a sub-part (**tiles**) of an image at a specific resolution level (**pyramid level**) needed, thus speeding-up very significantly the display and processing of these images. Having pyramidal images also helps improving the registration quality: registrations are using large scale features (size above  a few cells), which are incorrectly sampled if no downsampled image pre-exists.

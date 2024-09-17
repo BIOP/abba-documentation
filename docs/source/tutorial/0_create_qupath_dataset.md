@@ -33,7 +33,7 @@ Briefly, setting-up a project is as follows:
 
 :::{note}
 You can also work with OMERO images, as long as they are loaded through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero). Once the extension is installed, you can directly add your images by browsing your OMERO server:
-`Extensions > OMERO-RAW > Browse server...`
+`Extensions > OMERO-RAW > Browse server...` and importing images or a full dataset.
 :::
 
 ![creating a project with slices in QuPath](/assets/gif/qupath_create_project.gif)
