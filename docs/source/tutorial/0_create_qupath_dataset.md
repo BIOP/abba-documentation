@@ -1,49 +1,51 @@
-# QuPath - Making a project, compatible with ABBA
+# QuPath - Creating a project compatible with ABBA
 :::{warning}
-Do not modify the images present in the project once it has been opened and used in ABBA. ABBA risk not to behave properly if the images in the QuPath project are changed.
+Do not modify the images in the project once they have been opened and used in ABBA. Changing the images in the QuPath project may cause ABBA to function improperly.
 :::
 
 :::{hint}
-Working with a QuPath project is the preferred way to work with ABBA, because it facilitates a lot downstream processing.
+Using a QuPath project is the preferred method for working with ABBA, as it greatly simplifies downstream processing.
 :::
 
-## Dataset pre-requisites
+## Dataset requirements
 
-ABBA is designed to work on a set of slices belonging to a single animal. If multiple animals need to be aligned, then each animal should be aligned independently - one per QuPath project. It's not a strict restriction and you can combine images coming from different animals in a single dataset. However, you won't have full flexibility for the registration. Namely, you will not be able to set different cutting angles for different animals.
+ABBA is designed to work on a set of brain slices from a single animal. If you need to align slices from multiple animals, each animal should be processed in a separate QuPath project. While it's possible to combine slices from different animals in one dataset, this reduces flexibility in the registration process, particularly in terms of setting different cutting angles for different animals.
 
-Now, let's discuss a bit what sort of images can be used. ABBA can:
-- read all [Bio-Formats](https://bio-formats.readthedocs.io/en/latest/supported-formats.html) supported formats
-- stream data from [OMERO](https://www.openmicroscopy.org/omero/)
-- work on any XML defined [BigDataViewer dataset](https://imagej.net/plugins/bdv/playground/bdv-playground-open-dataset)
-- read a [QuPath](https://qupath.github.io/) project (which internally uses Bio-Formats and OMERO)
+### Supported Image Formats
 
-Also please make sure to read the message about [pyramidal file formats requirements](../explanation/file_formats_supported.md).
+ABBA can handle a variety of image types, including:
 
-## Define a dataset of brain sections in QuPath
+* Any format supported by [Bio-Formats](https://bio-formats.readthedocs.io/en/latest/supported-formats.html)
+* Data streamed from an [OMERO](https://www.openmicroscopy.org/omero/) server
+* XML-defined [BigDataViewer datasets](https://imagej.net/plugins/bdv/playground/bdv-playground-open-dataset)
+* A [QuPath](https://qupath.github.io/) project (which internally uses Bio-Formats and OMERO)
 
-As in the recommended workflow, you first need to create a QuPath project that contains all the brain slices that you want to register - usually from one animal.
+Please also review the information on [pyramidal file format requirements](../explanation/file_formats_supported.md) to ensure your files meet the necessary criteria.
 
-To learn how to do that, please check the relevant part of the QuPath documentation: https://qupath.readthedocs.io/en/latest/docs/tutorials/projects.html
+## Setting up a dataset of brain sections in QuPath
 
-Briefly, setting-up a project is as follows:
-* (you can download a [demo dataset](demo_dataset.md))
-* create a project by dragging and dropping an empty folder into QuPath's GUI
-* drag and drop your images to append them into this QuPath project
-* select `Bio-Formats builder` and then click Import
+As recommended, you should begin by creating a QuPath project that contains all the brain slices you wish to register, typically from one animal.
+
+For detailed instructions, refer to the QuPath documentation: [Creating a Project in QuPath](https://qupath.readthedocs.io/en/latest/docs/tutorials/projects.html).
+
+Below is a brief overview of the steps to set up a project:
+* (You can download a [demo dataset](demo_dataset.md) if needed.)
+* Create a new project by dragging and dropping an empty folder into QuPath's graphical user interface.
+* Drag and drop your images into the QuPath project.
+* Select `Bio-Formats builder` and click Import.
 
 :::{note}
-You can also work with OMERO images, as long as they are loaded through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero). Once the extension is installed, you can directly add your images by browsing your OMERO server:
-`Extensions > OMERO-RAW > Browse server...` and importing images or a full dataset.
+You can also work with OMERO images, provided they are accessed through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero). After installing the extension, you can add images directly by browsing your OMERO server: `Extensions > OMERO-RAW > Browse server...` and importing images or entire datasets.
 :::
 
 ![creating a project with slices in QuPath](/assets/gif/qupath_create_project.gif)
 
 :::{warning}
-All files need to be properly calibrated (microns, millimeters, etc, but **not pixels!**). Check on the `Image` tab of QuPath that you have a proper physical unit specified for your images, and not pixels! If that's not the case, you should specify the correct pixel size **NOW! (= BEFORE importing the project into Fiji's ABBA plugin)**. Otherwise, the images will be wrongly scaled.
+Ensure that all images are correctly calibrated (in units such as microns or millimeters, not **pixels**). In QuPath, verify this by checking the `Image` tab, where the physical unit should be specified. If the units are set to pixels, adjust the pixel size before importing the project into Fiji's ABBA plugin, or the images will be scaled incorrectly.
 :::
 
-[image calibration in QuPath](/assets/img/qupath_image_calibration.png)
+![image calibration in QuPath](/assets/img/qupath_image_calibration.png)
 
 ---
 
-You are done for now on the QuPath side. You can let QuPath open while performing the rest of the workflow.
+At this point, your work in QuPath is complete. You can leave QuPath open as you proceed with the rest of the workflow.

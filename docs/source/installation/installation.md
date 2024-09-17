@@ -8,7 +8,8 @@ The QuPath extension, while optional, is highly recommended. It simplifies datas
 
 # Fiji + ABBA plugin installation
 
-:::{tip} For Windows users, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/), which simplifies the installation process. :::
+:::{tip} For Windows users, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/), which simplifies the installation process. 
+:::
 
 ABBA can be installed as a Fiji plugin, but additional components are needed to unlock its full functionality. In particular, ABBA performs best with the following components:
 
@@ -64,29 +65,23 @@ If Fiji is not already installed, download and install it from [fiji.sc](https:/
 ### Step 4. Install elastix/transformix
 
 ABBA relies on  [elastix](https://github.com/SuperElastix/elastix) for 2D in-plane registration. Elastix is independent of Fiji and must be installed separately.
-
 * Download [elastix version 5.2.0](https://github.com/SuperElastix/elastix/releases/tag/5.2.0) for your operating system.
 * Extract it to a convenient location (`C:` on Windows, `Applications` on macOS).
 
 #### Windows
-
 Install [Visual C++ redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170), (choose `vc_redist.x64.exe` for a 64-bit system). 
 
-:::{warn}
-If you are updating Fiji and switches from elastix 5.0.1 to elastix 5.2.0, make sure you have the latest version installed. Otherwise elastix will not work.
+:::{warning}
+If you are updating Fiji and switch from elastix 5.0.1 to elastix 5.2.0, make sure you have the latest version installed. Otherwise elastix will not work.
 :::
 
 #### Mac
-
 Since macOS treats elastix and transformix as software from "unknown developers," you need to [create security exceptions](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) for both executables to bypass repeated warnings.
 
 #### Linux
-
 No special steps are required.
 
-
 ### Step 5. Set `elastix` and `transformix` Paths in Fiji
-
 * Run Fiji and execute `Plugins › BIOP › Set and Check Wrappers`.
 * Specify the paths for the elastix and transformix executables. For instance:
 
@@ -129,4 +124,3 @@ If you're using OMERO for your data, you'll need the [QuPath OMERO RAW extension
 * Image Combiner Warpy
 * Warpy
 * OMERO BIOP
-* 
