@@ -7,6 +7,17 @@ ABBA consists of a `Fiji <https://fiji.sc/>`_ plugin for the registration part, 
 
 Available atlases are the `3D mouse Allen Brain atlas <http://atlas.brain-map.org/atlas?atlas=602630314)>`_, and the `Waxholm Space Atlas of the Sprague Dawley Rat Brain <https://www.nitrc.org/projects/whs-sd-atlas>`_. Depending on the way you install ABBA, you may also use all `BrainGlobe atlases <https://brainglobe.info/documentation/brainglobe-atlasapi/usage/atlas-details.html>`_.
 
+Once your dataset is registered, you can use `BraiAn <https://silvalab.codeberg.page/BraiAn/>`_ to streamline the analysis.
+
+How to cite ABBA
+================
+
+If you use ABBA in your work, please cite the paper below, currently in pre-print:
+
+.. admonition:: Reference
+
+    Chiaruttini, N., Castoldi, C. et al. ABBA, a novel tool for whole-brain mapping, reveals brain-wide differences in immediate early genes induction following learning. bioRxiv (2024).
+    https://doi.org/10.1101/2024.09.06.611625
 
 .. raw:: html
 
@@ -21,11 +32,6 @@ If you want to check a short presentation of who the biop is and what are ABBA's
 .. raw:: html
 
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPCf8GXPFr8STRMw7zyeIjI2WQzBuY2oHBpG8qZjwzWYQzUTOB4IO5yJN90uWGqIb-OFI5ErWr3YZA/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="560" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-Citation
-========
-
-`A preprint is available at https://doi.org/10.1101/2024.09.06.611625 <https://doi.org/10.1101/2024.09.06.611625>`_
 
 
 
