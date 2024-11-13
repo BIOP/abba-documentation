@@ -34,24 +34,24 @@ The tables below summarize the functionality available for each installation met
 | BrainGlobe atlases                                  | ✅       | ❌         | ✅         |
 | DeepSlice (online)                                  | ✅       | ✅         | ✅         |
 | DeepSlice (local)                                   | ✅       | _Optional_ | _Optional_ |
+ 
+| Linux                                               | Method 1 | Method 2   | Method 3   |
+|-----------------------------------------------------|----------|------------|------------|
+| CLI                                                 | ❌       | ✅         | ✅         |
+| GUI                                                 | ❌       | ✅         | ✅         |
+| Default atlases<br/>(Allen's Mouse & Waxholm's Rat) | ❌       | ✅         | ✅         |
+| BrainGlobe atlases                                  | ❌       | ❌         | ✅         |
+| DeepSlice (online)                                  | ❌       | ✅         | ✅         |
+| DeepSlice (local)                                   | ❌       | _Optional_ | _Optional_ |
 
-| Linux                                               | Method 2   | Method 3   |
-|-----------------------------------------------------|------------|------------|
-| CLI                                                 | ✅         | ✅         |
-| GUI                                                 | ✅         | ✅         |
-| Default atlases<br/>(Allen's Mouse & Waxholm's Rat) | ✅         | ✅         |
-| BrainGlobe atlases                                  | ❌         | ✅         |
-| DeepSlice (online)                                  | ✅         | ✅         |
-| DeepSlice (local)                                   | _Optional_ | _Optional_ |
-
-| MacOS                                               | Method 2   | Method 3   |
-|-----------------------------------------------------|------------|------------|
-| CLI                                                 | ✅         | ✅         |
-| GUI                                                 | ✅         | ❌         |
-| Default atlases<br/>(Allen's Mouse & Waxholm's Rat) | ✅         | ✅         |
-| BrainGlobe atlases                                  | ❌         | ✅         |
-| DeepSlice (online)                                  | ✅         | ✅         |
-| DeepSlice (local)                                   | _Optional_ | _Optional_ |
+| MacOS                                               | Method 1 | Method 2   | Method 3   |
+|-----------------------------------------------------|----------|------------|------------|
+| CLI                                                 | ❌       | ✅         | ✅         |
+| GUI                                                 | ❌       | ✅         | ❌         |
+| Default atlases<br/>(Allen's Mouse & Waxholm's Rat) | ❌       | ✅         | ✅         |
+| BrainGlobe atlases                                  | ❌       | ❌         | ✅         |
+| DeepSlice (online)                                  | ❌       | ✅         | ✅         |
+| DeepSlice (local)                                   | ❌       | _Optional_ | _Optional_ |
 
 _NOTE_: a internet connection is required during the installation.
 
