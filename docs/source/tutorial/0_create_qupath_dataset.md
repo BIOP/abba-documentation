@@ -1,4 +1,4 @@
-# QuPath - Creating a project compatible with ABBA
+# Creating a compatible QuPath project
 :::{warning}
 Do not modify the images in the project once they have been opened and used in ABBA. Changing the images in the QuPath project may cause ABBA to function improperly.
 :::

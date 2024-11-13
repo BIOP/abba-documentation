@@ -1,5 +1,5 @@
 
-# Frequent issues / Frequently asked questions
+# Known issues & frequently asked questions
 
 ## All ABBA related questions on forum.image.sc
 

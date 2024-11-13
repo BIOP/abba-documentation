@@ -1,4 +1,4 @@
-# Video tutorial
+# Video lecture
 
 ## Youtube
 

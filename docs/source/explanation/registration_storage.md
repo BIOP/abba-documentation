@@ -1,4 +1,4 @@
-# ABBA state file and transformation specifications
+# Specification: save state & exported files
 
 ## ABBA state files
 

@@ -1,4 +1,4 @@
-# Which data source can be used by ABBA ?
+# Supported data sources
 
 ABBA can read data from many sources, but these two sources are the most commonly used:
 - [Bio-Formats](https://bio-formats.readthedocs.io/en/latest/supported-formats.html) compatible files

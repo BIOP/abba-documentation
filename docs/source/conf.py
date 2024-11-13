@@ -34,6 +34,10 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+html_logo = 'assets/img/abba_logo64x64.png'
+html_theme_options = {
+    'logo_only': True
+}
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
