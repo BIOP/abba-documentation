@@ -1,4 +1,4 @@
-# Fiji - Slices selection and display
+# Slices selection and display
 
 Once your dataset is opened in ABBA, you’ll be able to position slices along the slicing axis ("Z") and adjust each slice in 2D (including tilt and roll corrections, 2D affine, and spline in-plane registrations).
 
@@ -72,7 +72,7 @@ Additionally, you can adjust the color, and the minimum and maximum display valu
 
 If necessary, the display for each slice can be further customized by modifying its corresponding row in the table.
 
-# Fiji - Registration workflow
+# Registration workflow
 
 The registration process starts with a manual step, which serves two purposes:
 
@@ -442,7 +442,7 @@ A typical registration may be obtained using the following successive steps, per
 
 This takes about 10 minutes for 50 slices on a laptop.
 
-# Fiji - Saving / Opening registrations results
+# Saving & loading states
 
 At each step of the workflow, you can save the current state of your work (as long as no job is being processed).
 

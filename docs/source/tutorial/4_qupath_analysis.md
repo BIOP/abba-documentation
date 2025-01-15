@@ -1,4 +1,4 @@
-# QuPath - Using ABBA's registration in QuPath
+# Image analysis in QuPath
 
 ## Exporting ABBA registration results
 When a registration is done in ABBA, and if the slices have been opened from a QuPath project, it is possible to re-export the registration results into the original QuPath project.

@@ -1,4 +1,4 @@
-# Fiji -  BDV Navigation and QuPath project import
+# Data import & navigation
 
 :::{note}
 You will  need a mouse, since navigating with a trackpad can be frustrating!
