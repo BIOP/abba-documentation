@@ -16,8 +16,8 @@ If you use ABBA in your work, please cite the paper below, currently in pre-prin
 
 .. admonition:: Reference
 
-    Chiaruttini, N., Castoldi, C. et al. ABBA, a novel tool for whole-brain mapping, reveals brain-wide differences in immediate early genes induction following learning. bioRxiv (2024).
-    https://doi.org/10.1101/2024.09.06.611625
+    Chiaruttini, N.; Castoldi, C.; Requie L. et al. **ABBA+BraiAn, an integrated suite for whole-brain mapping, reveals brain-wide differences in immediate-early genes induction upon learning**, *Cell Reports* (2025).
+    https://doi.org/10.1016/j.celrep.2025.115876
 
 .. raw:: html
 
