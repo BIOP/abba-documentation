@@ -231,7 +231,7 @@ To use the DeepSlice web interface:
 
 * Adjust slice display settings to avoid saturation.
 * Select the slices you want to register.
-* Click `Align > ABBA - DeepSlice Registration (web)`.
+* Click `Register > DeepSlice > DeepSlice Registration (web)`.
 
 You get the following window:
 
