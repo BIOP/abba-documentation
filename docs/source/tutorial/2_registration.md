@@ -173,7 +173,7 @@ To switch to review mode:
 
 * Press the shortcut key r. 
 * Or click `Review` in the `Display & Navigation > Modes` card.
-* Or Select `Display > Review Mode` from the menu bar.
+* Or Select `View > Display Mode > Review Mode` from the menu bar.
 
 ![Review mode](/assets/img/fiji_review_mode.png)
 
