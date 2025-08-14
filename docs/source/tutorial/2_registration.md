@@ -99,7 +99,7 @@ Unlike most other actions in ABBA, these flipping and rotating actions cannot be
 
 ## Manual interactive transformation of slices (Scale, Translate, Rotate)
 
-To apply manual transformations (such as rotation, translation, and scaling) to the selected slices, go to the top menu bar and select `Edit > ABBA - Interactive Transform`. This tool allows you to rotate, translate, and scale the slices anisotropically (for example, compensating for the common 20% shrinkage in the Y direction due to slicing).
+To apply manual transformations (such as rotation, translation, and scaling) to the selected slices, go to the top menu bar and select `Register > Affine > Interactive Transform`. This tool allows you to rotate, translate, and scale the slices anisotropically (for example, compensating for the common 20% shrinkage in the Y direction due to slicing).
 
 ![Interactive slice transformation](/assets/gif/fiji_interactivetransform.gif)
 
