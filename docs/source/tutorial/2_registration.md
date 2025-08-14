@@ -58,7 +58,7 @@ In some cases, especially with multi-series files like VSI files, you might enco
 To remove unwanted slices:
 
 * Select the slices that appear black in the table.
-* Right-click in the ABBA viewer window and select `Remove Selected Slices` (or go to `Edit > ABBA - Remove Selected Slices` in the menu bar).
+* Right-click in the ABBA viewer window and select `Remove Selected Slices` (or go to `Slices > Remove Slices` in the menu bar).
 
 ![Removing slices](/assets/gif/fiji_remove_slices.gif)
 
