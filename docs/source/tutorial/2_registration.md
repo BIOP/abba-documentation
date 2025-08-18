@@ -278,7 +278,7 @@ Check DeepSlice’s path by running `DeepSlice > DeepSlice setup...`:
 
 and select the proper folder containing the conda environment for DeepSlice (if you used the ABBA installer for windows, do not touch it, it should already be set correctly).
 
-Then, to run DeepSlice locally, select the slices you want to register and run `Align > ABBA - DeepSlice registration (local)`. This window will pop-up:
+Then, to run DeepSlice locally, select the slices you want to register and run `Register > DeepSlice > DeepSlice Registration (local)`. This window will pop-up:
 
 ![ABBA DeepSlice options](/assets/img/fiji_deepslice_options.png)
 
