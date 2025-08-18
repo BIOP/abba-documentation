@@ -371,7 +371,7 @@ A few extra options are available:
 
 ### Spline registration (Automated)
 
-Spline registration is a more advanced form of alignment that allows for non-linear transformations. You can perform a spline registration by selecting the slices you want to register and going to the top menu bar: `Align > ABBA - Elastix Registration (Spline)`.
+Spline registration is a more advanced form of alignment that allows for non-linear transformations. You can perform a spline registration by selecting the slices you want to register and going to the top menu bar: `Register > Spline > Elastix Registration (Spline)`.
 
 ![Spline registration parameters](/assets/img/fiji_elastix_spline_registration.png)
 
