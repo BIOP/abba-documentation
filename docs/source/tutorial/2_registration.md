@@ -339,7 +339,7 @@ If your slice contains broken or missing regions, it can be challenging or even 
 
 ### Affine registration (Automated)
 
-Affine registration is the first step in aligning your dataset slices to the atlas. This process involves scaling, rotating, and translating your slices to match the atlas while preserving their relative proportions. To initiate an affine registration, select the slices you want to register and go to the top menu bar: `Align > ABBA - Elastix Registration (Affine)`.
+Affine registration is the first step in aligning your dataset slices to the atlas. This process involves scaling, rotating, and translating your slices to match the atlas while preserving their relative proportions. To initiate an affine registration, select the slices you want to register and go to the top menu bar: `Register > Affine > Elastix Registration (Affine)`.
 
 In the registration dialog, you’ll be asked to select channels from both the atlas and your dataset slices. A common starting point is to use the DAPI channel from your sections and match it with the Nissl channel (channel 0) from the atlas. This pairing often provides a good basis for the first registration.
 
