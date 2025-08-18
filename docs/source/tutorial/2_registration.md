@@ -272,7 +272,7 @@ You can further refine the registration using ABBA's non-linear tools.
 
 If you have installed DeepSlice locally using [this guide](https://github.com/BIOP/ijl-utilities-wrappers), you can run DeepSlice directly in ABBA. The Windows installer usually configures everything for you.
 
-Check DeepSlice’s path by running `DeepSlice > DeepSlice setup...`:
+Check DeepSlice’s path by running `Edit > Configuration > Set DeepSlice Env Path`:
 
 ![ABBA DeepSlice setup](/assets/img/fiji_deepslice_setup.png)
 
@@ -385,7 +385,7 @@ If you want full control over the registration process, you can use [BigWarp](ht
 
 ### Editing a registration
 
-If the last registration performed on a slice is either a BigWarp or spline registration, it can be manually edited. To do so, select the slice you want to edit, and in the top menu bar, go to: `Align > ABBA - Edit Last Registration`.
+If the last registration performed on a slice is either a BigWarp or spline registration, it can be manually edited. To do so, select the slice you want to edit, and in the top menu bar, go to: `Register > Edit Last Registration`.
 
 :::{warning} If you select many slices before clicking "Edit Last Registration," each slice's registration will be opened for editing in sequence. Make sure this is what you intend before proceeding! 
 :::
@@ -409,14 +409,14 @@ After editing a registration, you can export it again (to QuPath for instance), 
 
 If you're not satisfied with a registration result, you can undo it for the selected slices by:
 
-* Clicking in the top menu bar: `Align > ABBA - Remove Last Registration`
+* Clicking in the top menu bar: `Register > Remove Last Registration`
 * Or right-clicking in the ABBA viewer: `Remove Last Registration`
 
 This action can be reversed, restoring the previous registration.
 
 #### Applying the registration sequence from one slice to another
 
-See [the use case in this issue](https://github.com/BIOP/ijp-imagetoatlas/issues/174). Suppose you want to duplicate the registration sequence from one slice to another. It is possible with the command `ABBA - Copy and Apply Registration`:
+See [the use case in this issue](https://github.com/BIOP/ijp-imagetoatlas/issues/174). Suppose you want to duplicate the registration sequence from one slice to another. It is possible with the command `Edit > (Experimental) > Copy and Apply Registration`:
 
 ![fiji_copy_apply_registration.png](/assets/img/fiji_copy_apply_registration.png)
 
@@ -446,11 +446,11 @@ This takes about 10 minutes for 50 slices on a laptop.
 
 At each step of the workflow, you can save the current state of your work (as long as no job is being processed).
 
-To save your project, you can click, in the top menu bar `File > ABBA - Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file in fact a set of text files zipped together.
+To save your project, you can click, in the top menu bar `File > Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file in fact a set of text files zipped together.
 
 All files are text files, which are fast to save and rather small (in comparison to the images...). So do not hesitate to save multiple successive files all along your workflow. Consider your work done when you have obtained regions in QuPath, but the ABBA state file has less guarantee on the long term.
 
-To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > ABBA - Load State (+View)`, and select your previously saved `.abba` file.
+To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > Load State (+View)`, and select your previously saved `.abba` file.
 
 :::{warning}
 If you move your image files, your qupath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file path are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.
