@@ -8,7 +8,7 @@ In addition, we also offer a [QuPath](https://qupath.github.io/) extension that 
 The QuPath extension, while optional, is highly recommended. It simplifies dataset definition and post-registration analysis.
 :::
 
-## ABBA
+## ABBA plugin for Fiji
 
 :::{tip} For Windows users, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/), which simplifies the installation process. 
 :::
@@ -53,7 +53,7 @@ The tables below summarize the functionality available for each installation met
 | DeepSlice (online)                                  | ❌       | ✅         | ✅         |
 | DeepSlice (local)                                   | ❌       | _Optional_ | _Optional_ |
 
-_NOTE_: a internet connection is required during the installation.
+_NOTE_: an internet connection is required during the installation.
 
 ### Method 1 - Windows installer
 
@@ -121,14 +121,39 @@ To install DeepSlice locally, please follow the instructions specified in the [B
 
 ### Method 3 - Installing ABBA plugin in python
 
-ABBA can also be installed within a python environment thanks to [`abba-python`](https://pypi.org/project/abba-python/). This method adds support to [BrainGlobe](https://brainglobe.info/documentation/brainglobe-atlasapi/index.html#atlases-available)'s additional atlaes.
+ABBA can also be installed within a python environment thanks to [`abba-python`](https://pypi.org/project/abba-python/). This method adds support to [BrainGlobe](https://brainglobe.info/documentation/brainglobe-atlasapi/index.html#atlases-available)'s additional atlases.
 
 For the installation instructions refer to the [project's page](https://github.com/BIOP/abba_python).
 
-## QuPath extension for ABBA
+## ABBA extension for QuPath
+
+### QuPath 0.6
 
 1. if QuPath is not already installed, [download it](https://qupath.github.io/) and install it;
-2. download the latest [ABBA extension](https://github.com/BIOP/qupath-extension-abba/releases/latest) zip file (named `qupath-extension-abba-x.y.z.zip`);
+
+The ABBA extension is distributed into QuPath via a the QuPath-BIOP catalog.
+This catalog is NOT enabled by default in QuPath. In order to add it to the list of available catalogs:
+
+2. Open QuPath
+3. Go to **Extensions → Manage extensions**
+4. Click **Manage extension catalogs**
+5. Enter the catalog URL: `https://github.com/BIOP/qupath-biop-catalog`
+6. Browse and install the latest abba extension by clicking its (+) button
+7. Make sure to restart QuPath
+
+:::{note}
+Note that the BraiAn extension is available via the catalog `https://github.com/carlocastoldi/qupath-extension-braian-catalog`
+:::
+
+:::{note}
+If you're using OMERO for your data, you'll need to install the QuPath OMERO extension with optional dependencies. 
+You need to import your images in OMERO by using the [Ice API](https://github.com/qupath/qupath-extension-omero).
+:::
+
+### QuPath 0.5 (legacy - no bug fix)
+
+1. if QuPath is not already installed, [download it](https://qupath.github.io/) and install it;
+2. download the version 0.3.3 [ABBA extension](https://github.com/BIOP/qupath-extension-abba/releases/tag/0.3.3) zip file (named `qupath-extension-abba-0.3.3.zip`);
 3. unzip it;
 4. drag-and-drop the `.jar` files into QuPath's main window;
 

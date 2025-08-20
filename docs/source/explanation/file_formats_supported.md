@@ -89,7 +89,7 @@ Depending on the image loader, the data can be read from various sources:
 If you add the Fiji MoBiE update site, you should be able to use OME/ZARR dataset:
 - [OMEZARR loader](https://github.com/mobie/mobie-io/tree/main/src/main/java/org/embl/mobie/io/ome/zarr/loaders)
 
-Now, using ABBA, the easiest way is again to make a QuPath project with Bio-Formats supported files or with OMERO images through the use of the [QuPath OMERO RAW extension](https://github.com/BIOP/qupath-extension-biop-omero).
+Now, using ABBA, the easiest way is again to make a QuPath project with Bio-Formats supported files or with OMERO images through the use of the QuPath OMERO extension (with the Ice API).
 
 While other sources from other image loaders should work almost 'out of the box', there is no very direct way to do that because it's not in the GUI of ABBA. If you need other sources coming from different loaders, please write an issue on GitHub or open a post on the forum.
 

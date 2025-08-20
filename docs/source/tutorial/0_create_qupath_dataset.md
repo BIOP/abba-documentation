@@ -35,7 +35,7 @@ Below is a brief overview of the steps to set up a project:
 * Select `Bio-Formats builder` and click Import.
 
 :::{note}
-You can also work with OMERO images, provided they are accessed through the [OMERO-RAW QuPath extension](https://github.com/BIOP/qupath-extension-biop-omero). After installing the extension, you can add images directly by browsing your OMERO server: `Extensions > OMERO-RAW > Browse server...` and importing images or entire datasets.
+You can also work with OMERO images, provided they were imported using the Ice API of the [OMERO QuPath extension](https://github.com/qupath/qupath-extension-omero). After installing the extension, you can add images directly by browsing your OMERO server: `Extensions > OMERO > Browse server...` and importing images or entire datasets.
 :::
 
 ![creating a project with slices in QuPath](/assets/gif/qupath_create_project.gif)

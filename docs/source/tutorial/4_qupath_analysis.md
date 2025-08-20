@@ -1,5 +1,11 @@
 # Image analysis in QuPath
 
+## Give a try to BraiAn
+
+BraiAn is a worflow that has been designed to easily process whole brain datasets aligned with ABBA.
+
+You can get its documentation here: https://silvalab.codeberg.page/BraiAn/
+
 ## Exporting ABBA registration results
 When a registration is done in ABBA, and if the slices have been opened from a QuPath project, it is possible to re-export the registration results into the original QuPath project.
 
@@ -23,10 +29,6 @@ The region boundaries are displayed. If you do not split between the left and ri
 If you split the regions between left and right hemi-brain, the display will be less cluttered. Moreover, you can press `N` to hide the name of the imported regions.
 
 You can also use the transparency slider to change the opacity of the regions.
-
-
-
-    Is there a way to get the text label to display on the actual region?
 
 If you put a low transparency, double-click on a region and have the hierarchy tab activated, you will see in yellow the region selected, and the region selected will be synchronized on the hierarchy tab:
 
@@ -67,9 +69,9 @@ getDetectionObjects().forEach(detection -> {
     MeasurementList ml = detection.getMeasurementList();
     atlasCoordinates.setPosition([detection.getROI().getCentroidX(),detection.getROI().getCentroidY(),0] as double[]);
     pixelToAtlasTransform.apply(atlasCoordinates, atlasCoordinates);
-    ml.putMeasurement("Atlas_X", atlasCoordinates.getDoublePosition(0) )
-    ml.putMeasurement("Atlas_Y", atlasCoordinates.getDoublePosition(1) )
-    ml.putMeasurement("Atlas_Z", atlasCoordinates.getDoublePosition(2) )
+    ml.put("Atlas_X", atlasCoordinates.getDoublePosition(0) ) // QuPath 0.6 syntax; in v0.5 you need to replace 'put' with 'putMeasurement'
+    ml.put("Atlas_Y", atlasCoordinates.getDoublePosition(1) )
+    ml.put("Atlas_Z", atlasCoordinates.getDoublePosition(2) )
 })
 
 import net.imglib2.RealPoint
