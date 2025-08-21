@@ -58,7 +58,7 @@ In some cases, especially with multi-series files like VSI files, you might enco
 To remove unwanted slices:
 
 * Select the slices that appear black in the table.
-* Right-click in the ABBA viewer window and select `Remove Selected Slices` (or go to `Edit > ABBA - Remove Selected Slices` in the menu bar).
+* Right-click in the ABBA viewer window and select `Remove Selected Slices` (or go to `Slices > Remove Slices` in the menu bar).
 
 ![Removing slices](/assets/gif/fiji_remove_slices.gif)
 
@@ -99,7 +99,7 @@ Unlike most other actions in ABBA, these flipping and rotating actions cannot be
 
 ## Manual interactive transformation of slices (Scale, Translate, Rotate)
 
-To apply manual transformations (such as rotation, translation, and scaling) to the selected slices, go to the top menu bar and select `Edit > ABBA - Interactive Transform`. This tool allows you to rotate, translate, and scale the slices anisotropically (for example, compensating for the common 20% shrinkage in the Y direction due to slicing).
+To apply manual transformations (such as rotation, translation, and scaling) to the selected slices, go to the top menu bar and select `Register > Affine > Interactive Transform`. This tool allows you to rotate, translate, and scale the slices anisotropically (for example, compensating for the common 20% shrinkage in the Y direction due to slicing).
 
 ![Interactive slice transformation](/assets/gif/fiji_interactivetransform.gif)
 
@@ -173,7 +173,7 @@ To switch to review mode:
 
 * Press the shortcut key r. 
 * Or click `Review` in the `Display & Navigation > Modes` card.
-* Or Select `Display > Review Mode` from the menu bar.
+* Or Select `View > Display Mode > Review Mode` from the menu bar.
 
 ![Review mode](/assets/img/fiji_review_mode.png)
 
@@ -231,7 +231,7 @@ To use the DeepSlice web interface:
 
 * Adjust slice display settings to avoid saturation.
 * Select the slices you want to register.
-* Click `Align > ABBA - DeepSlice Registration (web)`.
+* Click `Register > DeepSlice > DeepSlice Registration (web)`.
 
 You get the following window:
 
@@ -272,13 +272,13 @@ You can further refine the registration using ABBA's non-linear tools.
 
 If you have installed DeepSlice locally using [this guide](https://github.com/BIOP/ijl-utilities-wrappers), you can run DeepSlice directly in ABBA. The Windows installer usually configures everything for you.
 
-Check DeepSlice’s path by running `DeepSlice > DeepSlice setup...`:
+Check DeepSlice’s path by running `Edit > Configuration > Set DeepSlice Env Path`:
 
 ![ABBA DeepSlice setup](/assets/img/fiji_deepslice_setup.png)
 
 and select the proper folder containing the conda environment for DeepSlice (if you used the ABBA installer for windows, do not touch it, it should already be set correctly).
 
-Then, to run DeepSlice locally, select the slices you want to register and run `Align > ABBA - DeepSlice registration (local)`. This window will pop-up:
+Then, to run DeepSlice locally, select the slices you want to register and run `Register > DeepSlice > DeepSlice Registration (local)`. This window will pop-up:
 
 ![ABBA DeepSlice options](/assets/img/fiji_deepslice_options.png)
 
@@ -339,7 +339,7 @@ If your slice contains broken or missing regions, it can be challenging or even 
 
 ### Affine registration (Automated)
 
-Affine registration is the first step in aligning your dataset slices to the atlas. This process involves scaling, rotating, and translating your slices to match the atlas while preserving their relative proportions. To initiate an affine registration, select the slices you want to register and go to the top menu bar: `Align > ABBA - Elastix Registration (Affine)`.
+Affine registration is the first step in aligning your dataset slices to the atlas. This process involves scaling, rotating, and translating your slices to match the atlas while preserving their relative proportions. To initiate an affine registration, select the slices you want to register and go to the top menu bar: `Register > Affine > Elastix Registration (Affine)`.
 
 In the registration dialog, you’ll be asked to select channels from both the atlas and your dataset slices. A common starting point is to use the DAPI channel from your sections and match it with the Nissl channel (channel 0) from the atlas. This pairing often provides a good basis for the first registration.
 
@@ -371,7 +371,7 @@ A few extra options are available:
 
 ### Spline registration (Automated)
 
-Spline registration is a more advanced form of alignment that allows for non-linear transformations. You can perform a spline registration by selecting the slices you want to register and going to the top menu bar: `Align > ABBA - Elastix Registration (Spline)`.
+Spline registration is a more advanced form of alignment that allows for non-linear transformations. You can perform a spline registration by selecting the slices you want to register and going to the top menu bar: `Register > Spline > Elastix Registration (Spline)`.
 
 ![Spline registration parameters](/assets/img/fiji_elastix_spline_registration.png)
 
@@ -385,7 +385,7 @@ If you want full control over the registration process, you can use [BigWarp](ht
 
 ### Editing a registration
 
-If the last registration performed on a slice is either a BigWarp or spline registration, it can be manually edited. To do so, select the slice you want to edit, and in the top menu bar, go to: `Align > ABBA - Edit Last Registration`.
+If the last registration performed on a slice is either a BigWarp or spline registration, it can be manually edited. To do so, select the slice you want to edit, and in the top menu bar, go to: `Register > Edit Last Registration`.
 
 :::{warning} If you select many slices before clicking "Edit Last Registration," each slice's registration will be opened for editing in sequence. Make sure this is what you intend before proceeding! 
 :::
@@ -409,14 +409,14 @@ After editing a registration, you can export it again (to QuPath for instance), 
 
 If you're not satisfied with a registration result, you can undo it for the selected slices by:
 
-* Clicking in the top menu bar: `Align > ABBA - Remove Last Registration`
+* Clicking in the top menu bar: `Register > Remove Last Registration`
 * Or right-clicking in the ABBA viewer: `Remove Last Registration`
 
 This action can be reversed, restoring the previous registration.
 
 #### Applying the registration sequence from one slice to another
 
-See [the use case in this issue](https://github.com/BIOP/ijp-imagetoatlas/issues/174). Suppose you want to duplicate the registration sequence from one slice to another. It is possible with the command `ABBA - Copy and Apply Registration`:
+See [the use case in this issue](https://github.com/BIOP/ijp-imagetoatlas/issues/174). Suppose you want to duplicate the registration sequence from one slice to another. It is possible with the command `Edit > (Experimental) > Copy and Apply Registration`:
 
 ![fiji_copy_apply_registration.png](/assets/img/fiji_copy_apply_registration.png)
 
@@ -446,11 +446,11 @@ This takes about 10 minutes for 50 slices on a laptop.
 
 At each step of the workflow, you can save the current state of your work (as long as no job is being processed).
 
-To save your project, you can click, in the top menu bar `File > ABBA - Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file in fact a set of text files zipped together.
+To save your project, you can click, in the top menu bar `File > Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file in fact a set of text files zipped together.
 
 All files are text files, which are fast to save and rather small (in comparison to the images...). So do not hesitate to save multiple successive files all along your workflow. Consider your work done when you have obtained regions in QuPath, but the ABBA state file has less guarantee on the long term.
 
-To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > ABBA - Load State (+View)`, and select your previously saved `.abba` file.
+To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > Load State (+View)`, and select your previously saved `.abba` file.
 
 :::{warning}
 If you move your image files, your qupath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file path are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.

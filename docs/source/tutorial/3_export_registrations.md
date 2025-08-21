@@ -33,7 +33,7 @@ If you choose a very small pixel size, be aware that the computation can take a 
 
 ### Export warped slices
 
-In ABBA, select the slices you want to export, and click `Export> ABBA - Export registered slices to ImageJ`.
+In ABBA, select the slices you want to export, and click `Export > ImageJ > Export Registered Slices to ImageJ`.
 
 ![Exporting slices options](/assets/img/fiji_export_registered_slices_imagej.png)
 
@@ -47,7 +47,7 @@ When this process is done, you end up with an ImageJ image stack, which can be s
 If you choose a really too small pixel size, you may reach ImageJ's limitation of 2 Gpixels per plane.
 :::
 
-You may want to export not the full slice but only a subregion of the atlas. The computation for a small region can thus be much faster. To do this, open the `Define region of interest` panel, click `Define interactively` and draw the rectangular region of interest with the mouse.
+You may want to export not the full slice but only a subregion of the atlas. The computation for a small region can thus be much faster. To do this, open the `Define region of interest for registration` panel, click `Define interactively` and draw the rectangular region of interest with the mouse.
 
 :::{warning}
 This region is also used to restrict registrations areas. Most probably you will want to restore the full size before starting a registration.
@@ -63,7 +63,7 @@ Now the exported slices will be restricted to your user defined ROI, as shown in
 
 Also, do not forget to adjust B&C once the export is done!
 
-If you want to export the atlas data in the same conditions (sampling and region), you can click `Edit> ABBA - Export Atlas to ImageJ`.
+If you want to export the atlas data in the same conditions (sampling and region), you can click `Export > ImageJ > Export Atlas to ImageJ`.
 
 ![Export atlas options](/assets/img/fiji_atlas_export_options.png)
 
@@ -80,12 +80,12 @@ This exported stack can be combined with the exported slices in a multi-channel 
 
 ## 2. Warping atlas onto the slice
 
-This feature is not implemented yet, but it is not complicated to add. Make sure that you do not prefer the other options mentioned below, but if not, please contact the authors or use the feedback form of ABBA (`Help> ABBA - Give your feedback`) to request this feature.
+This feature is not implemented yet, but it is not complicated to add. Make sure that you do not prefer the other options mentioned below, but if not, please contact the authors or use the feedback form of ABBA (`Help > Give your feedback (web)`) to request this feature.
 
 
 ## 3. Export an image of the atlas coordinates onto the slice
 
-Using the backward transform, the command `Export > ABBA - Export Atlas Coordinates of Original Slices to ImageJ` will output, for each slice, a three channel image where each channel correspond to one coordinate in the atlas (3 channels = X, Y, Z coordinates).
+Using the backward transform, the command `Export > ImageJ > Export Atlas Coordinates of Original Slices to ImageJ` will output, for each slice, a three channel image where each channel correspond to one coordinate in the atlas (3 channels = X, Y, Z coordinates).
 
 ![Export atlas coordinates image](/assets/img/fiji_export_atlas_coordinates_image.png)
 
@@ -100,7 +100,7 @@ The output is a 32 bit image, which can be saved as a regular imagej image.
 Thanks to this image, you can for instance detect cells in ImageJ on the original slice, and find their corresponding atlas coordinates thanks to this exported image.
 
 :::{warning}
-It is possible to export the original slice data as an imagej stack thanks to the command `Export > ABBA - Export Original Slices to ImageJ`.
+It is possible to export the original slice data as an imagej stack thanks to the command `Export > ImageJ > Export Original Slices to ImageJ`.
 :::
 
 After adjusting the B&C of the exported image you may get an image looking like the one below:
@@ -111,7 +111,7 @@ A periodic LUT is applied for each channel which allows to easily visualize the 
 
 ## 4. Export atlas regions in the Roi Manager
 
-Besides [exporting regions in QuPath](4_qupath_analysis.md), it is possible to export regions to the ROI manager (`export > ABBA - Export Regions to ROI Manager`). However, since images are pretty big, it is not the most recommended workflow.
+Besides [exporting regions in QuPath](4_qupath_analysis.md), it is possible to export regions to the ROI manager (`export > ImageJ > Export Regions to Roi Manager`). However, since images are pretty big, it is not the most recommended workflow.
 
 Here a gif demoing this possibility:
 
