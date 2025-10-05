@@ -1,9 +1,6 @@
 ABBA - Aligning Big Brains & Atlases
 ====================================
 
-ABBA in action
-==============
-
 .. raw:: html
 
     <video autoplay loop muted style="width: 100%;">
