@@ -68,9 +68,6 @@ ABBA includes a built-in tool to help you write the methods section for your pub
    * Verify that atlas orientation (coronal/sagittal/horizontal) is correctly specified
    * For manual BigWarp registrations, add the number of control points used
 
-**Additional atlas information**
-
-To get detailed information about the currently loaded atlas (including URLs and citations), use **Cite → About current atlas (web)** from the top menu.
 
 Citing third-party tools
 ========================
@@ -79,7 +76,8 @@ Here's a list of common third party tools that may be used with or within ABBA. 
 
 **Atlas datasets**
 
-Please cite the relevant publication for the atlas dataset you are using.
+Please cite the relevant publication for the atlas dataset you are using. To get detailed information about the currently loaded atlas (including URLs and citations), use **Cite → About current atlas (web)** from the top menu.
+This should automatically included in the methods assistant.
 
 **BrainGlobe**
 
