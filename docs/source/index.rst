@@ -56,12 +56,37 @@ If you use QuPath for image analysis, please cite:
     Bankhead, P. et al. **QuPath: Open source software for digital pathology image analysis**. *Scientific Reports* 7, 17204 (2017).
     https://doi.org/10.1038/s41598-017-17204-5
 
+Methods writing assistant
+=========================
 
-Learn more
-==========
+ABBA includes a built-in tool to help you write the methods section for your publication. This feature automatically generates a draft methods paragraph based on your actual registration workflow.
 
-For a short presentation about the BioImaging & Optics Platform and ABBA's goals, check out `this presentation <https://docs.google.com/presentation/d/1LWlmE8iHpaJhV4bZr8hC3H2cjUDvGUA1s21OdNTCUCg/edit#slide=id.g1259e64410f_0_91>`_:
+.. admonition:: How to use the methods generator
+   :class: tip
 
-.. raw:: html
+   1. Complete your registration workflow with all slices
+   2. Select the slices you want to include in your methods
+   3. Navigate to **Cite → Generate methods prompt** in the top menu
+   4. Copy the generated prompt and paste it into your preferred LLM (Mistral, ChatGPT, Claude, etc.)
+   5. Review and edit the generated methods text carefully before including it in your publication
 
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPCf8GXPFr8STRMw7zyeIjI2WQzBuY2oHBpG8qZjwzWYQzUTOB4IO5yJN90uWGqIb-OFI5ErWr3YZA/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="560" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+.. admonition:: What information is included
+   :class: note
+
+   The generated prompt includes:
+
+   * Atlas information and configuration (name, DOI, rotation adjustments)
+   * List of registered slices with their positions
+   * Registration methods used (DeepSlice, Elastix affine/spline, BigWarp manual)
+   * Channel mappings for multi-channel registrations
+   * Inter-slice spacing information
+   * Relevant citations for all tools used
+
+.. admonition:: Important
+   :class: warning
+
+   * The generated methods section is a **draft** - always review and verify the content
+   * Add missing experimental details (image acquisition, staining protocols, equipment)
+   * Fill in any placeholders marked in the generated text
+   * Verify that atlas orientation (coronal/sagittal/horizontal) is correctly specified
+   * For manual BigWarp registrations, add th
