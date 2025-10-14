@@ -77,7 +77,7 @@ Here's a list of common third party tools that may be used with or within ABBA. 
 **Atlas datasets**
 
 Please cite the relevant publication for the atlas dataset you are using. To get detailed information about the currently loaded atlas (including URLs and citations), use **Cite → About current atlas (web)** from the top menu.
-This should automatically included in the methods assistant.
+This should be automatically included in the methods assistant.
 
 **BrainGlobe**
 
