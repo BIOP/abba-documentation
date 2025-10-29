@@ -7,7 +7,7 @@ copyright = '2024, BIOP-EPFL'
 author = 'BIOP-EPFL'
 
 release = '0.9'
-version = '0.10.9-SNAPSHOT'
+version = '0.11.0-SNAPSHOT'
 
 # -- General configuration
 

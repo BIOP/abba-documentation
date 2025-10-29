@@ -124,3 +124,13 @@ By using `Export>QuickNII>Export Registered Slices As QuickNII Dataset`, you can
 :::{warning}
 This export method will suffer from some limitations. In particular, all images are exported as `.jpg` images, which is a lossy compression on top of supporting only 3 channels and 8-bits of dynamic range. It is thus advised to always keep the corresponding `.abba` project file if you want to do some modifications later.
 :::
+
+## 6. Export a self-contained zip file / Standardized export
+
+By using `Export>Export Standardized ABBA Project (Zip)`, you will generate a zip file that contains: 
+* the original data of the selected slices, resampled at the resolution of your choice (images need to have been properly calibrated upon import)
+* the abba project in order to be reopened through ABBA using the original methods
+* the transformation field of the final registration for each slice
+* some metadata such as the atlas used and its orientation, as well as a user defined text field
+
+Such a zip file can be re-opened in ABBA through `Import>Export Standardized ABBA Project (Zip) in new ABBA instance`
