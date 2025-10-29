@@ -51,6 +51,19 @@ For Mac users, use `cmd` instead of `ctrl`.
 
 To facilitate registration, it’s essential to ensure your slices are displayed properly. Depending on your use case, you may want to show only a subset of channels and adjust the minimum and maximum display values for optimal contrast.
 
+## Slices with a white background
+
+By default ABBA works with fluorescent images. Thus the background color is mostly black, and when the slice needs to be extended outside of its bounds, the color given is black. However, some dataset are acquired in brightfield, thus having a white background image. For these images, the default out-of-bounds black color is not ideal, and could cause issues with downstream registration.
+
+By going into `Slices>Set White background`, you can override the default out-of bounds color of the slice. Typically the white value you will need to set is above 200, with 255 being the maximum. You may need to look at your pixel value data to know it, or just attempt a few values to find the right one, meaning one that should make the bounds of the image as little visible as possible.
+
+![Setting White Background To Slices](/assets/img/fiji_white_background_slice.png)
+
+Left: default; middle: background too dim; right, correct background value.
+(Data taken from DeepSlice example dataset)
+
+It is also recommended to increase the max displayed value of the white-background slices to, for instance, 512, in order to dim the brightness of the slices and allow for a transparency like behaviour.
+
 ### Removing Unwanted Slices
 
 In some cases, especially with multi-series files like VSI files, you might encounter unwanted images, such as labels or macro images. These unwanted slices, typically RGB images, will often appear black in the slice display table, making them easy to identify.
