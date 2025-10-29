@@ -116,3 +116,11 @@ Besides [exporting regions in QuPath](4_qupath_analysis.md), it is possible to e
 Here a gif demoing this possibility:
 
 ![Exporting regions to the ROI Manager](/assets/gif/fiji_export_ij1_roi_manager.gif)
+
+## 5. Export as a new QuickNII dataset
+
+By using `Export>QuickNII>Export Registered Slices As QuickNII Dataset`, you can package all your registered slices into a dataset that can be opened by QuickNII. The slices will be resampled to the resolution of your choice and the corresponding json file will be created.
+
+:::{warning}
+This export method will suffer from some limitations. In particular, all images are exported as `.jpg` images, which is a lossy compression on top of supporting only 3 channels and 8-bits of dynamic range. It is thus advised to always keep the corresponding `.abba` project file if you want to do some modifications later.
+:::

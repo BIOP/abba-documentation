@@ -465,6 +465,10 @@ All files are text files, which are fast to save and rather small (in comparison
 
 To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > Load State (+View)`, and select your previously saved `.abba` file.
 
+:::{info}
+You can also directly drag an drop a `.abba` project file into ABBA's viewer panel to open it.
+:::
+
 :::{warning}
-If you move your image files, your qupath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file path are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.
+If you move your image files, your QuPath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file path are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.
 :::
