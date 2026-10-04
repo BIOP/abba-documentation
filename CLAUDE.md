@@ -28,6 +28,8 @@ may come later.
 
 Follow [BUMP_DOC.md](BUMP_DOC.md).
 
+Pictures of the ABBA window (not the dialogs): see [ASSETS_HANDOFF.md](ASSETS_HANDOFF.md), the plan for generating them from Java.
+
 ## Build
 
 ```bash
