@@ -53,7 +53,7 @@ If you choose a pixel size that is far too small, you may reach the ImageJ limit
 
 The export is restricted to the [region of interest](#region-of-interest): to export a small part of the atlas faster, define a small region of interest first, either in review mode or in positioning mode, and restore the full size afterwards.
 
-![Exporting registered slices with a region of interest](/assets/gif/fiji_export_registered_slices.gif)
+![One plane of the stack exported by Export Registered Slices To ImageJ: a demo slice, registered, at 20 micrometers per pixel, its DAPI channel](/assets/abba/guide/export_results/registered_slice_export.png)
 
 Do not forget to adjust the brightness and contrast of the exported image.
 
@@ -67,9 +67,7 @@ To export the atlas in the same conditions (pixel size and region), click {menus
 
 Keep `Interpolate` unchecked when you export label channels. The exported atlas stack can be combined with the exported slices into a multichannel stack, since both have the same geometry.
 
-![Export atlas](/assets/gif/fiji_export_atlas.gif)
-
-<!-- TODO GIF phase: re-record the two export GIFs with ABBA 0.24.1. -->
+![The same plane exported by Export Atlas To ImageJ, Nissl channel: the atlas section at the position of the slice, with the same geometry](/assets/abba/guide/export_results/atlas_export.png)
 
 ## Export the atlas coordinates of the original slices
 
@@ -96,6 +94,8 @@ A periodic LUT is applied to each channel, which makes the warping easy to see. 
 {menuselection}`Export --> ImageJ --> Export Regions To File` saves the same regions as one ImageJ ROI set zip file per slice, in a folder of your choice.
 
 ![Exporting regions to the ROI Manager](/assets/gif/fiji_export_ij1_roi_manager.gif)
+
+<!-- TODO GIF phase: re-record with ABBA 0.24.1 (the ROI Manager is an AWT window, which abba-doc-assets does not paint). -->
 
 <!-- TODO: dialog screenshots of the two region exports (need a live session). -->
 

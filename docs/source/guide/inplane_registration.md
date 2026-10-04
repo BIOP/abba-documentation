@@ -20,11 +20,11 @@ If your image file format does not contain multiple resolution levels (pyramids)
 
 When a registration starts on a slice, an indicator appears below its handle. It is round for automatic registrations and rectangular for manual ones, and its color shows the status of the job:
 
-- red: registration not started;
-- orange: registration in progress;
+- light red: registration waiting (not started, or waiting for the user, like a manual registration whose editor is open);
+- yellow: registration in progress;
 - green: registration done.
 
-![Slice registration example](/assets/gif/fiji_register_affine_spline.gif)
+![The slice handles in review mode, each with its markers: all the slices have their DeepSlice and Elastix affine registrations done (green), except 10x_06, whose manual registration is open in the editor, and whose Elastix affine registration waits behind it (light red)](/assets/abba/guide/inplane_registration/registration_status.png)
 
 ABBA runs several registrations in parallel, from 4 to 128 at once depending on your computer. You can monitor the memory and CPU usage with {menuselection}`View --> Cards --> Add Resources Monitor`.
 
@@ -38,7 +38,11 @@ The following sequence shows the registration of 80 sections, with these automat
 
 (real time ~ 10 min)
 
-Registrations add up: you usually start with an affine registration, followed by one or two spline registrations. For difficult slices where the automated registrations fail, start with a manual registration to help the automated ones, or edit the result of a spline registration by hand, adding landmarks in the regions you care about most.
+Registrations add up: you usually start with an affine registration, followed by one or two spline registrations. Here is the top right quarter of a demo slice, with the borders of the atlas regions only, after DeepSlice, after an Elastix affine registration, and after an Elastix spline registration:
+
+![A quarter of a slice with the atlas region borders, after each registration step: DeepSlice, Elastix affine, Elastix spline](/assets/abba/guide/inplane_registration/registration_steps.png)
+
+For difficult slices where the automated registrations fail, start with a manual registration to help the automated ones, or edit the result of a spline registration by hand, adding landmarks in the regions you care about most.
 
 :::{warning}
 If a slice contains broken or missing regions, a perfect registration can be hard or even impossible to reach: ABBA does not handle discontinuous deformations well.
@@ -62,7 +66,9 @@ The atlas channels are listed, in order, in the `Atlas Display` card. When sever
 
 Registrations, and exports, are computed within a rectangular **region of interest** of the atlas: by default, the full atlas section. To restrict it, for instance to hemi-sections or to a region you care about, open the `Define Region Of Interest` card, click `Define Interactively` and draw the rectangle in the viewer, or type its coordinates. `Full Size` restores the full atlas section.
 
-![Define a region of interest in ABBA](/assets/img/fiji_define_ROI.png)
+![The Define Region Of Interest card, with a region restricted to the left half of the atlas](/assets/abba/guide/inplane_registration/define_roi_card.png)
+
+![The same region of interest in review mode: outside of it, the atlas is dimmed](/assets/abba/guide/inplane_registration/region_of_interest.png)
 
 :::{warning}
 Remember to restore the full size when you are done: the region of interest applies to all the following registrations and exports.
@@ -105,7 +111,7 @@ Edits can be undone with `ctrl + Z`.
 If many slices are selected, the registration of each slice opens for editing, one after the other. Make sure this is what you intend!
 :::
 
-![BigWarp edit](/assets/gif/fiji_bigwarp_edit.gif)
+![Edit Last Registration on an Elastix spline registration: the two BigWarp windows, the moving slice (left) and the atlas (right), with the landmarks of the registration in magenta](/assets/abba/guide/inplane_registration/bigwarp_edit.png)
 
 You can check the [BigWarp documentation](https://imagej.net/plugins/bigwarp), or the [relevant part of the video tutorial](https://youtu.be/sERGONVw4zE?t=2534s), for more information about its interface. After editing a registration, export it again (to QuPath for instance) to update the results.
 
