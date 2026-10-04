@@ -67,9 +67,7 @@ If your dataset contains 16-bit RGB channels (as is the case for some CZI files)
 
 The first import may take up to a minute. Once the project is loaded, the slices appear along the atlas. They are displayed with all their channels, and the imported slices are selected.
 
-![Project newly opened in ABBA](/assets/img/fiji_just_opened_project.png)
-
-<!-- TODO GIF phase: re-shoot this view with ABBA 0.24.1 (slices are now displayed by default). -->
+![ABBA window right after importing slices: the atlas sections in a row, the imported slices below them, all selected](/assets/abba/guide/start_and_import/slices_imported.png)
 
 (import-files)=
 ### Import files with Bio-Formats
