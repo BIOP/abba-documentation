@@ -6,8 +6,8 @@ project = 'ABBA-Documentation'
 copyright = '2024-2026, BIOP-EPFL'
 author = 'BIOP-EPFL'
 
-release = '0.11.1.dev0'
-version = '0.11.1.dev0'
+release = '0.11.0'
+version = '0.11.0'
 
 # -- General configuration
 
