@@ -1,0 +1,1649 @@
+{
+  "ch.epfl.biop.atlas.aligner.command.ABBABenchMarkCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBABenchMarkCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eABBA - Run Benchmark",
+    "description": "Complete ABBA process in a benchmark",
+    "input": [
+      {
+        "type": "String",
+        "name": "comment"
+      },
+      {
+        "type": "String",
+        "name": "demo_dataset",
+        "choices": [
+          "25 sections",
+          "97 sections"
+        ]
+      },
+      {
+        "type": "boolean",
+        "name": "use_gui",
+        "label": "Use graphical user interface",
+        "default": false
+      },
+      {
+        "type": "boolean",
+        "name": "wait_betweem_each_step",
+        "description": "Slower when check - wait for all sections to have finished their registration steps before starting the next one.",
+        "default": false
+      }
+    ],
+    "output": [
+      {
+        "type": "String",
+        "name": "report"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBACheckForUpdateCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBACheckForUpdateCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eHelp\u003eABBA - Check for updates",
+    "description": "Check for updates",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBACiteInfoCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBACiteInfoCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eCite\u003eABBA - How to cite",
+    "description": "How to cite",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBACloseCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBACloseCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eABBA - Close session",
+    "description": "Close ABBA session",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBADocumentationCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBADocumentationCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eHelp\u003eABBA - Go to documentation",
+    "description": "Open ABBA documentation webpage.",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAForumHelpCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAForumHelpCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eHelp\u003eABBA - Ask for help in the forum",
+    "description": "Open a new post in the image.sc forum with current install information",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAGenerateMethodsPrompt": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAGenerateMethodsPrompt",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eCite\u003eABBA - Get Prompt r methods writing",
+    "description": "Outputs a summary of methods used for the registration. Can be copy pasted in the llm of your choice.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": [
+      {
+        "type": "String",
+        "name": "llm_prompt_for_methods"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBASetBDVPreferencesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBASetBDVPreferencesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eABBA - Preferences",
+    "description": "Sets actions linked to key / mouse event in ABBA (not functional)",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAStartCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAStartCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eABBA - Align Big Brains and Atlases (no GUI)",
+    "description": "Starts ABBA from an Atlas",
+    "messages": [
+      "Select the atlas slicing orientation"
+    ],
+    "input": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      },
+      {
+        "type": "String",
+        "name": "x_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "y_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "z_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAStartLogCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAStartLogCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eABBA - Start Logging",
+    "description": "Close ABBA session",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAStateLoadCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAStateLoadCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eFile\u003eABBA - Load State",
+    "description": "Loads a previous registration state into ABBA",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "File",
+        "name": "state_file",
+        "style": "open"
+      }
+    ],
+    "output": [
+      {
+        "type": "Boolean",
+        "name": "success"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAStateSaveCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAStateSaveCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eFile\u003eABBA - Save State",
+    "description": "Saves the current registration state",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "File",
+        "name": "state_file",
+        "style": "save"
+      }
+    ],
+    "output": [
+      {
+        "type": "Boolean",
+        "name": "success"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ABBAUserFeedbackCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ABBAUserFeedbackCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eHelp\u003eABBA - Give your feedback",
+    "description": "Open an ABBA feedback form",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.DeepSliceDocumentationCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.DeepSliceDocumentationCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eDeepSlice\u003eDeepSlice Info",
+    "description": "Open deep slice reference webpage.",
+    "input": [],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportAtlasToImageJCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportAtlasToImageJCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Atlas to ImageJ",
+    "description": "Export atlas properties as an ImageJ stack (for each selected slice).",
+    "input": [
+      {
+        "type": "String",
+        "name": "atlas_channels",
+        "label": "Channels to export, \u0027*\u0027 for all channels",
+        "default": "*"
+      },
+      {
+        "type": "String",
+        "name": "image_name",
+        "label": "Exported image name",
+        "default": "Atlas"
+      },
+      {
+        "type": "boolean",
+        "name": "interpolate",
+        "default": false
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron",
+        "label": "Pixel Size in micron",
+        "default": 20.0
+      }
+    ],
+    "output": [
+      {
+        "type": "ImagePlus",
+        "name": "image"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportDeformationFieldToImageJCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportDeformationFieldToImageJCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Atlas Coordinates of Original Slices to ImageJ",
+    "description": "Exports physical coordinates of the atlas in a 3 channel (x,y,z) image that matches pixels of the initial unregistered slice (for each selected slice). Resolution levels can be specified.",
+    "input": [
+      {
+        "type": "int",
+        "name": "downsampling",
+        "label": "Extra DownSampling",
+        "default": 1
+      },
+      {
+        "type": "int",
+        "name": "max_number_of_iterations",
+        "label": "Max iterations in invertible transform computation (default 200)",
+        "default": 200
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "resolution_level",
+        "label": "Resolution level (0 \u003d max resolution)",
+        "default": 0
+      }
+    ],
+    "output": [
+      {
+        "type": "ImagePlus[]",
+        "name": "images"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportRegistrationToQuPathCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportRegistrationToQuPathCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Registrations To QuPath Project",
+    "description": "Export atlas regions and transformations to QuPath project (for each selected slice)",
+    "input": [
+      {
+        "type": "boolean",
+        "name": "erase_previous_file",
+        "label": "Erase Previous ROIs",
+        "default": false
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportResampledSlicesToBDVSourceCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportResampledSlicesToBDVSourceCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Resampled Slices as BDV Source ( experimental )",
+    "description": "Export registered (deformed) slices in the atlas coordinates. A pixel size should be specified to resample the registered images.",
+    "input": [
+      {
+        "type": "int",
+        "name": "block_size_x",
+        "label": "Block Size X",
+        "default": 64
+      },
+      {
+        "type": "int",
+        "name": "block_size_y",
+        "label": "Block Size Y",
+        "default": 64
+      },
+      {
+        "type": "int",
+        "name": "block_size_z",
+        "label": "Block Size Z",
+        "default": 4
+      },
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "int",
+        "name": "downsample_x",
+        "label": "X downsampling",
+        "default": 2
+      },
+      {
+        "type": "int",
+        "name": "downsample_y",
+        "label": "Y downsampling",
+        "default": 2
+      },
+      {
+        "type": "int",
+        "name": "downsample_z",
+        "label": "Z downsampling",
+        "default": 1
+      },
+      {
+        "type": "String",
+        "name": "image_name",
+        "label": "Exported source name",
+        "default": "Untitled"
+      },
+      {
+        "type": "boolean",
+        "name": "interpolate",
+        "default": false
+      },
+      {
+        "type": "double",
+        "name": "margin_z",
+        "label": "Margin in Z in micron",
+        "default": 0.0
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "n_threads",
+        "label": "Number of threads",
+        "default": 6
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron_x",
+        "label": "Pixel Size in micron (X)",
+        "default": 20.0
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron_y",
+        "label": "Pixel Size in micron (Y)",
+        "default": 20.0
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron_z",
+        "label": "Pixel Size in micron (Z)",
+        "default": 20.0
+      },
+      {
+        "type": "int",
+        "name": "resolution_levels",
+        "label": "Number of resolution levels (min 1)",
+        "default": 6
+      }
+    ],
+    "output": [
+      {
+        "type": "SourceAndConverter[]",
+        "name": "fusedImages"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportSlicesOriginalDataToImageJCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportSlicesOriginalDataToImageJCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Original Slices to ImageJ",
+    "description": "Export to ImageJ the original unregistered slice data (for each selected slice).If the image has more than 2GPixels, this will fail. Resolution levels can be specified.",
+    "input": [
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "resolution_level",
+        "label": "Resolution level (0 \u003d max resolution)",
+        "default": 0
+      },
+      {
+        "type": "boolean",
+        "name": "verbose",
+        "label": "verbose",
+        "default": false
+      }
+    ],
+    "output": [
+      {
+        "type": "ImagePlus[]",
+        "name": "images"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportSlicesToBDVCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportSlicesToBDVCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Registered Slices to BDV",
+    "description": "Export registered slices to a BigDataViewer window.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "tag",
+        "label": "Enter a tag to identify the registered sources (metadata key \u003d \"ABBA\")"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportSlicesToBDVJsonDatasetCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportSlicesToBDVJsonDatasetCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Registered Slices to BDV Json Dataset (Experimental)",
+    "description": "Export registered slices as a BigDataViewer json dataset (very experimental).",
+    "input": [
+      {
+        "type": "File",
+        "name": "file",
+        "label": "Please specify a json file to store the reconstructed data"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "tag",
+        "label": "Enter a tag to identify the registered sources (metadata key \u003d \"ABBA\")"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportSlicesToQuickNIIDatasetCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportSlicesToQuickNIIDatasetCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export registered slices as QuickNII dataset",
+    "messages": [
+      "WARNING: The QuickNII export will apply all registrations and resample the images. Only JPG seems to be supported."
+    ],
+    "input": [
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "boolean",
+        "name": "convert_to_8_bits",
+        "label": "Convert to 8 bit image",
+        "default": true
+      },
+      {
+        "type": "boolean",
+        "name": "convert_to_jpg",
+        "label": "Convert to jpg (single channel recommended)",
+        "default": true
+      },
+      {
+        "type": "File",
+        "name": "dataset_folder",
+        "label": "QuickNII dataset export folder",
+        "style": "directory"
+      },
+      {
+        "type": "String",
+        "name": "image_name",
+        "label": "Section Name Prefix",
+        "default": "Section"
+      },
+      {
+        "type": "boolean",
+        "name": "interpolate",
+        "default": false
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron",
+        "label": "Pixel Size in micron",
+        "description": "The resolution at which the registered slices will be resampled",
+        "default": 40.0
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportStdZipStateCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportStdZipStateCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Standardized ABBA Project (Zip)",
+    "description": "Takes a full project and store a downscaled version of the dataset for sharing",
+    "messages": [
+      "Select the atlas slicing orientation"
+    ],
+    "input": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      },
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "int",
+        "name": "downscale_deformation_field",
+        "default": 4
+      },
+      {
+        "type": "String",
+        "name": "experiment_information",
+        "style": "text area"
+      },
+      {
+        "type": "String",
+        "name": "identifier"
+      },
+      {
+        "type": "File",
+        "name": "save_path",
+        "required": false,
+        "style": "directory"
+      },
+      {
+        "type": "File",
+        "name": "state_file",
+        "style": "open"
+      },
+      {
+        "type": "double",
+        "name": "target_resolution_micrometer",
+        "default": 0.0
+      },
+      {
+        "type": "String",
+        "name": "x_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "y_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "z_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "type": "Boolean",
+        "name": "success"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ExportTransformedAtlasToImageJCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ExportTransformedAtlasToImageJCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eExport\u003eABBA - Export Atlas Channel in Original Slices Coordinates to ImageJ",
+    "description": "Exports physical coordinates of the atlas in a 3 channel (x,y,z) image that matches pixels of the initial unregistered slice (for each selected slice). Resolution levels can be specified.",
+    "input": [
+      {
+        "type": "String",
+        "name": "atlas_channels",
+        "label": "Channels to export, \u0027*\u0027 for all channels",
+        "default": "*"
+      },
+      {
+        "type": "int",
+        "name": "downsampling",
+        "label": "Extra DownSampling",
+        "default": 1
+      },
+      {
+        "type": "int",
+        "name": "max_number_of_iterations",
+        "label": "Max iterations in invertible transform computation (default 200)",
+        "default": 200
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "resolution_level",
+        "label": "Resolution level (0 \u003d max resolution)",
+        "default": 0
+      }
+    ],
+    "output": [
+      {
+        "type": "ImagePlus[]",
+        "name": "images"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportDemoSlicesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportDemoSlicesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eABBA - Open Demo Slices (Web)",
+    "description": "Open a set of demo brain sections",
+    "messages": [
+      "Import Demo Slices These Demo slices are kindly hosted within the public German-BioImaging OMERO instance. For more information, please visit https://forum.image.sc/t/trends-in-microscopy-2023-omero-server/101652 The QuPath project containing these slices can also be directly downloaded from Zenodo."
+    ],
+    "input": [
+      {
+        "type": "String",
+        "name": "demo_dataset",
+        "label": "Choose the number of sections to import",
+        "choices": [
+          "25 sections",
+          "97 sections"
+        ]
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "File",
+        "name": "project_directory",
+        "label": "Target directory for QuPath project (not required)",
+        "required": false,
+        "style": "directory"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportSliceFromImagePlusCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportSliceFromImagePlusCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import Current ImageJ Window",
+    "description": "Import the current ImageJ image as a slice into ABBA",
+    "input": [
+      {
+        "type": "ImagePlus",
+        "name": "image"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "slice_axis_mm",
+        "label": "Initial axis position (0 \u003d front, mm units)",
+        "default": 0.0,
+        "style": "format:0.000"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportSliceFromSourcesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportSliceFromSourcesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import Sources",
+    "description": "Import a list of sources as a slice into ABBA",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "slice_axis_mm",
+        "label": "Initial axis position (0 \u003d front, mm units)",
+        "default": 0.0,
+        "style": "format:0.000"
+      },
+      {
+        "type": "SourceAndConverter[]",
+        "name": "sources",
+        "style": "sorted"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromFilesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromFilesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import With Bio-Formats",
+    "description": "Import a Bio-Formats compatible file as brain slices",
+    "input": [
+      {
+        "type": "String",
+        "name": "datasetname",
+        "label": "Dataset Name"
+      },
+      {
+        "type": "File[]",
+        "name": "files",
+        "label": "Files to import"
+      },
+      {
+        "type": "double",
+        "name": "increment_between_slices_mm",
+        "label": "Axis increment between slices (mm, can be negative for reverse order)",
+        "default": 0.0,
+        "style": "format:0.000"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "slice_axis_initial_mm",
+        "label": "Initial axis position (0 \u003d front, mm units)",
+        "default": 0.0,
+        "style": "format:0.000"
+      },
+      {
+        "type": "boolean",
+        "name": "split_rgb_channels",
+        "label": "Split RGB channels",
+        "default": false
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromQuPathCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromQuPathCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import QuPath Project",
+    "description": "Import images of a QuPath project as slices into ABBA",
+    "messages": [
+      "WARNING: Do not delete or add any image in the QuPath project after it has been imported in ABBA!"
+    ],
+    "input": [
+      {
+        "type": "double",
+        "name": "increment_between_slices_mm",
+        "label": "Axis increment between slices (mm, can be negative for reverse order)",
+        "default": 0.0,
+        "style": "format:0.000"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "File",
+        "name": "qupath_project",
+        "label": "QuPath project file (.qpproj)"
+      },
+      {
+        "type": "double",
+        "name": "slice_axis_initial_mm",
+        "label": "Initial axis position (0 \u003d front, mm units)",
+        "default": 0.0,
+        "style": "format:0.000"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromQuickNIICommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportSlicesFromQuickNIICommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import QuickNII Project",
+    "description": "Import images of a QuickNII Project as slices into ABBA",
+    "messages": [
+      "WARNING: The QuickNII import is not exact: The same slicing angle (median of all slices) will be applied for all slices."
+    ],
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "File",
+        "name": "quicknii_project",
+        "label": "QuickNII file (.json)"
+      },
+      {
+        "type": "boolean",
+        "name": "split_rgb_channels",
+        "label": "Split RGB channels",
+        "default": false
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ImportStdZipStateCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ImportStdZipStateCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eImport\u003eABBA - Import Standardized ABBA Project (Zip)",
+    "description": "Opens a previously created zipped ABBA project.",
+    "input": [
+      {
+        "type": "File",
+        "name": "zip_file",
+        "style": "open"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.MirrorDoCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.MirrorDoCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Mirror Slices",
+    "description": "Mirror a half section to create the other side.",
+    "input": [
+      {
+        "type": "String",
+        "name": "mirror_side",
+        "choices": [
+          "Left",
+          "Right"
+        ]
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.MirrorUndoCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.MirrorUndoCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Un-Mirror Slices",
+    "description": "Remove slice mirroring.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RasterSlicesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RasterSlicesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Raster slice",
+    "description": "Speed up the display of slices by precomputing and caching their pixel.",
+    "input": [
+      {
+        "type": "boolean",
+        "name": "interpolate",
+        "label": "Interpolate",
+        "default": false
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "pixel_size_micrometer",
+        "label": "Pixel size (micrometer)",
+        "default": 10.0
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RasterSlicesDeformationCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RasterSlicesDeformationCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Raster and cache deformation field",
+    "description": "Speed up the display of slices by precomputing and caching their deformation field (useful after spline registrations only!).",
+    "input": [
+      {
+        "type": "double",
+        "name": "grid_spacing_in_micrometer",
+        "label": "Deformation grid size (micrometer)",
+        "default": 150.0
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesBigWarpCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesBigWarpCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - BigWarp Registration",
+    "description": "Uses BigWarp for in plane registration of selected slices",
+    "input": [
+      {
+        "type": "String",
+        "name": "channels_atlas_csv",
+        "label": "Atlas channels (channels comma separated)"
+      },
+      {
+        "type": "String",
+        "name": "channels_slice_csv",
+        "label": "Slices channels (channels comma separated)"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesCopyAndApplyCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesCopyAndApplyCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Copy and Apply Registration",
+    "description": "Copy the registration sequence of a slice and apply it to selected slices",
+    "input": [
+      {
+        "type": "int",
+        "name": "model_slice_index",
+        "label": "Index of the slice registrations you\u0027d like to copy",
+        "default": 0
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "boolean",
+        "name": "skip_pre_transform",
+        "label": "Tick if you want to skip the pre-transform (probably not)",
+        "default": false
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesDeepSliceLocalCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesDeepSliceLocalCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - DeepSlice Registration (Local)",
+    "description": "Uses Deepslice for affine in plane and axial registration of selected slices",
+    "messages": [
+      "Don\u0027t forget to adjust min/max display settings! Almost 50% of images sent by ABBA users to DeepSlice are over-saturated. (and thus, badly registered)"
+    ],
+    "input": [
+      {
+        "type": "boolean",
+        "name": "allow_slicing_angle_change",
+        "label": "Allow change of atlas slicing angle",
+        "default": true
+      },
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "boolean",
+        "name": "ensemble",
+        "label": "Average of several models (slower)",
+        "description": "Try with and without ensemble to find the model which best works for you",
+        "default": false
+      },
+      {
+        "type": "String",
+        "name": "model",
+        "label": "(\u0027mouse\u0027, \u0027rat\u0027) Mouse or Rat ?",
+        "choices": [
+          "mouse",
+          "rat"
+        ]
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "post_processing",
+        "description": "DeepSlice post-processing",
+        "choices": [
+          "Keep order",
+          "Keep order + ensure regular spacing",
+          "Keep order + set spacing (parameter below)",
+          "No post-processing"
+        ]
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron",
+        "label": "Resampling pixel size (10 for mouse, 40 for rat)",
+        "description": "To go fast, you can use 30 microns for mouse, 60 for rat",
+        "default": 10.0
+      },
+      {
+        "type": "double",
+        "name": "slices_spacing_micrometer",
+        "label": "Spacing (micrometer), used only when \u0027Keep order + set spacing\u0027 is selected",
+        "default": -1.0,
+        "style": "format:0.0"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesDeepSliceWebCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesDeepSliceWebCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - DeepSlice Registration (Web)",
+    "description": "Uses Deepslice for affine in plane and axial registration of selected slices",
+    "messages": [
+      "Don\u0027t forget to adjust min/max display settings! Almost 50% of images sent by ABBA users to DeepSlice are over-saturated. (and thus, badly registered)"
+    ],
+    "input": [
+      {
+        "type": "boolean",
+        "name": "allow_slicing_angle_change",
+        "label": "Allow change of atlas slicing angle",
+        "default": true
+      },
+      {
+        "type": "String",
+        "name": "channels",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "boolean",
+        "name": "maintain_slices_order",
+        "label": "Keep slices order",
+        "default": false
+      },
+      {
+        "type": "String",
+        "name": "model",
+        "label": "(\u0027mouse\u0027, \u0027rat\u0027) Mouse or Rat ?",
+        "choices": [
+          "mouse",
+          "rat"
+        ]
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "px_size_micron",
+        "label": "Resampling pixel size (10 for mouse, 40 for rat)",
+        "description": "To go fast, you can use 30 microns for mouse, 60 for rat",
+        "default": 10.0
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesEditLastCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesEditLastCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Edit Last Registration",
+    "description": "Edit the last registration of the current selected slices, if possible.",
+    "input": [
+      {
+        "type": "String",
+        "name": "atlas_channels_csv",
+        "label": "Atlas channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "boolean",
+        "name": "reuse_original_channels",
+        "label": "Reuse original channels of the registration",
+        "default": false
+      },
+      {
+        "type": "String",
+        "name": "slices_channels_csv",
+        "label": "Slices channels, 0-based, comma separated, \u0027*\u0027 for all channels",
+        "description": "\u00270,2\u0027 for channels 0 and 2",
+        "default": "*"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesElastixAffineCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesElastixAffineCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Elastix Registration (Affine)",
+    "description": "Uses Elastix for affine in plane registration of selected slices",
+    "input": [
+      {
+        "type": "double",
+        "name": "background_offset_value_moving",
+        "label": "Background offset value",
+        "default": 0.0
+      },
+      {
+        "type": "String",
+        "name": "channels_atlas_csv",
+        "label": "Atlas channels (channels comma separated)"
+      },
+      {
+        "type": "String",
+        "name": "channels_slice_csv",
+        "label": "Slices channels (channels comma separated)"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "pixel_size_micrometer",
+        "label": "Registration re-sampling (micrometers)",
+        "default": 40.0
+      },
+      {
+        "type": "boolean",
+        "name": "show_imageplus_registration_result",
+        "label": "Show registration results as ImagePlus",
+        "default": false
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesElastixSplineCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesElastixSplineCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Elastix Registration (Spline)",
+    "description": "Uses Elastix for spline in plane registration of selected slices",
+    "input": [
+      {
+        "type": "double",
+        "name": "background_offset_value_moving",
+        "label": "Background offset value",
+        "default": 0.0
+      },
+      {
+        "type": "String",
+        "name": "channels_atlas_csv",
+        "label": "Atlas channels (channels comma separated)"
+      },
+      {
+        "type": "String",
+        "name": "channels_slice_csv",
+        "label": "Slices channels (channels comma separated)"
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "nb_control_points_x",
+        "label": "Number of control points along X, minimum 2.",
+        "default": 10
+      },
+      {
+        "type": "double",
+        "name": "pixel_size_micrometer",
+        "label": "Registration re-sampling (micrometers)",
+        "default": 20.0
+      },
+      {
+        "type": "boolean",
+        "name": "show_imageplus_registration_result",
+        "label": "Show registration results as ImagePlus",
+        "default": false
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RegisterSlicesRemoveLastCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RegisterSlicesRemoveLastCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Remove Last Registration",
+    "description": "Remove the last registration of the current selected slices, if possible.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.ReindexSlicesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.ReindexSlicesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eAlign\u003eABBA - Re-index channels of slices",
+    "description": "Creates a new slice with reindexed channels.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "new_indices",
+        "label": "New indices in csv",
+        "description": "For instance `0,2` to keep the first and third channels"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.RotateSlicesCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.RotateSlicesCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Rotate",
+    "description": "To use at the beginning of the registration process only! Rotates the original unregistered selected slices",
+    "input": [
+      {
+        "type": "double",
+        "name": "angle_degrees",
+        "label": "Angle (degrees)",
+        "default": 0.0,
+        "style": "format:0.00"
+      },
+      {
+        "type": "String",
+        "name": "axis_string",
+        "label": "Rotation axis",
+        "choices": [
+          "Z",
+          "Y",
+          "X"
+        ]
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesBackgroundCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesBackgroundCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Set Slice Background",
+    "description": "Allow to work with white background images.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "int",
+        "name": "white_background_value",
+        "label": "White value (8-bit or rgb: 255, 16-bit:65535)",
+        "default": 255
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesDeselectedCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesDeselectedCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Deselect Slices",
+    "description": "Set the slices to deselect.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "slices_csv",
+        "label": "Slices to deselect, \u0027*\u0027 for all slices, comma separated, 0-based",
+        "default": "*"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesDisplayRangeCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesDisplayRangeCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Set Slices Min Max Display Range",
+    "description": "Change min max displayed value (for each selected slice).",
+    "input": [
+      {
+        "type": "String",
+        "name": "channels_csv",
+        "label": "Channels to adjust, \u0027*\u0027 for all channels, comma separated, 0-based",
+        "default": "*"
+      },
+      {
+        "type": "double",
+        "name": "display_max",
+        "label": "Max displayed valued",
+        "default": 0.0
+      },
+      {
+        "type": "double",
+        "name": "display_min",
+        "label": "Min displayed valued",
+        "default": 0.0
+      },
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesSelectedCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesSelectedCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Select Slices",
+    "description": "Set the slices to select.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "String",
+        "name": "slices_csv",
+        "label": "Slices to select, \u0027*\u0027 for all slices, comma separated, 0-based",
+        "default": "*"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesThicknessCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesThicknessCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Set Slices Thickness",
+    "description": "Set the selected slices thickness - useful for a fully reconstructed brain display.",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      },
+      {
+        "type": "double",
+        "name": "thickness_in_micrometer",
+        "label": "Slice thickness in micrometer",
+        "default": 0.0,
+        "style": "format:0.00"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.command.SetSlicesThicknessMatchNeighborsCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.command.SetSlicesThicknessMatchNeighborsCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eMulti Image To Atlas\u003eEdit\u003eABBA - Set Slices Thickness (fill gaps)",
+    "description": "Modifies the selected slices thickness in such a way that no space is left between slices. This is visible only in the reconstructed volume in BigDataViewer",
+    "input": [
+      {
+        "type": "MultiSlicePositioner",
+        "name": "mp"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.aligner.gui.bdv.ABBABdvStartCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.gui.bdv.ABBABdvStartCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eABBA - ABBA Start",
+    "description": "Starts ABBA from an Atlas with a BDV View",
+    "hasInitializer": true,
+    "messages": [
+      "Select the atlas slicing orientation"
+    ],
+    "input": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      },
+      {
+        "type": "String",
+        "name": "x_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "y_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "z_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "type": "BdvMultislicePositionerView",
+        "name": "view"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.aligner.gui.bdv.ABBABiopBdvStartCommand": {
+    "name": "ch.epfl.biop.atlas.aligner.gui.bdv.ABBABiopBdvStartCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eABBA - ABBA Start (alpha)",
+    "description": "Starts ABBA from an Atlas with a BDV View",
+    "hasInitializer": true,
+    "messages": [
+      "Select the atlas slicing orientation"
+    ],
+    "input": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      },
+      {
+        "type": "boolean",
+        "name": "white_background",
+        "default": false
+      },
+      {
+        "type": "String",
+        "name": "x_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "y_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      },
+      {
+        "type": "String",
+        "name": "z_axis",
+        "choices": [
+          "AP (Anterior-Posterior)",
+          "PA (Posterior-Anterior)",
+          "SI (Superior-Inferior)",
+          "IS (Inferior-Superior)",
+          "RL (Right-Left)",
+          "LR (Left-Right)"
+        ]
+      }
+    ],
+    "output": [
+      {
+        "type": "BdvMultislicePositionerView",
+        "name": "view"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.custom.AtlasFromImagePlusCommand": {
+    "name": "ch.epfl.biop.atlas.custom.AtlasFromImagePlusCommand",
+    "menuPath": "Plugins\u003eBIOP\u003eAtlas\u003eCreate Atlas from Images",
+    "description": "A simple way to create an atlas.",
+    "input": [
+      {
+        "type": "String",
+        "name": "atlas_name"
+      },
+      {
+        "type": "Double",
+        "name": "atlas_precision_mm"
+      },
+      {
+        "type": "ImagePlus",
+        "name": "label_image",
+        "label": "Label Image"
+      },
+      {
+        "type": "ImagePlus",
+        "name": "structural_images"
+      }
+    ],
+    "output": []
+  },
+  "ch.epfl.biop.atlas.mouse.allen.ccfv3.command.AllenBrainAdultMouseAtlasCCF2017Command": {
+    "name": "ch.epfl.biop.atlas.mouse.allen.ccfv3.command.AllenBrainAdultMouseAtlasCCF2017Command",
+    "input": [
+      {
+        "type": "String",
+        "name": "mapUrl",
+        "label": "URL path to brain map data, leave empty for downloading and caching",
+        "default": ""
+      },
+      {
+        "type": "String",
+        "name": "ontologyUrl",
+        "label": "URL path to brain ontology data, leave empty for downloading and caching",
+        "default": ""
+      }
+    ],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.mouse.allen.ccfv3p1.command.AllenBrainAdultMouseAtlasCCF2017v3p1Command": {
+    "name": "ch.epfl.biop.atlas.mouse.allen.ccfv3p1.command.AllenBrainAdultMouseAtlasCCF2017v3p1Command",
+    "input": [],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.mouse.allen.ccfv3p1asr.command.AllenBrainAdultMouseAtlasCCF2017v3p1ASRCommand": {
+    "name": "ch.epfl.biop.atlas.mouse.allen.ccfv3p1asr.command.AllenBrainAdultMouseAtlasCCF2017v3p1ASRCommand",
+    "input": [],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4.command.WaxholmSpragueDawleyRatV4Command": {
+    "name": "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4.command.WaxholmSpragueDawleyRatV4Command",
+    "input": [
+      {
+        "type": "String",
+        "name": "mapUrl",
+        "label": "URL path to brain map data, leave empty for downloading and caching",
+        "default": ""
+      },
+      {
+        "type": "String",
+        "name": "ontologyUrl",
+        "label": "URL path to brain ontology data, leave empty for downloading and caching",
+        "default": ""
+      }
+    ],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4p2.command.WaxholmSpragueDawleyRatV4p2Command": {
+    "name": "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4p2.command.WaxholmSpragueDawleyRatV4p2Command",
+    "input": [],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  },
+  "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4p2asr.command.WaxholmSpragueDawleyRatV4p2ASRCommand": {
+    "name": "ch.epfl.biop.atlas.rat.waxholm.spraguedawley.v4p2asr.command.WaxholmSpragueDawleyRatV4p2ASRCommand",
+    "input": [],
+    "output": [
+      {
+        "type": "Atlas",
+        "name": "ba"
+      }
+    ]
+  }
+}

@@ -1,5 +1,9 @@
 # Installation
 
+:::{warning}
+**This page is being reworked for ABBA 0.24.** Some steps below are outdated: elastix and DeepSlice are now set up automatically by ABBA the first time they are used, so you no longer need to install them manually or set their paths. The updated installation instructions will follow soon.
+:::
+
 ABBA is an application offering both a graphic user interface (_GUI_) and a command line interface (_CLI_) that works as _plugin_ of [Fiji](https://fiji.sc/), a common image-processing software used in health sciences.
 
 In addition, we also offer a [QuPath](https://qupath.github.io/) extension that helps importing the region annotations that were registered with ABBA.

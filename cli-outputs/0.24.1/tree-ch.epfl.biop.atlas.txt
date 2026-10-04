@@ -1,0 +1,196 @@
+=== Menu Hierarchy ===
+
+├── (no menu path)
+│   ├── AllenBrainAdultMouseAtlasCCF2017Command  [AllenBrainAdultMouseAtlasCCF2017Command]
+│   ├── AllenBrainAdultMouseAtlasCCF2017v3p1ASRCommand  [AllenBrainAdultMouseAtlasCCF2017v3p1ASRCommand]
+│   ├── AllenBrainAdultMouseAtlasCCF2017v3p1Command  [AllenBrainAdultMouseAtlasCCF2017v3p1Command]
+│   ├── WaxholmSpragueDawleyRatV4Command  [WaxholmSpragueDawleyRatV4Command]
+│   ├── WaxholmSpragueDawleyRatV4p2ASRCommand  [WaxholmSpragueDawleyRatV4p2ASRCommand]
+│   └── WaxholmSpragueDawleyRatV4p2Command  [WaxholmSpragueDawleyRatV4p2Command]
+└── Plugins
+    └── BIOP
+        ├── Atlas
+        │   ├── ABBA - ABBA Start  [ABBABdvStartCommand]
+        │   ├── ABBA - ABBA Start (alpha)  [ABBABiopBdvStartCommand]
+        │   ├── ABBA - Align Big Brains and Atlases (no GUI)  [ABBAStartCommand]
+        │   ├── ABBA - Close session  [ABBACloseCommand]
+        │   ├── ABBA - Start Logging  [ABBAStartLogCommand]
+        │   ├── Create Atlas from Images  [AtlasFromImagePlusCommand]
+        │   ├── List BrainGlobe Atlases  [BrainGlobeAtlasListCommand]
+        │   └── Multi Image To Atlas
+        │       ├── (Obsolete)
+        │       │   ├── ABBA - DeepSlice Registration (Local)  [RegisterSlicesDeepSliceLocalCommand]
+        │       │   └── ABBA - DeepSlice Registration (Web)  [RegisterSlicesDeepSliceWebCommand]
+        │       ├── ABBA - Open Demo Slices From OMERO  [ImportDemoSlicesOMEROCommand]
+        │       ├── ABBA - Open Demo Slices From ZENODO  [ImportDemoSlicesZENODOCommand]
+        │       ├── ABBA - Preferences  [ABBASetBDVPreferencesCommand]
+        │       ├── ABBA - Run Benchmark  [ABBABenchMarkCommand]
+        │       ├── Align
+        │       │   ├── ABBA - BigWarp Registration  [RegisterSlicesBigWarpCommand]
+        │       │   ├── ABBA - Copy and Apply Registration  [RegisterSlicesCopyAndApplyCommand]
+        │       │   ├── ABBA - DeepSlice Registration  [RegisterSlicesDeepSliceApposeCommand]
+        │       │   ├── ABBA - Edit Last Registration  [RegisterSlicesEditLastCommand]
+        │       │   ├── ABBA - Elastix Registration (Affine)  [RegisterSlicesElastixAffineCommand]
+        │       │   ├── ABBA - Elastix Registration (Spline)  [RegisterSlicesElastixSplineCommand]
+        │       │   ├── ABBA - Manual Affine Registration  [RegisterSlicesManualAffineCommand]
+        │       │   ├── ABBA - Mirror Slices  [MirrorDoCommand]
+        │       │   ├── ABBA - Re-index channels of slices  [ReindexSlicesCommand]
+        │       │   ├── ABBA - Remove Last Registration  [RegisterSlicesRemoveLastCommand]
+        │       │   └── ABBA - Un-Mirror Slices  [MirrorUndoCommand]
+        │       ├── Cite
+        │       │   ├── ABBA - Get Prompt for Methods Writing  [ABBAGenerateMethodsPrompt]
+        │       │   └── ABBA - How to cite  [ABBACiteInfoCommand]
+        │       ├── Edit
+        │       │   ├── ABBA - Auto Display Range  [AutoDisplayRangeCommand]
+        │       │   ├── ABBA - Delete Slices  [DeleteSlicesCommand]
+        │       │   ├── ABBA - Deselect Slices  [SetSlicesDeselectedCommand]
+        │       │   ├── ABBA - Distribute Slices  [DistributeSlicesCommand]
+        │       │   ├── ABBA - Move Slices  [MoveSlicesCommand]
+        │       │   ├── ABBA - Raster and cache deformation field  [RasterSlicesDeformationCommand]
+        │       │   ├── ABBA - Raster slice  [RasterSlicesCommand]
+        │       │   ├── ABBA - Rotate  [RotateSlicesCommand]
+        │       │   ├── ABBA - Select Slices  [SetSlicesSelectedCommand]
+        │       │   ├── ABBA - Set Atlas Slicing Angles  [SetAtlasSlicingAnglesCommand]
+        │       │   ├── ABBA - Set Key Slices  [SetKeySlicesCommand]
+        │       │   ├── ABBA - Set Region Of Interest  [SetRegionOfInterestCommand]
+        │       │   ├── ABBA - Set Slice Background  [SetSlicesBackgroundCommand]
+        │       │   ├── ABBA - Set Slices Min Max Display Range  [SetSlicesDisplayRangeCommand]
+        │       │   ├── ABBA - Set Slices Thickness  [SetSlicesThicknessCommand]
+        │       │   ├── ABBA - Set Slices Thickness (fill gaps)  [SetSlicesThicknessMatchNeighborsCommand]
+        │       │   └── ABBA - Undo or Redo  [UndoCommand]
+        │       ├── Export
+        │       │   ├── ABBA - Export Atlas Coordinates of Original Slices to ImageJ  [ExportDeformationFieldToImageJCommand]
+        │       │   ├── ABBA - Export Atlas to ImageJ  [ExportAtlasToImageJCommand]
+        │       │   ├── ABBA - Export Original Slices to ImageJ  [ExportSlicesOriginalDataToImageJCommand]
+        │       │   ├── ABBA - Export Registered Slices to BDV  [ExportSlicesToBDVCommand]
+        │       │   ├── ABBA - Export Registered Slices to BDV Json Dataset (Experimental)  [ExportSlicesToBDVJsonDatasetCommand]
+        │       │   ├── ABBA - Export Registrations To QuPath Project  [ExportRegistrationToQuPathCommand]
+        │       │   ├── ABBA - Export Resampled Slices as BDV Source ( experimental )  [ExportResampledSlicesToBDVSourceCommand]
+        │       │   ├── ABBA - Export Slices To New QuPath Project  [ExportSlicesToNewQuPathProjectCommand]
+        │       │   ├── ABBA - Export Standardized ABBA Project (Zip)  [ExportStdZipStateCommand]
+        │       │   └── ABBA - Export registered slices as QuickNII dataset  [ExportSlicesToQuickNIIDatasetCommand]
+        │       ├── File
+        │       │   ├── ABBA - Load State  [ABBAStateLoadCommand]
+        │       │   └── ABBA - Save State  [ABBAStateSaveCommand]
+        │       ├── Help
+        │       │   ├── ABBA - Ask for help in the forum  [ABBAForumHelpCommand]
+        │       │   ├── ABBA - Check for updates  [ABBACheckForUpdateCommand]
+        │       │   ├── ABBA - Give your feedback  [ABBAUserFeedbackCommand]
+        │       │   └── ABBA - Go to documentation  [ABBADocumentationCommand]
+        │       ├── Import
+        │       │   ├── ABBA - Import Current ImageJ Window  [ImportSliceFromImagePlusCommand]
+        │       │   ├── ABBA - Import QuPath Project  [ImportSlicesFromQuPathCommand]
+        │       │   ├── ABBA - Import QuickNII Project  [ImportSlicesFromQuickNIICommand]
+        │       │   ├── ABBA - Import Sources  [ImportSliceFromSourcesCommand]
+        │       │   ├── ABBA - Import Standardized ABBA Project (Zip)  [ImportStdZipStateCommand]
+        │       │   └── ABBA - Import With Bio-Formats  [ImportSlicesFromFilesCommand]
+        │       └── Inspect
+        │           ├── ABBA - Get State  [GetStateCommand]
+        │           └── ABBA - Snapshot  [SnapshotCommand]
+        └── DeepSlice
+            └── DeepSlice Info  [DeepSliceDocumentationCommand]
+
+=== Package Hierarchy ===
+
+└── ch
+    └── epfl
+        └── biop
+            └── atlas
+                ├── aligner
+                │   ├── command
+                │   │   ├── ABBABenchMarkCommand  (menu: ABBA - Run Benchmark)
+                │   │   ├── ABBACheckForUpdateCommand  (menu: ABBA - Check for updates)
+                │   │   ├── ABBACiteInfoCommand  (menu: ABBA - How to cite)
+                │   │   ├── ABBACloseCommand  (menu: ABBA - Close session)
+                │   │   ├── ABBADocumentationCommand  (menu: ABBA - Go to documentation)
+                │   │   ├── ABBAForumHelpCommand  (menu: ABBA - Ask for help in the forum)
+                │   │   ├── ABBAGenerateMethodsPrompt  (menu: ABBA - Get Prompt for Methods Writing)
+                │   │   ├── ABBASetBDVPreferencesCommand  (menu: ABBA - Preferences)
+                │   │   ├── ABBAStartCommand  (menu: ABBA - Align Big Brains and Atlases (no GUI))
+                │   │   ├── ABBAStartLogCommand  (menu: ABBA - Start Logging)
+                │   │   ├── ABBAStateLoadCommand  (menu: ABBA - Load State)
+                │   │   ├── ABBAStateSaveCommand  (menu: ABBA - Save State)
+                │   │   ├── ABBAUserFeedbackCommand  (menu: ABBA - Give your feedback)
+                │   │   ├── AutoDisplayRangeCommand  (menu: ABBA - Auto Display Range)
+                │   │   ├── DeepSliceDocumentationCommand  (menu: DeepSlice Info)
+                │   │   ├── DeleteSlicesCommand  (menu: ABBA - Delete Slices)
+                │   │   ├── DistributeSlicesCommand  (menu: ABBA - Distribute Slices)
+                │   │   ├── ExportAtlasToImageJCommand  (menu: ABBA - Export Atlas to ImageJ)
+                │   │   ├── ExportDeformationFieldToImageJCommand  (menu: ABBA - Export Atlas Coordinates of Original Slices to ImageJ)
+                │   │   ├── ExportRegistrationToQuPathCommand  (menu: ABBA - Export Registrations To QuPath Project)
+                │   │   ├── ExportResampledSlicesToBDVSourceCommand  (menu: ABBA - Export Resampled Slices as BDV Source ( experimental ))
+                │   │   ├── ExportSlicesOriginalDataToImageJCommand  (menu: ABBA - Export Original Slices to ImageJ)
+                │   │   ├── ExportSlicesToBDVCommand  (menu: ABBA - Export Registered Slices to BDV)
+                │   │   ├── ExportSlicesToBDVJsonDatasetCommand  (menu: ABBA - Export Registered Slices to BDV Json Dataset (Experimental))
+                │   │   ├── ExportSlicesToNewQuPathProjectCommand  (menu: ABBA - Export Slices To New QuPath Project)
+                │   │   ├── ExportSlicesToQuickNIIDatasetCommand  (menu: ABBA - Export registered slices as QuickNII dataset)
+                │   │   ├── ExportStdZipStateCommand  (menu: ABBA - Export Standardized ABBA Project (Zip))
+                │   │   ├── GetStateCommand  (menu: ABBA - Get State)
+                │   │   ├── ImportDemoSlicesOMEROCommand  (menu: ABBA - Open Demo Slices From OMERO)
+                │   │   ├── ImportDemoSlicesZENODOCommand  (menu: ABBA - Open Demo Slices From ZENODO)
+                │   │   ├── ImportSliceFromImagePlusCommand  (menu: ABBA - Import Current ImageJ Window)
+                │   │   ├── ImportSliceFromSourcesCommand  (menu: ABBA - Import Sources)
+                │   │   ├── ImportSlicesFromFilesCommand  (menu: ABBA - Import With Bio-Formats)
+                │   │   ├── ImportSlicesFromQuPathCommand  (menu: ABBA - Import QuPath Project)
+                │   │   ├── ImportSlicesFromQuickNIICommand  (menu: ABBA - Import QuickNII Project)
+                │   │   ├── ImportStdZipStateCommand  (menu: ABBA - Import Standardized ABBA Project (Zip))
+                │   │   ├── MirrorDoCommand  (menu: ABBA - Mirror Slices)
+                │   │   ├── MirrorUndoCommand  (menu: ABBA - Un-Mirror Slices)
+                │   │   ├── MoveSlicesCommand  (menu: ABBA - Move Slices)
+                │   │   ├── RasterSlicesCommand  (menu: ABBA - Raster slice)
+                │   │   ├── RasterSlicesDeformationCommand  (menu: ABBA - Raster and cache deformation field)
+                │   │   ├── RegisterSlicesBigWarpCommand  (menu: ABBA - BigWarp Registration)
+                │   │   ├── RegisterSlicesCopyAndApplyCommand  (menu: ABBA - Copy and Apply Registration)
+                │   │   ├── RegisterSlicesDeepSliceApposeCommand  (menu: ABBA - DeepSlice Registration)
+                │   │   ├── RegisterSlicesDeepSliceLocalCommand  (menu: ABBA - DeepSlice Registration (Local))
+                │   │   ├── RegisterSlicesDeepSliceWebCommand  (menu: ABBA - DeepSlice Registration (Web))
+                │   │   ├── RegisterSlicesEditLastCommand  (menu: ABBA - Edit Last Registration)
+                │   │   ├── RegisterSlicesElastixAffineCommand  (menu: ABBA - Elastix Registration (Affine))
+                │   │   ├── RegisterSlicesElastixSplineCommand  (menu: ABBA - Elastix Registration (Spline))
+                │   │   ├── RegisterSlicesManualAffineCommand  (menu: ABBA - Manual Affine Registration)
+                │   │   ├── RegisterSlicesRemoveLastCommand  (menu: ABBA - Remove Last Registration)
+                │   │   ├── ReindexSlicesCommand  (menu: ABBA - Re-index channels of slices)
+                │   │   ├── RotateSlicesCommand  (menu: ABBA - Rotate)
+                │   │   ├── SetAtlasSlicingAnglesCommand  (menu: ABBA - Set Atlas Slicing Angles)
+                │   │   ├── SetKeySlicesCommand  (menu: ABBA - Set Key Slices)
+                │   │   ├── SetRegionOfInterestCommand  (menu: ABBA - Set Region Of Interest)
+                │   │   ├── SetSlicesBackgroundCommand  (menu: ABBA - Set Slice Background)
+                │   │   ├── SetSlicesDeselectedCommand  (menu: ABBA - Deselect Slices)
+                │   │   ├── SetSlicesDisplayRangeCommand  (menu: ABBA - Set Slices Min Max Display Range)
+                │   │   ├── SetSlicesSelectedCommand  (menu: ABBA - Select Slices)
+                │   │   ├── SetSlicesThicknessCommand  (menu: ABBA - Set Slices Thickness)
+                │   │   ├── SetSlicesThicknessMatchNeighborsCommand  (menu: ABBA - Set Slices Thickness (fill gaps))
+                │   │   ├── SnapshotCommand  (menu: ABBA - Snapshot)
+                │   │   └── UndoCommand  (menu: ABBA - Undo or Redo)
+                │   └── gui
+                │       └── bdv
+                │           ├── ABBABdvStartCommand  (menu: ABBA - ABBA Start)
+                │           └── ABBABiopBdvStartCommand  (menu: ABBA - ABBA Start (alpha))
+                ├── custom
+                │   └── AtlasFromImagePlusCommand  (menu: Create Atlas from Images)
+                ├── mouse
+                │   └── allen
+                │       ├── ccfv3
+                │       │   └── command
+                │       │       └── AllenBrainAdultMouseAtlasCCF2017Command
+                │       ├── ccfv3p1
+                │       │   └── command
+                │       │       └── AllenBrainAdultMouseAtlasCCF2017v3p1Command
+                │       └── ccfv3p1asr
+                │           └── command
+                │               └── AllenBrainAdultMouseAtlasCCF2017v3p1ASRCommand
+                ├── rat
+                │   └── waxholm
+                │       └── spraguedawley
+                │           ├── v4
+                │           │   └── command
+                │           │       └── WaxholmSpragueDawleyRatV4Command
+                │           ├── v4p2
+                │           │   └── command
+                │           │       └── WaxholmSpragueDawleyRatV4p2Command
+                │           └── v4p2asr
+                │               └── command
+                │                   └── WaxholmSpragueDawleyRatV4p2ASRCommand
+                └── scijava
+                    └── BrainGlobeAtlasListCommand  (menu: List BrainGlobe Atlases)
+
