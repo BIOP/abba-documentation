@@ -12,12 +12,14 @@ It is easier to judge the orientation in review mode (see [The ABBA window](abba
 
 The `Edit Selected Slices` card has four buttons acting on the selected slices:
 
-![Edit selected slices](/assets/img/fiji_edit_slices_tab.png)
+![The Edit Selected Slices card: rotate 90 degrees clockwise or counterclockwise, flip around X or Y, Distribute Spacing](/assets/abba/guide/orient_slices/edit_slices_card.png)
 
 * the first two rotate the selected slices by 90 degrees clockwise or counterclockwise;
 * the next two flip them: `Rotate around X axis (~ flip vertically)` turns the sections upside down, `Rotate around Y axis (~ flip horizontally)` mirrors them left-right.
 
 A flip is a rotation of 180 degrees around an axis of the section plane: it shows the section from its other side, as if it had been mounted the other way around on the slide.
+
+![A slice in review mode, before and after a rotation around the X axis: upside down, it does not match the atlas any more](/assets/abba/guide/orient_slices/flip_x.png)
 
 For other angles, click {menuselection}`Register --> Affine --> Rotate`: around `Z`, the slices rotate in plane by any angle (positive is clockwise on screen); around `X` or `Y`, only 180 or -180 degrees are accepted, which flips the slices.
 
@@ -31,8 +33,6 @@ Rotations and flips are recorded as registration steps of the slices: they can b
 In coronal and horizontal orientations, mirroring a section left-right swaps the hemispheres. If you can tell the left and right hemispheres apart (a mark on the tissue, a unilateral injection...), make sure they match the atlas: the region names exported to QuPath distinguish left and right.
 :::
 
-<!-- TODO GIF phase: record the rotation and flip buttons on the demo slices. -->
-
 ## Manual affine registration
 
 {menuselection}`Register --> Affine --> Manual Affine Registration` opens the selected slices in a dedicated window, one at a time, where you move, rotate, scale and shear each slice over the atlas with a gizmo. Use it for a coarse alignment, for instance to roughly center and scale the slices, or to compensate for the shrinkage of the tissue along one direction (often around 20% along Y due to slicing).
@@ -41,7 +41,7 @@ In coronal and horizontal orientations, mirroring a section left-right swaps the
 
 The channels you select are only used for the display in the editor. The result is a registration step like any other: it can be undone, removed, and edited later with {menuselection}`Register --> Edit Last Registration`.
 
-<!-- TODO GIF phase: record the manual affine editor. -->
+![The manual affine editor on a slice: drag the white, red, green and yellow handles over the slice, then click `Apply transformation`](/assets/abba/guide/orient_slices/manual_affine_editor.png)
 
 :::{note}
 The manual affine registration replaces the `Interactive Transform` of previous ABBA versions.

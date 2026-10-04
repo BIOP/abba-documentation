@@ -23,7 +23,7 @@ If your slices are not sorted correctly along the atlas, select the slices that 
 
 To space the selected slices evenly, click `Distribute Spacing` in the `Edit Selected Slices` card, press `D`, or click {menuselection}`Slices --> Distribute Slices`. This can be undone with `ctrl + Z`:
 
-![Distribute slices](/assets/gif/fiji_slices_distribute.gif)
+![The atlas row and, below it, a small square for the position of each slice: top, as positioned by DeepSlice; bottom, after Distribute Spacing on all slices](/assets/abba/guide/position_along_atlas/distribute_spacing.png)
 
 When no slice is a key slice (explained below), the first and last selected slices keep their position.
 
@@ -32,14 +32,14 @@ When no slice is a key slice (explained below), the first and last selected slic
 A recommended workflow to position slices along the atlas is:
 
 * sort the slices along the axis;
-* display the atlas with a coarse spacing (every 500 micrometers, see the animation below) and drag the slices to their approximate position;
+* display the atlas with a coarse spacing (every 500 micrometers, the default, see the picture below) and drag the slices to their approximate position;
 * zoom in, and match precisely a slice with easily recognizable features to the atlas;
 * set this slice as a **key slice**: select it alone, right-click and choose `Set as Key Slice(s)`;
 * position a few other slices precisely and set them as key slices;
 * adjust the atlas slicing angles and check all slices;
 * use `Distribute Spacing` to space the other slices evenly between the key slices.
 
-![Coarsening atlas slicing](/assets/gif/fiji_atlas_coarse_slicing.gif)
+![The atlas row with `Displayed slicing` at 10 atlas steps (a section every 100 micrometers, top) and at 50, the default (every 500 micrometers, bottom): set it in the `Atlas Display` card](/assets/abba/guide/position_along_atlas/displayed_slicing.png)
 
 :::{note}
 The displayed slicing of the atlas does not affect the registration. Internally, slices are positioned with a precision of 10 micrometers, the highest resolution of the atlas.
@@ -49,17 +49,19 @@ The displayed slicing of the atlas does not affect the registration. Internally,
 
 Key slices keep their position along the axis when other slices are dragged or distributed: the slices between two key slices are stretched along the axis while keeping their spacing ratio. You can still drag a key slice itself if you need to move it. Two or three key slices, usually the ones with the most recognizable features, are typically enough.
 
+![A key slice: its handle is larger than the others, and a magenta square marks its position on the slicing axis](/assets/abba/guide/position_along_atlas/key_slice.png)
+
 ### Check positions in review mode
 
 The positioning mode makes moving slices easy, but is not ideal to compare a section with the atlas. Switch to review mode (`R`) to display one slice at a time overlaid on the atlas, and browse the slices with the left and right arrow keys. You can switch back to the positioning mode at any time to correct a position.
 
-![Review mode](/assets/img/fiji_review_mode.png)
+![Review mode: a slice over the atlas section at its position, here after DeepSlice](/assets/abba/getting_started/first_registration/05_review_after_deepslice.png)
 
 ## Correct the atlas slicing angles
 
 The `Atlas Slicing` card contains two sliders to adjust the slicing angles of the atlas:
 
-![Atlas slicing adjustment](/assets/gif/fiji_adjust_atlas_angle.gif)
+![The Atlas Slicing card, with the angles found by DeepSlice for the demo slices](/assets/abba/guide/position_along_atlas/atlas_slicing_card.png)
 
 Use slices with easily identifiable features to set the slicing angles.
 
@@ -67,7 +69,7 @@ Use slices with easily identifiable features to set the slicing angles.
 The atlas slicing angles are the same for all sections: you can tilt the atlas, but you cannot "bend" it.
 :::
 
-<!-- TODO GIF phase: re-record the positioning GIFs with ABBA 0.24.1 and the demo slices. -->
+<!-- TODO GIF phase: re-record dragging slices and setting a key slice with ABBA 0.24.1 and the demo slices. -->
 
 (deepslice)=
 ## Automated positioning with DeepSlice
@@ -110,10 +112,10 @@ DeepSlice runs on your computer. The first time it is used, ABBA installs it, wi
 
 **Before**
 
-![Before DeepSlice](/assets/img/fiji_before_deepslice.png)
+![Before DeepSlice: the demo slices as imported, regularly spaced at the anterior end of the atlas](/assets/abba/getting_started/first_registration/03_display_adjusted.png)
 
 **After**
 
-![After DeepSlice](/assets/img/fiji_after_deepslice.png)
+![After DeepSlice: the slices positioned along the atlas, an R marker under each handle for the DeepSlice registration](/assets/abba/getting_started/first_registration/05_after_deepslice.png)
 
 The result can then be refined with the [in-plane registrations](inplane_registration.md). The DeepSlice affine registration can also be edited by hand with {menuselection}`Register --> Edit Last Registration`.
