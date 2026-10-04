@@ -16,7 +16,7 @@ Available atlases include the `3D mouse Allen Brain atlas <http://atlas.brain-ma
 
 Once your dataset is registered, you can use `BraiAn <https://silvalab.codeberg.page/BraiAn/>`_ to streamline the analysis.
 
-This documentation describes ABBA |release|. The documentation of the previous version, ABBA 0.11, `remains available <https://abba-documentation.readthedocs.io/en/v0.11.0/>`_.
+This documentation describes ABBA |release|.
 
 How this documentation is organized
 ===================================

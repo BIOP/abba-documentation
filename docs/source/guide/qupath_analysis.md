@@ -19,7 +19,9 @@ These two files are saved into the folder of each QuPath image entry. Additional
 
 ## Importing ABBA registration results: creating Atlas regions as QuPath annotations
 
-In QuPath, provided you have correctly installed the [required extensions](../installation/installation.md), you can click `Extensions > ABBA > Load Atlas Annotations into Open Image`.
+This requires the ABBA extension for QuPath. It is distributed through the QuPath-BIOP extension catalog, which is not enabled by default in QuPath: click `Extensions > Manage extensions`, then `Manage extension catalogs`, add the catalog `https://github.com/BIOP/qupath-biop-catalog`, install the ABBA extension with its (+) button, and restart QuPath.
+
+Then, in QuPath, click `Extensions > ABBA > Load Atlas Annotations into Open Image`.
 
 ![Load annotation](/assets/img/qupath_import_atlas_regions.png)
 

@@ -65,4 +65,3 @@
    resources/demo_dataset.md
    resources/video_tuto.md
    resources/slides_tuto.md
-   Documentation of ABBA 0.11 <https://abba-documentation.readthedocs.io/en/v0.11.0/>
