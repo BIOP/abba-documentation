@@ -4,7 +4,7 @@
 
 Most ABBA commands act on the **selected slices**. Each slice is represented by a round handle below the atlas, which is green when the slice is selected and yellow when it is not.
 
-![Highlighted green handle of selected slices](/assets/img/fiji_selected_slice.png)
+![Slices 3 to 7 selected: their handles are green and joined by a line, the handles of the other slices are yellow](/assets/abba/guide/select_display_slices/selected_slices.png)
 
 There are two ways to select slices.
 
@@ -28,7 +28,7 @@ Here is a demonstration of adding slices with `shift + rectangle`, removing slic
 
 You can also select slices in the table of the `Slices Display` card:
 
-![Selecting slices in the table](/assets/gif/fiji_select_slices_table.gif)
+![The table of the Slices Display card, filtered by name with `10x_0`: the selected slices are the highlighted rows](/assets/abba/guide/select_display_slices/slices_table_filtered.png)
 
 The selection behaves as in a standard table (`shift` to select a range, `ctrl` to toggle the selection of a single slice). Type a part of a slice name in `Filter by name`, above the table, to show only the matching slices: with many slices, this is the quickest way to find and select some of them.
 
@@ -41,7 +41,7 @@ On macOS, use `cmd` instead of `ctrl`.
 
 {menuselection}`Slices --> Select Slices` and {menuselection}`Slices --> Deselect Slices` select or deselect slices by their index.
 
-<!-- TODO GIF phase: re-record the two selection GIFs with ABBA 0.24.1 (name filter, slices displayed by default). -->
+<!-- TODO GIF phase: re-record the rectangle selection GIF with ABBA 0.24.1 and the demo slices. -->
 
 ## Display slices
 
@@ -49,9 +49,7 @@ To register slices, you need to see them well: show the channels that matter for
 
 Slices are displayed with all their channels when they are imported. In the table of the `Slices Display` card, the header row acts on all the selected slices at once: toggle the visibility of each channel, and set its color and its minimum and maximum displayed values (pay attention to where you click in the column headers). Each row customizes the display of a single slice.
 
-![Slices display options](/assets/gif/fiji_slices_display_options.gif)
-
-<!-- TODO GIF phase: re-record with ABBA 0.24.1. -->
+![All slices selected, with only their channel 0 (DAPI) shown and its display range set to 0 - 1185: crossed eyes for the hidden channels, the range in the colored cells](/assets/abba/guide/select_display_slices/slices_table_display.png)
 
 {menuselection}`Slices --> Set Slices Display Range` sets the minimum and maximum displayed values of channels of all the selected slices at once.
 
@@ -66,7 +64,7 @@ Multi-series files, like VSI files, may contain unwanted images: slide labels, m
 
 To remove them, select them, then right-click in the viewer and choose `Remove Selected Slices`, or click {menuselection}`Slices --> Remove Slices`. Removing slices can be undone.
 
-![Removing slices](/assets/gif/fiji_remove_slices.gif)
+![The Slices menu, Remove Slices](/assets/abba/guide/select_display_slices/remove_slices_menu.png)
 
 ## Reorder channels
 
