@@ -65,8 +65,10 @@ python scripts/build_menu_reference.py $ABBA <NEW>     # again: references the s
 * The screenshots are rendered offscreen by the `scijava-screenshots` tool (`ShotCommands.java`), from the
   released artifact, into `docs/source/assets/dialogs/`. The extra list adds the two start dialogs used
   by the user guide.
-* A command whose only input is a file opens a file chooser directly: it gets no screenshot. Running it
-  offscreen would hang, which is why the generator leaves it out of `dialogs.txt`.
+* The screenshots use the light theme, like the documentation (`SHOT_THEME=dark` for the other one).
+* Commands without parameters get no screenshot. A command whose only input is a file opens a file
+  chooser directly: it gets no screenshot either, and running it offscreen would hang, which is why the
+  generator leaves it out of `dialogs.txt`.
 * Known failures: the region exports and `Export Registered Slices To ImageJ` need a live session
   (their choices come from the atlas), and the QuPath dataset options dialog hangs offscreen.
 * Look at every new or changed PNG. HTML messages without a width make dialogs with big blank bands: fix
@@ -77,8 +79,9 @@ python scripts/build_menu_reference.py $ABBA <NEW>     # again: references the s
 * User guide: `docs/source/guide/`, task oriented, GUI first. Link to commands with their menu path,
   ``{menuselection}`Register --> Affine --> Elastix Registration (Affine)` ``, and to the menu reference
   with the generated labels, `[...](#menu-register-affine-elastix-registration-affine)`.
-* Dialog images are referenced as `![<title> dialog](/assets/dialogs/<slug>.png){.dialog}`: the `.dialog`
-  class displays these 2x images at a readable size.
+* Dialog images are referenced as `![<title> dialog](/assets/dialogs/<slug>.png){.dialog}`: for the
+  `.dialog` class, `conf.py` sets the display width of these 2x images from their PNG size, and the theme
+  shrinks the widest ones to the text column.
 * Pictures of the ABBA window itself (GIFs, views) cannot be generated offscreen: mark outdated ones with
   `<!-- TODO GIF phase: ... -->`.
 

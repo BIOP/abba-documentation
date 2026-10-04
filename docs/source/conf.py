@@ -77,6 +77,29 @@ redirects = {
     "explanation/registration_storage": "../reference/state_files.html",
 }
 
-# -- Custom styles
-html_static_path = ['_static']
-html_css_files = ['css/custom.css']
+# -- Dialog screenshots
+# They are rendered at 2x (scripts/shoot_dialogs.sh, --scale 2) to stay sharp on high-density
+# screens. Images with the 'dialog' class get an explicit width, a bit larger than their 1x size;
+# the theme caps images at the width of the text column, so wide dialogs shrink to fit.
+DIALOG_DISPLAY_SCALE = 0.6
+
+
+def _png_width(path):
+    with open(path, 'rb') as f:
+        header = f.read(24)
+    return int.from_bytes(header[16:20], 'big')
+
+
+def _size_dialog_images(app, doctree):
+    import os
+    from docutils import nodes
+    for image in doctree.findall(nodes.image):
+        if 'dialog' not in image.get('classes', []) or 'width' in image:
+            continue
+        path = os.path.join(app.srcdir, image['uri'].lstrip('/'))
+        if os.path.exists(path):
+            image['width'] = f"{round(_png_width(path) * DIALOG_DISPLAY_SCALE)}px"
+
+
+def setup(app):
+    app.connect('doctree-read', _size_dialog_images)

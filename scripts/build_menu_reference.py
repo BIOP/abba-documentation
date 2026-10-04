@@ -239,8 +239,7 @@ class Builder:
         for s in by_name.values():  # inherited parameters, not in this file
             if s["type"] not in NO_WIDGET_TYPES:
                 params.append(s)
-        has_message = any(p["message"] for p in declared)
-        return fqn, description, params, has_message
+        return fqn, description, params
 
     def emit_entry(self, path, cls, depth):
         label = path.split(">")[-1]
@@ -250,7 +249,7 @@ class Builder:
         if cls is None:
             self.lines += [ACTIONS.get(path, "_No description yet._"), ""]
             return
-        fqn, description, params, has_message = self.command_info(cls)
+        fqn, description, params = self.command_info(cls)
         if path in NOTES:
             self.lines += [":::{note}", NOTES[path], ":::", ""]
         if description:
@@ -260,14 +259,12 @@ class Builder:
             p = params[0]
             self.lines += [f"A file chooser opens to select the **{cell(p.get('label') or p['name'])}**"
                            + (f": {cell(p.get('description'))}" if p.get("description") else ".") , ""]
-        elif params or has_message:
+        elif params:
             slug = slugify_class(cls)
             self.dialogs[fqn] = slug
             # Referenced once shot: run this script again after scripts/shoot_dialogs.sh.
             if (ROOT / "docs" / "source" / DIALOGS_DIR.lstrip("/") / f"{slug}.png").exists():
                 self.lines += [f"![{label} dialog]({DIALOGS_DIR}/{slug}.png){{.dialog}}", ""]
-            if not params:
-                return  # a dialog with a message only
             self.lines += ["| Parameter | Description | Default |", "|---|---|---|"]
             for p in params:
                 desc = cell(p.get("description"))
@@ -276,7 +273,8 @@ class Builder:
                 self.lines.append(f"| {cell(p.get('label') or p['name'])} | {desc} | {fmt_default(p.get('default'))} |")
             self.lines.append("")
         else:
-            self.lines += ["This command opens no dialog.", ""]
+            # Commands without parameters run directly, or show a message and OK: no screenshot.
+            self.lines += ["This command has no parameter.", ""]
 
     def emit(self, node, depth, prefix):
         for name, child in node.items():

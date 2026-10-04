@@ -15,7 +15,7 @@
 #   JAVA_HOME      a JDK 21
 #   SHOT_TOOL      path to ShotCommands.java
 #   WORK_DIR       scratch folder for the throwaway Maven project and compiled classes
-#   SHOT_THEME     dark (default) | light
+#   SHOT_THEME     light (default, matches the documentation theme) | dark
 set -euo pipefail
 
 VERSION="${1:?usage: scripts/shoot_dialogs.sh <version> [extra Class=slug,...]}"
@@ -24,7 +24,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 : "${JAVA_HOME:=$USERPROFILE/.jdks/ms-21.0.11}"
 : "${SHOT_TOOL:=$USERPROFILE/.claude/skills/scijava-screenshots/ShotCommands.java}"
 : "${WORK_DIR:=${TMPDIR:-/tmp}/abba-dialog-shots-$VERSION}"
-: "${SHOT_THEME:=dark}"
+: "${SHOT_THEME:=light}"
 export JAVA_HOME PATH="$JAVA_HOME/bin:$PATH"
 SEP=';'; [[ "$(uname -s)" == MINGW* || "$(uname -s)" == MSYS* ]] || SEP=':'
 

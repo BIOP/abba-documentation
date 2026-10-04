@@ -310,7 +310,7 @@ Centers the view on the atlas and zooms to fit the window.
 
 Opens a debug window which logs the slice events of an ABBA session (creation, deletion, actions).
 
-![Log dialog](/assets/dialogs/abba-start-log.png){.dialog}
+This command has no parameter.
 
 (menu-slices)=
 ## Slices
@@ -430,7 +430,7 @@ Turns hemi-sections into full sections, for instance before DeepSlice which need
 
 Removes the mirroring of the selected slices, made with 'Mirror Slices', while keeping the registrations done afterwards.
 
-![Un-Mirror Slices dialog](/assets/dialogs/mirror-undo.png){.dialog}
+This command has no parameter.
 
 (menu-register)=
 ## Register
@@ -528,7 +528,7 @@ Manually edits the last registration of each selected slice, if it is editable: 
 
 Removes the last registration of each selected slice (it can be undone).
 
-![Remove Last Registration dialog](/assets/dialogs/register-slices-remove-last.png){.dialog}
+This command has no parameter.
 
 (menu-register-copy-registrations-from-model-and-apply-to-selected-slices)=
 ### Copy Registrations From Model And Apply To Selected Slices
@@ -600,7 +600,7 @@ Sets the thickness of the selected slices along the slicing axis. It affects the
 
 Sets the thickness of each selected slice so that it extends halfway to its neighbors, leaving no gap between slices. It affects the 3D display (reconstructed brain) and the 3D resampled export, not the registrations.
 
-![Set Slices Thickness (fill gaps) dialog](/assets/dialogs/set-slices-thickness-match-neighbors.png){.dialog}
+This command has no parameter.
 
 ### QuPath
 
@@ -819,7 +819,7 @@ Creates a standardized, shareable zip of the current ABBA session: all slices do
 
 Compares the installed ABBA version with the latest release on GitHub and shows the result in a dialog.
 
-![Check For Updates dialog](/assets/dialogs/abba-check-for-update.png){.dialog}
+This command has no parameter.
 
 (menu-help-ask-for-help-in-the-forum-web)=
 ### Ask For Help In The Forum (Web)
@@ -828,7 +828,7 @@ Compares the installed ABBA version with the latest release on GitHub and shows 
 
 Opens a new post draft on the image.sc forum in a web browser, pre-filled with the versions of ABBA and its dependencies.
 
-![Ask For Help In The Forum (Web) dialog](/assets/dialogs/abba-forum-help.png){.dialog}
+This command has no parameter.
 
 (menu-help-go-to-documentation-web)=
 ### Go To Documentation (Web)
@@ -837,7 +837,7 @@ Opens a new post draft on the image.sc forum in a web browser, pre-filled with t
 
 Opens the ABBA documentation website in a web browser.
 
-![Go To Documentation (Web) dialog](/assets/dialogs/abba-documentation.png){.dialog}
+This command has no parameter.
 
 (menu-help-give-your-feedback-web)=
 ### Give Your Feedback (Web)
@@ -846,7 +846,7 @@ Opens the ABBA documentation website in a web browser.
 
 Opens the ABBA user feedback form in a web browser.
 
-![Give Your Feedback (Web) dialog](/assets/dialogs/abba-user-feedback.png){.dialog}
+This command has no parameter.
 
 (menu-help-about-deepslice-web)=
 ### About DeepSlice (Web)
@@ -855,7 +855,7 @@ Opens the ABBA user feedback form in a web browser.
 
 Opens the DeepSlice guide website in a web browser.
 
-![About DeepSlice (Web) dialog](/assets/dialogs/deepslice-documentation.png){.dialog}
+This command has no parameter.
 
 (menu-cite)=
 ## Cite
@@ -867,7 +867,7 @@ Opens the DeepSlice guide website in a web browser.
 
 Shows how to cite ABBA and the tools it uses, in a window (requires an internet connection).
 
-![How To Cite ABBA (Web) dialog](/assets/dialogs/abba-cite-info.png){.dialog}
+This command has no parameter.
 
 (menu-cite-generate-methods-prompt)=
 ### Generate Methods Prompt
@@ -876,7 +876,7 @@ Shows how to cite ABBA and the tools it uses, in a window (requires an internet 
 
 Generates a prompt describing how the selected slices were registered (atlas, slicing angles, positions, registration steps), to paste in a large language model to draft the methods section of a publication.
 
-![Generate Methods Prompt dialog](/assets/dialogs/abba-generate-methods-prompt.png){.dialog}
+This command has no parameter.
 
 (menu-cite-about-deepslice-web)=
 ### About DeepSlice (Web)
@@ -885,7 +885,7 @@ Generates a prompt describing how the selected slices were registered (atlas, sl
 
 Opens the DeepSlice guide website in a web browser.
 
-![About DeepSlice (Web) dialog](/assets/dialogs/deepslice-documentation.png){.dialog}
+This command has no parameter.
 
 (menu-cite-about-current-atlas-web)=
 ### About Current Atlas (Web)
