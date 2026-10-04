@@ -69,8 +69,9 @@ python scripts/build_menu_reference.py $ABBA <NEW>     # again: references the s
 * Commands without parameters get no screenshot. A command whose only input is a file opens a file
   chooser directly: it gets no screenshot either, and running it offscreen would hang, which is why the
   generator leaves it out of `dialogs.txt`.
-* Known failures: the region exports and `Export Registered Slices To ImageJ` need a live session
-  (their choices come from the atlas), and the QuPath dataset options dialog hangs offscreen.
+* The region exports and `Export Registered Slices To ImageJ` need a live session (their choices come from
+  the atlas): `GenerateLiveDialogsAssets` of abba-doc-assets renders them, with `run-all.sh` (section 4). Run
+  section 4 before the second `build_menu_reference.py`. The QuPath dataset options dialog hangs offscreen.
 * Look at every new or changed PNG. HTML messages without a width make dialogs with big blank bands: fix
   them in the ABBA command, not here.
 

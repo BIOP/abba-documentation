@@ -42,6 +42,8 @@ To export warped slices, a full warped image must be computed at a resolution yo
 
 Select the slices to export and click {menuselection}`Export --> ImageJ --> Export Registered Slices To ImageJ`. You get an ImageJ stack, one plane per slice, that can be saved and handled as any other ImageJ image.
 
+![Export Registered Slices To ImageJ dialog](/assets/dialogs/export-slices-to-imagej.png){.dialog}
+
 * `Pixel size`: 20 micrometers gives a fast and broad overview. Exporting gigantic images this way is not advised: process the original images in QuPath instead.
 * `Slice channels`: the channels to export, separated by commas, or `*` for all channels.
 * `Add atlas regions overlay`: adds the atlas regions of each slice as an overlay of ROIs, named after the ontology property of your choice (acronym, name, id...).
@@ -56,8 +58,6 @@ The export is restricted to the [region of interest](#region-of-interest): to ex
 ![One plane of the stack exported by Export Registered Slices To ImageJ: a demo slice, registered, at 20 micrometers per pixel, its DAPI channel](/assets/abba/guide/export_results/registered_slice_export.png)
 
 Do not forget to adjust the brightness and contrast of the exported image.
-
-<!-- TODO: dialog screenshot of 'Export Registered Slices To ImageJ' (needs a live session: the ROI naming choices come from the atlas). -->
 
 ### Export the atlas at the same positions
 
@@ -91,13 +91,15 @@ A periodic LUT is applied to each channel, which makes the warping easy to see. 
 
 {menuselection}`Export --> ImageJ --> Export Regions To Roi Manager` adds the atlas regions of each selected slice to the ImageJ ROI Manager, in the pixel coordinates of the original, full resolution slice image. Since slice images are usually big, this is not the most recommended workflow: prefer QuPath.
 
+![Export Regions To Roi Manager dialog](/assets/dialogs/export-regions-to-roi-manager.png){.dialog}
+
 {menuselection}`Export --> ImageJ --> Export Regions To File` saves the same regions as one ImageJ ROI set zip file per slice, in a folder of your choice.
+
+![Export Regions To File dialog](/assets/dialogs/export-regions-to-roiset-file.png){.dialog}
 
 ![Exporting regions to the ROI Manager](/assets/gif/fiji_export_ij1_roi_manager.gif)
 
 <!-- TODO GIF phase: re-record with ABBA 0.24.1 (the ROI Manager is an AWT window, which abba-doc-assets does not paint). -->
-
-<!-- TODO: dialog screenshots of the two region exports (need a live session). -->
 
 ## Export to BigDataViewer
 

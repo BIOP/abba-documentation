@@ -635,6 +635,8 @@ A file chooser opens to select the **QuPath project folder**: Folder of the new 
 
 Adds the atlas regions of each selected slice to the ImageJ ROI Manager, as ROIs in the pixel coordinates of the original (unregistered, full resolution) slice image.
 
+![Export Regions To Roi Manager dialog](/assets/dialogs/export-regions-to-roi-manager.png){.dialog}
+
 | Parameter | Description | Default |
 |---|---|---|
 | ROI naming | Atlas ontology property used to name each region ROI, for instance its acronym, name or id. The available choices depend on the atlas. |  |
@@ -645,6 +647,8 @@ Adds the atlas regions of each selected slice to the ImageJ ROI Manager, as ROIs
 {menuselection}`Export --> ImageJ --> Export Regions To File`
 
 Saves the atlas regions of each selected slice as an ImageJ ROI set zip file, named after the slice, with ROIs in the pixel coordinates of the original (unregistered, full resolution) slice image.
+
+![Export Regions To File dialog](/assets/dialogs/export-regions-to-roiset-file.png){.dialog}
 
 | Parameter | Description | Default |
 |---|---|---|
@@ -658,6 +662,8 @@ Saves the atlas regions of each selected slice as an ImageJ ROI set zip file, na
 {menuselection}`Export --> ImageJ --> Export Registered Slices To ImageJ`
 
 Exports the registered (deformed) selected slices as an ImageJ image, one plane per slice, resampled at the given pixel size within the current region of interest, optionally with the atlas regions as overlay. Same geometry as 'Export Atlas to ImageJ'.
+
+![Export Registered Slices To ImageJ dialog](/assets/dialogs/export-slices-to-imagej.png){.dialog}
 
 | Parameter | Description | Default |
 |---|---|---|
