@@ -84,13 +84,12 @@ one generator per page runs the demo registration in a real Fiji and paints the 
 cd ../abba-doc-assets
 # pom.xml: abba.version to <NEW>, and the version overrides copied again from ABBA's own pom:
 git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<\/properties>/p'
-./run.sh GenerateStartAndImportAssets
-./run.sh GenerateFirstRegistrationAssets
+./run-all.sh                    # every generator, about 25 minutes; see its README for one page at a time
 ```
 
 * A Fiji and the ABBA window open on screen while a generator runs: leave them, nothing depends on the mouse,
-  the keyboard or what is visible. Each one takes a few minutes; the first run on a machine downloads the atlas
-  and the demo slide, and installs DeepSlice.
+  the keyboard or what is visible. The first run on a machine downloads the atlas and the demo slide, and
+  installs DeepSlice.
 * Without a change in ABBA, a rerun writes byte-identical pictures: `git status` lists exactly the pictures the
   new release changes. Look at each of them, and at the framing of the views.
 * `.abba` states of the key steps are saved in `../abba-doc-assets/target/states/`.
