@@ -155,3 +155,25 @@ may be better than the viewer.
 2. The Getting started pictures, from one pipeline run.
 3. The user guide pictures of the shot list.
 4. The three dialogs needing a live session.
+
+## Status (2026-10-05): phase 1 done
+
+All four milestones are committed (not pushed): this repo on `docs-0.24.1`, `abba-doc-assets` on `main`, and
+fiji-robot on its branch `painted-pictures` (0.1.4-SNAPSHOT, installed locally; `abba-doc-assets` depends on it).
+
+* **Pictures**: 32 pictures of the ABBA window in `docs/source/assets/abba/<page>/`, and the three live-session
+  dialogs in `docs/source/assets/dialogs/`. `../abba-doc-assets/run-all.sh` regenerates them all (about 30 minutes);
+  two runs give byte-identical files. How to rerun them at a release: `BUMP_DOC.md`, section 4.
+* **fiji-robot**, generic and reusable for phase 2: `widgets.Painter` (components, windows without title bar,
+  closed menus, painted as on screen), `widgets.CommandDialogPainter` (a command dialog with live inputs),
+  `bdv.view.BdvCards` (expand and paint cards), `bdv.view.BdvViewer` (wait for passing messages),
+  `core.InMemoryPreferences` (defaults for every remembered input, user preferences untouched).
+* **Not done, phase 2**: the motion. The 0.11 GIFs left are marked `TODO GIF phase` (rectangle selection, dragging
+  slices, setting a key slice, the registration sequence, the ROI Manager). The generators are written as fiji-robot
+  `Step`s per chapter, ready for visible launchers and recording.
+* **Open question for the maintainer**: the size and scale of the whole-window pictures (1600 x 1000, painted at
+  1x). Cards and menus are painted at 1x: Swing text painted bigger than its layout gets cut.
+* **Findings in ABBA 0.24.1** (proposals, nothing changed): the regions overlay of `Export Registered Slices To
+  ImageJ` is drawn by ImageJ as horizontal stripes (the picture leaves it out); a manual registration whose editor is
+  open shows as waiting (red), not running (yellow); the manual affine editor shows a `100 undefined` scale bar;
+  after deleting the current slice, the `Slices Display` card still names it.
