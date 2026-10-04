@@ -74,7 +74,28 @@ python scripts/build_menu_reference.py $ABBA <NEW>     # again: references the s
 * Look at every new or changed PNG. HTML messages without a width make dialogs with big blank bands: fix
   them in the ABBA command, not here.
 
-## 4. Update the pages
+## 4. Pictures of the ABBA window
+
+The pictures in `docs/source/assets/abba/<page>/` are produced by
+abba-doc-assets, a sibling repository (`../abba-doc-assets`):
+one generator per page runs the demo registration in a real Fiji and paints the ABBA window (see its `README.md`).
+
+```bash
+cd ../abba-doc-assets
+# pom.xml: abba.version to <NEW>, and the version overrides copied again from ABBA's own pom:
+git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<\/properties>/p'
+./run.sh GenerateStartAndImportAssets
+./run.sh GenerateFirstRegistrationAssets
+```
+
+* A Fiji and the ABBA window open on screen while a generator runs: leave them, nothing depends on the mouse,
+  the keyboard or what is visible. Each one takes a few minutes; the first run on a machine downloads the atlas
+  and the demo slide, and installs DeepSlice.
+* Without a change in ABBA, a rerun writes byte-identical pictures: `git status` lists exactly the pictures the
+  new release changes. Look at each of them, and at the framing of the views.
+* `.abba` states of the key steps are saved in `../abba-doc-assets/target/states/`.
+
+## 5. Update the pages
 
 * User guide: `docs/source/guide/`, task oriented, GUI first. Link to commands with their menu path,
   ``{menuselection}`Register --> Affine --> Elastix Registration (Affine)` ``, and to the menu reference
@@ -82,10 +103,10 @@ python scripts/build_menu_reference.py $ABBA <NEW>     # again: references the s
 * Dialog images are referenced as `![<title> dialog](/assets/dialogs/<slug>.png){.dialog}`: for the
   `.dialog` class, `conf.py` sets the display width of these 2x images from their PNG size, and the theme
   shrinks the widest ones to the text column.
-* Pictures of the ABBA window itself (GIFs, views) cannot be generated offscreen: mark outdated ones with
-  `<!-- TODO GIF phase: ... -->`.
+* Pictures of the ABBA window: add them to a generator of abba-doc-assets (section 4). Motion (GIFs,
+  videos) is not generated yet: mark outdated ones with `<!-- TODO GIF phase: ... -->`.
 
-## 5. Version, build, publish
+## 6. Version, build, publish
 
 * `docs/source/conf.py`: `version` and `release` to `<NEW>`.
 * Build with zero warnings (see `CLAUDE.md`), and check the `href` of new cross-page label links in the
