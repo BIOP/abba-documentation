@@ -12,14 +12,25 @@
    installation/installation
 
 .. toctree::
-   :maxdepth: 3
-   :caption: How-to
+   :maxdepth: 2
+   :caption: Getting started
 
-   tutorial/0_create_qupath_dataset.md
-   tutorial/1_import_qupath_project.md
-   tutorial/2_registration.md
-   tutorial/3_export_registrations.md
-   tutorial/4_qupath_analysis.md
+   getting_started/first_registration.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User guide
+
+   guide/prepare_qupath_project.md
+   guide/start_and_import.md
+   guide/abba_window.md
+   guide/select_display_slices.md
+   guide/orient_slices.md
+   guide/position_along_atlas.md
+   guide/inplane_registration.md
+   guide/save_load_share.md
+   guide/export_results.md
+   guide/qupath_analysis.md
 
 .. toctree::
    :caption: See also
@@ -27,22 +38,31 @@
    Whole-brain analysis with BraiAn <https://silvalab.codeberg.page/BraiAn/>
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Tutorial
+   :maxdepth: 2
+   :caption: Reference
 
-   tutorial/demo_dataset.md
-   tutorial/video_tuto.md
-   tutorial/slides_tuto.md
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Advanced
-
-   explanation/file_formats_supported.md
-   explanation/registration_storage.md
+   reference/menu_reference.md
+   reference/shortcuts.md
+   reference/file_formats.md
+   reference/state_files.md
 
 .. toctree::
-   :maxdepth: 3
-   :caption: FAQ
+   :maxdepth: 2
+   :caption: Cite
+
+   cite.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Help
 
    frequently_asked_questions.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Other resources
+
+   resources/demo_dataset.md
+   resources/video_tuto.md
+   resources/slides_tuto.md
+   Documentation of ABBA 0.11 <https://abba-documentation.readthedocs.io/en/v0.11.0/>

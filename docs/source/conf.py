@@ -6,8 +6,8 @@ project = 'ABBA-Documentation'
 copyright = '2024-2026, BIOP-EPFL'
 author = 'BIOP-EPFL'
 
-release = '0.11.0'
-version = '0.11.0'
+release = '0.24.1'
+version = '0.24.1'
 
 # -- General configuration
 
@@ -62,3 +62,21 @@ myst_enable_extensions = [
 ]
 
 source_suffix = ['.rst', '.md']
+# -- Redirects from the page paths of ABBA 0.11 (linked from forum posts)
+extensions.append('sphinx_reredirects')
+redirects = {
+    "tutorial/0_create_qupath_dataset": "../guide/prepare_qupath_project.html",
+    "tutorial/1_import_qupath_project": "../guide/start_and_import.html",
+    "tutorial/2_registration": "../guide/inplane_registration.html",
+    "tutorial/3_export_registrations": "../guide/export_results.html",
+    "tutorial/4_qupath_analysis": "../guide/qupath_analysis.html",
+    "tutorial/demo_dataset": "../resources/demo_dataset.html",
+    "tutorial/video_tuto": "../resources/video_tuto.html",
+    "tutorial/slides_tuto": "../resources/slides_tuto.html",
+    "explanation/file_formats_supported": "../reference/file_formats.html",
+    "explanation/registration_storage": "../reference/state_files.html",
+}
+
+# -- Custom styles
+html_static_path = ['_static']
+html_css_files = ['css/custom.css']

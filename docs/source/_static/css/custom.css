@@ -1,0 +1,6 @@
+/* Dialog screenshots are rendered at 2x (scripts/shoot_dialogs.sh, --scale 2) to stay sharp on
+   high-density screens: display them a bit larger than their natural 1x size, for readability. */
+img.dialog {
+    zoom: 0.6;
+    max-width: 166%;
+}

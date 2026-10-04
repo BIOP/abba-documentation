@@ -1,0 +1,86 @@
+# Select & display slices
+
+## Select slices
+
+Most ABBA commands act on the **selected slices**. Each slice is represented by a round handle below the atlas, which is green when the slice is selected and yellow when it is not.
+
+![Highlighted green handle of selected slices](/assets/img/fiji_selected_slice.png)
+
+There are two ways to select slices.
+
+### Rectangle selection with the mouse
+
+Draw rectangles around slice handles to select them. Modifier keys add or remove slices from the current selection:
+
+* `hold and left-click`: draw a rectangle to select slices;
+* `shift + hold and left-click`: add slices to the current selection;
+* `ctrl + hold and left-click`: remove slices from the current selection.
+
+:::{warning}
+Press the modifier keys before drawing the rectangle, or they won't take effect.
+:::
+
+Here is a demonstration of adding slices with `shift + rectangle`, removing slices with `ctrl + rectangle`, and selecting all slices with `ctrl + A`.
+
+![Selecting slices in the viewer](/assets/gif/fiji_select_slices.gif)
+
+### The slice table
+
+You can also select slices in the table of the `Slices Display` card:
+
+![Selecting slices in the table](/assets/gif/fiji_select_slices_table.gif)
+
+The selection behaves as in a standard table (`shift` to select a range, `ctrl` to toggle the selection of a single slice). Type a part of a slice name in `Filter by name`, above the table, to show only the matching slices: with many slices, this is the quickest way to find and select some of them.
+
+Additional shortcuts:
+
+* `ctrl + A`: select all slices;
+* `ctrl + shift + A`: deselect all slices.
+
+On macOS, use `cmd` instead of `ctrl`.
+
+{menuselection}`Slices --> Select Slices` and {menuselection}`Slices --> Deselect Slices` select or deselect slices by their index.
+
+<!-- TODO GIF phase: re-record the two selection GIFs with ABBA 0.24.1 (name filter, slices displayed by default). -->
+
+## Display slices
+
+To register slices, you need to see them well: show the channels that matter for the registration and adjust their contrast.
+
+Slices are displayed with all their channels when they are imported. In the table of the `Slices Display` card, the header row acts on all the selected slices at once: toggle the visibility of each channel, and set its color and its minimum and maximum displayed values (pay attention to where you click in the column headers). Each row customizes the display of a single slice.
+
+![Slices display options](/assets/gif/fiji_slices_display_options.gif)
+
+<!-- TODO GIF phase: re-record with ABBA 0.24.1. -->
+
+{menuselection}`Slices --> Set Slices Display Range` sets the minimum and maximum displayed values of channels of all the selected slices at once.
+
+:::{warning}
+The display settings matter beyond the display: the images sent to DeepSlice are made with them. Avoid saturated images (see [DeepSlice](#deepslice)).
+:::
+
+(remove-unwanted-slices)=
+## Remove unwanted slices
+
+Multi-series files, like VSI files, may contain unwanted images: slide labels, macro or overview images. They are usually RGB images, easy to spot in the slice table.
+
+To remove them, select them, then right-click in the viewer and choose `Remove Selected Slices`, or click {menuselection}`Slices --> Remove Slices`. Removing slices can be undone.
+
+![Removing slices](/assets/gif/fiji_remove_slices.gif)
+
+## Reorder channels
+
+If your slices do not all have their channels in the same order, or if you want to drop some channels, {menuselection}`Slices --> Re-Index Slices channels` replaces each selected slice by a new one with the channels in the order you give (for instance `1,0` swaps the first two channels, `0,2` keeps the first and the third). The new slices keep the position and the registrations of the original ones.
+
+(white-background)=
+## Slices with a white background
+
+By default ABBA works with fluorescent images: the background is mostly black, and when a slice needs to be extended outside of its bounds, it is filled with black. Brightfield images have a white background instead, and black out-of-bounds pixels cause dark edges in registrations and exports.
+
+Click {menuselection}`Slices --> Set White Background` to fill the area outside the selected slices with another value: 255 for 8-bit or RGB images, 65535 for 16-bit images, or a slightly lower value matching your actual background, so that the bounds of the images are as little visible as possible.
+
+![Setting a white background to slices](/assets/img/fiji_white_background_slice.png)
+
+Left: default; middle: background too dim; right: correct background value. (Data taken from the DeepSlice example dataset.)
+
+It is also recommended to increase the maximum displayed value of white-background slices, to 512 for instance, to dim them and get a transparency-like behavior over the atlas.
