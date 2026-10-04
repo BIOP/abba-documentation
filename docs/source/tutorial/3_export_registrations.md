@@ -37,7 +37,7 @@ In ABBA, select the slices you want to export, and click `Export > ImageJ > Expo
 
 ![Exporting slices options](/assets/img/fiji_export_registered_slices_imagej.png)
 
-You can select the channels you want to export be separating them with commas, or type `*` to export all channels. Usually, 20 microns per pixel gives a fast and broad overview. It is not advised to export gigantic images this way. Processing big images will be faster by working on untransformed images in QuPath.
+You can select the channels you want to export by separating them with commas, or type `*` to export all channels. Usually, 20 microns per pixel gives a fast and broad overview. It is not advised to export gigantic images this way. Processing big images will be faster by working on untransformed images in QuPath.
 
 Clicking `interpolate` will lead to a smoother image at the cost of computation speed.
 
@@ -50,11 +50,11 @@ If you choose a really too small pixel size, you may reach ImageJ's limitation o
 You may want to export not the full slice but only a subregion of the atlas. The computation for a small region can thus be much faster. To do this, open the `Define region of interest for registration` panel, click `Define interactively` and draw the rectangular region of interest with the mouse.
 
 :::{warning}
-This region is also used to restrict registrations areas. Most probably you will want to restore the full size before starting a registration.
+This region is also used to restrict registration areas. Most probably you will want to restore the full size before starting a registration.
 :::
 
 ![Define a region of interest in ABBA](/assets/img/fiji_define_ROI.png)
-a
+
 You can now draw a rectangle in the region of your choice, either in review mode or in positioning mode. You can click `Full Size` to restore the initial field of interest.
 
 Now the exported slices will be restricted to your user defined ROI, as shown in the gif below.
@@ -85,14 +85,14 @@ This feature is not implemented yet, but it is not complicated to add. Make sure
 
 ## 3. Export an image of the atlas coordinates onto the slice
 
-Using the backward transform, the command `Export > ImageJ > Export Atlas Coordinates of Original Slices to ImageJ` will output, for each slice, a three channel image where each channel correspond to one coordinate in the atlas (3 channels = X, Y, Z coordinates).
+Using the backward transform, the command `Export > ImageJ > Export Atlas Coordinates of Original Slices to ImageJ` will output, for each slice, a three channel image where each channel corresponds to one coordinate in the atlas (3 channels = X, Y, Z coordinates).
 
 ![Export atlas coordinates image](/assets/img/fiji_export_atlas_coordinates_image.png)
 
 Options:
 
 * `Resolution level (0 = max resolution)`: because the original slice image can be multiscale, you may want to export the atlas coordinate image for subresolution only.
-* `Extra Down Sampling`: downsamples the exported atlas coordinates image to fasten computation
+* `Extra Down Sampling`: downsamples the exported atlas coordinates image to speed up computation
   `Deformation error tolerance` and `max iterations` can be let to their default values.
 
 The output is a 32 bit image, which can be saved as a regular imagej image.
@@ -107,7 +107,7 @@ After adjusting the B&C of the exported image you may get an image looking like 
 
 ![Atlas coordinates image](/assets/img/fiji_atlas_coordinates_image.png)
 
-A periodic LUT is applied for each channel which allows to easily visualize the warping. What really matters is the value of each pixel in each channel which correpond to the atlas coordinates position in millimeter.
+A periodic LUT is applied for each channel which allows to easily visualize the warping. What really matters is the value of each pixel in each channel which corresponds to the atlas coordinates position in millimeter.
 
 ## 4. Export atlas regions in the Roi Manager
 
@@ -127,10 +127,10 @@ This export method will suffer from some limitations. In particular, all images 
 
 ## 6. Export a self-contained zip file / Standardized export
 
-By using `Export>Export Standardized ABBA Project (Zip)`, you will generate a zip file that contains: 
+By using `Export > Export Standardized ABBA Project (Zip)`, you will generate a zip file that contains: 
 * the original data of the selected slices, resampled at the resolution of your choice (images need to have been properly calibrated upon import)
 * the abba project in order to be reopened through ABBA using the original methods
 * the transformation field of the final registration for each slice
 * some metadata such as the atlas used and its orientation, as well as a user defined text field
 
-Such a zip file can be re-opened in ABBA through `Import>Export Standardized ABBA Project (Zip) in new ABBA instance`
+Such a zip file can be re-opened in ABBA through `Import > Import Standardized ABBA Project (Zip) in new ABBA instance`.

@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'ABBA-Documentation'
-copyright = '2024, BIOP-EPFL'
+copyright = '2024-2026, BIOP-EPFL'
 author = 'BIOP-EPFL'
 
 release = '0.11.1.dev0'
@@ -41,6 +41,9 @@ html_theme_options = {
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# Generate GitHub-style anchors for headings up to level 3 (e.g. 'page.md#5-export-as-a-new-quicknii-dataset')
+myst_heading_anchors = 3
 
 myst_enable_extensions = [
     "amsmath",

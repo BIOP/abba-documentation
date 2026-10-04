@@ -2,7 +2,7 @@
 
 ## Give a try to BraiAn
 
-BraiAn is a worflow that has been designed to easily process whole brain datasets aligned with ABBA.
+BraiAn is a workflow that has been designed to easily process whole brain datasets aligned with ABBA.
 
 You can get its documentation here: https://silvalab.codeberg.page/BraiAn/
 
@@ -13,7 +13,7 @@ For that, simply select all your slices of interest and click, in the top menu b
 
 When executing this action, ABBA exports, for each slice:
 * regions of the allen brain atlas as a zip file (ImageJ rois file)
-* a json file which can be used to compute the transformation between pixels coordinates of the original file to the Atlas (and vice versa)
+* a json file which can be used to compute the transformation between pixel coordinates of the original file to the Atlas (and vice versa)
 
 These two files are saved into each QuPath entry folder. Additionally, the Atlas Ontology is written next to the QuPath project file (do not erase it!).
 
@@ -32,7 +32,7 @@ You can also use the transparency slider to change the opacity of the regions.
 
 If you put a low transparency, double-click on a region and have the hierarchy tab activated, you will see in yellow the region selected, and the region selected will be synchronized on the hierarchy tab:
 
-![Sync between hierarchy tab and annotations](/assets/qupath_sync_hierarchy_annotations.png)
+![Sync between hierarchy tab and annotations](/assets/img/qupath_sync_hierarchy_annotations.png)
 
 ### Automating the import for all slices
 If you go to the workflow tab of QuPath, you will see that a workflow step is present. You can create a script out of it, such as:
@@ -111,7 +111,7 @@ To write a bit of code, click in QuPath: `Automate > Show script editor`.
 #### 1. Clear all objects (cells, annotations)
 
 ```
-// To clear all objects (take care, it also clear cells (detection objects)!)
+// To clear all objects (take care, it also clears cells (detection objects)!)
 clearAllObjects()
 ```
 

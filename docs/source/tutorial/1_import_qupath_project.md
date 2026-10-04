@@ -34,7 +34,7 @@ Once you’re comfortable with the navigation, you can proceed to import a QuPat
 
 ![Importing a QuPath Project in ABBA](/assets/img/fiji_import_qupath.png)
 
-:::{info}
+:::{tip}
 To import a QuPath project, you can also drag and drop a `.qpproj` file into ABBA's graphical interface (in the viewer area).
 :::
 
@@ -58,9 +58,9 @@ The initial import process may take up to a minute. Once the project is loaded, 
 
 ## Other import methods
 
-### Importing a [QuickNII] project
+### Importing a QuickNII project
 
-You have an option to open a QuickNII project within `Import>Import QuickNII project` and selecting the `.json` file for this project. 
+You have an option to open a [QuickNII](https://quicknii.readthedocs.io/) project within `Import>Import QuickNII project` and selecting the `.json` file for this project. 
 
 :::{warning}
 Be aware that the import will not necessarily be exact! Indeed QuickNII allows for each slice of a similar dataset to be positioned in any orientation. In ABBA, within a single project, the slicing angle correction will be applied identically to all sections. As a result, during the import of the QuickNII project, ABBA will compute the median slicing angles for all slices and apply it identically to all slices.

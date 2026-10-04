@@ -13,7 +13,7 @@ The QuPath extension, while optional, is highly recommended. It simplifies datas
 :::{tip} For Windows users, [a standalone installer is available](https://github.com/BIOP/ijp-imagetoatlas/releases/), which simplifies the installation process. 
 :::
 
-ABBA can be directly installed from Fiji's interface as a plugin, but depending from your needs you might want to follow a different installation method to unlock additional functionalities, namely:
+ABBA can be directly installed from Fiji's interface as a plugin, but depending on your needs you might want to follow a different installation method to unlock additional functionalities, namely:
 
 <!-- * [elastix/transformix](https://github.com/SuperElastix/elastix): Software used for automating 2D in-plane registration. -->
 * [BrainGlobe](https://brainglobe.info/about.html): a Python library that [extends the atlases](https://brainglobe.info/documentation/brainglobe-atlasapi/index.html#atlases-available) available in ABBA.
@@ -76,7 +76,7 @@ This step is necessary only if you want to use ABBA on images saved on an [OMERO
 
 #### Step 3. Install elastix/transformix
 
-[elastix](https://elastix.dev/), a toolbox for 2D in-plane registration, is an indipendent program that is executed by ABBA under the hood in order to apply affine and spline transformations to the images.
+[elastix](https://elastix.dev/), a toolbox for 2D in-plane registration, is an independent program that is executed by ABBA under the hood in order to apply affine and spline transformations to the images.
 
 * download [elastix version 5.2.0](https://github.com/SuperElastix/elastix/releases/tag/5.2.0) for your operating system;
 * extract it to a convenient location (e.g., `C:\` on Windows, `/opt/` on Linux, `Applications` on MacOS).
@@ -94,13 +94,13 @@ No special steps are required.
 ##### MacOS
 Since macOS treats elastix and transformix as software from "unknown developers," you need to [create security exceptions](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) for both executables to bypass repeated warnings.
 
-#### Step 5. Set elastix paths in Fiji
+#### Step 4. Set elastix paths in Fiji
 
 Now you have to tell Fiji where to find your installation of `elastix` and `transformix` by clicking on `Plugins › BIOP › Elastix > Test elastix`. When asked, specify the paths of `elastix` and `transformix` executables. For instance:
 
-![Setting elastix and transformix path in Fiji](../assets/img/fiji_elastix_transformix_path.png)
+![Setting elastix and transformix path in Fiji](/assets/img/fiji_elastix_transformix_path.png)
 
-In Fiji's console (`Window > Console`, if closed), you should see a confirmation messages like:
+In Fiji's console (`Window > Console`, if closed), you should see confirmation messages like:
 ```
 [INFO] Elastix	->	set :-) 
 Transformix	->	set :-) 
@@ -109,7 +109,7 @@ Transformix	->	set :-)
 Lastly, you will be asked to start a registration test. Run it and check its result.
 <!-- To verify `elastix` is working, you can run [this test script](https://gist.githubusercontent.com/NicoKiaru/b91f9f3f0069b765a49b5d4629a8b1c7/raw/a64f92467bc354eb45af579b5eb3c5a8a0c466b4/TestRegister.groovy) in Fiji. Save the file with a .groovy extension, open it in Fiji, and run it. -->
 
-#### Step 6. Install DeepSlice locally _[optional]_
+#### Step 5. Install DeepSlice locally _[optional]_
 
 While you can use the default web-based DeepSlice interface, installing it locally can streamline the registration process.
 
@@ -131,7 +131,7 @@ For the installation instructions refer to the [project's page](https://github.c
 
 1. if QuPath is not already installed, [download it](https://qupath.github.io/) and install it;
 
-The ABBA extension is distributed into QuPath via a the QuPath-BIOP catalog.
+The ABBA extension is distributed into QuPath via the QuPath-BIOP catalog.
 This catalog is NOT enabled by default in QuPath. In order to add it to the list of available catalogs:
 
 2. Open QuPath

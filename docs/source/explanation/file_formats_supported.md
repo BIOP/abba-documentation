@@ -10,7 +10,7 @@ This section deals with the file formats requirements.
 While ABBA can open files directly, it is highly recommended to package all files from a single animal into a QuPath project, as explained in the [create QuPath dataset section](../tutorial/0_create_qupath_dataset.md).
 :::
 
-In short ABBA can use any Bio-Formats supported file format, ideally multi-resolution, and calibrated. It can also stream images for an OMERO database.
+In short ABBA can use any Bio-Formats supported file format, ideally multi-resolution, and calibrated. It can also stream images from an OMERO database.
 
 ## 1. Any Bio-Formats supported file format,
 All Bio-Formats readable file formats are supported. You can check in the [Bio-Formats documentation](https://bio-formats.readthedocs.io/en/latest/supported-formats.html) if your files are supported.
@@ -30,7 +30,7 @@ If files are pyramidal, ABBA can load only a sub-part (**tiles**) of an image at
 
 For non-pyramidal files, the full data needs to be loaded, displayed and registered. This can be fine for small images (<2000x2000 pixels), but will be annoying when images are bigger.
 
-If your images are not pyramidal, we advise to convert your files to pyrimadal OME-TIFF formats. This can be done for instance by using one of the following options:
+If your images are not pyramidal, we advise to convert your files to pyramidal OME-TIFF formats. This can be done for instance by using one of the following options:
 - [Kheops](https://github.com/BIOP/ijp-kheops) Fiji plugin ,
 - [NGFF converter by Glencoe](https://www.glencoesoftware.com/products/ngff-converter/) (!n5 not supported, choose OME-TIFF).
 
@@ -71,7 +71,7 @@ Note that Leica `.lif` files are not well supported because their multi-resoluti
 
 ## More technicalities
 
-Hidden somewhere in the state of an ABBA instance, one or several BigDataViewer dataset are used. BigDataViewer dataset can use different backends, which are implementing the java `ImageLoader` interface. See this [youtube video](https://youtu.be/LHI7vXiUUms?t=280) for more details.
+Hidden somewhere in the state of an ABBA instance, one or several BigDataViewer datasets are used. BigDataViewer datasets can use different backends, which are implementing the java `ImageLoader` interface. See this [youtube video](https://youtu.be/LHI7vXiUUms?t=280) for more details.
 
 Depending on the image loader, the data can be read from various sources:
 - Loaders from [BigDataViewer core](https://github.com/bigdataviewer/bigdataviewer-core):
@@ -81,7 +81,7 @@ Depending on the image loader, the data can be read from various sources:
     - [openconnectome](https://github.com/bigdataviewer/bigdataviewer-core/tree/master/src/main/java/bdv/img/openconnectome)
     - [n5](https://github.com/bigdataviewer/bigdataviewer-core/tree/master/src/main/java/bdv/img/n5)
     - [BigDataServer](https://github.com/bigdataviewer/bigdataviewer-core/tree/master/src/main/java/bdv/img/remote)
-- [bigdataviewer-image-loaders](https://github.com/BIOP/bigdataviewer-image-loaders) is a library developped and maintained by the BIOP. It is a meta image-loader that delegates its loading depending on the image URI, a mechanism similar to the QuPath Image Server. It allows to load/stream data from:
+- [bigdataviewer-image-loaders](https://github.com/BIOP/bigdataviewer-image-loaders) is a library developed and maintained by the BIOP. It is a meta image-loader that delegates its loading depending on the image URI, a mechanism similar to the QuPath Image Server. It allows to load/stream data from:
     - [Bio-Formats](https://github.com/BIOP/bigdataviewer-image-loaders/tree/master/src/main/java/ch/epfl/biop/bdv/img/bioformats)
     - [OMERO](https://github.com/BIOP/bigdataviewer-image-loaders/tree/master/src/main/java/ch/epfl/biop/bdv/img/omero)
     - [QuPath projects](https://github.com/BIOP/bigdataviewer-image-loaders/tree/master/src/main/java/ch/epfl/biop/bdv/img/qupath). It is in itself a meta-loader in the meta image loader (ouch) which calls other loaders depending on the QuPath Image Server.

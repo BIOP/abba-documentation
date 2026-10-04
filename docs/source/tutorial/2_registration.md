@@ -51,19 +51,6 @@ For Mac users, use `cmd` instead of `ctrl`.
 
 To facilitate registration, it’s essential to ensure your slices are displayed properly. Depending on your use case, you may want to show only a subset of channels and adjust the minimum and maximum display values for optimal contrast.
 
-## Slices with a white background
-
-By default ABBA works with fluorescent images. Thus the background color is mostly black, and when the slice needs to be extended outside of its bounds, the color given is black. However, some dataset are acquired in brightfield, thus having a white background image. For these images, the default out-of-bounds black color is not ideal, and could cause issues with downstream registration.
-
-By going into `Slices>Set White background`, you can override the default out-of bounds color of the slice. Typically the white value you will need to set is above 200, with 255 being the maximum. You may need to look at your pixel value data to know it, or just attempt a few values to find the right one, meaning one that should make the bounds of the image as little visible as possible.
-
-![Setting White Background To Slices](/assets/img/fiji_white_background_slice.png)
-
-Left: default; middle: background too dim; right, correct background value.
-(Data taken from DeepSlice example dataset)
-
-It is also recommended to increase the max displayed value of the white-background slices to, for instance, 512, in order to dim the brightness of the slices and allow for a transparency like behaviour.
-
 ### Removing Unwanted Slices
 
 In some cases, especially with multi-series files like VSI files, you might encounter unwanted images, such as labels or macro images. These unwanted slices, typically RGB images, will often appear black in the slice display table, making them easy to identify.
@@ -85,6 +72,19 @@ Additionally, you can adjust the color, and the minimum and maximum display valu
 
 If necessary, the display for each slice can be further customized by modifying its corresponding row in the table.
 
+### Slices with a white background
+
+By default ABBA works with fluorescent images. Thus the background color is mostly black, and when the slice needs to be extended outside of its bounds, the color given is black. However, some datasets are acquired in brightfield, thus having a white background image. For these images, the default out-of-bounds black color is not ideal, and could cause issues with downstream registration.
+
+By going into `Slices>Set White background`, you can override the default out-of-bounds color of the slice. Typically the white value you will need to set is above 200, with 255 being the maximum. You may need to look at your pixel value data to know it, or just attempt a few values to find the right one, meaning one that should make the bounds of the image as little visible as possible.
+
+![Setting White Background To Slices](/assets/img/fiji_white_background_slice.png)
+
+Left: default; middle: background too dim; right, correct background value.
+(Data taken from DeepSlice example dataset)
+
+It is also recommended to increase the max displayed value of the white-background slices to, for instance, 512, in order to dim the brightness of the slices and allow for a transparency like behaviour.
+
 # Registration workflow
 
 The registration process starts with a manual step, which serves two purposes:
@@ -93,7 +93,7 @@ The registration process starts with a manual step, which serves two purposes:
 * Adjust the slicing angles of the atlas.
 
 :::{hint} 
-If your slices have sufficient quality, consider using ABBA's DeepSlice integration to skip these initial manual registration steps. Note than DeepSlice is available only in coronal orientation for adult mouse and rat altases only.
+If your slices have sufficient quality, consider using ABBA's DeepSlice integration to skip these initial manual registration steps. Note that DeepSlice is available only in coronal orientation for adult mouse and rat atlases only.
 :::
 
 To help position each slice along the slicing axis, ABBA offers an interface designed for easy manipulation of a series of slices.
@@ -154,7 +154,7 @@ A recommended workflow for manually aligning slices along the atlas includes:
 * Shifting slices along the atlas at their approximately correct position
 * Matching precisely a slice of your choice (usually one with easily recognizable features) with the atlas by zooming in
 * Setting this slice as `key slice` (select this slice only, right click and select `Set as key slice` in the popup menu). As long as you don't drag this slice, each key slice has its z position locked in the atlas: `Distribute Spacing` won't affect the position of key slices.
-* Setting a few others slices precisely and setting them as key slices
+* Setting a few other slices precisely and setting them as key slices
 * Adjusting atlas slicing angles and checking all slices.
 * Using `distribute spacing` to evenly space slices between key slices.
 
@@ -168,7 +168,7 @@ The displayed slicing of the atlas does not affect the registration. Internally,
 
 After all slices are approximately positioned, you can zoom in into the atlas, reduce the displayed spacing, fine tune  the position of a few slices along the atlas and set these fine tuned slices as `key slices`.
 
-![Finding correspondance and key slice](/assets/gif/fiji_atlas_drag_then_key.gif)
+![Finding correspondence and key slice](/assets/gif/fiji_atlas_drag_then_key.gif)
 
 Once key slices are set, their positions along the axis remain locked when other slices are moved. You can still drag key slices manually if needed.
 
@@ -206,7 +206,7 @@ If adjustments are needed, you can return to positioning mode at any time.
 
 The `Atlas Slicing` card contains two sliders to adjust the slicing angles of the atlas:
 
-![Atlas slicing adjustement](/assets/gif/fiji_adjust_atlas_angle.gif)
+![Atlas slicing adjustment](/assets/gif/fiji_adjust_atlas_angle.gif)
 
 Use slices with easily identifiable features to set the slicing orientation. 
 
@@ -344,7 +344,7 @@ The following sequence demonstrates the registration of 80 sections, with the fo
 
 (real time ~ 10 min)
 
-It is possible (and advised) to perform several successive registration. You will usually start by an affine registration followed by one or two spline registrations. For 'difficult slices' where the automated registration result are bad, you can either start by a manual registration to facilitate a following automated registration, or, alternatively, you can directly edit the result of a spline transform, in order to improve it and even to add landmarks in regions in which you are more interested.
+It is possible (and advised) to perform several successive registrations. You will usually start by an affine registration followed by one or two spline registrations. For 'difficult slices' where the automated registration results are bad, you can either start by a manual registration to facilitate a following automated registration, or, alternatively, you can directly edit the result of a spline transform, in order to improve it and even to add landmarks in regions in which you are more interested.
 
 :::{warning}
 If your slice contains broken or missing regions, it can be challenging or even impossible to achieve a perfect registration. ABBA may not handle discontinuous deformations well.
@@ -378,7 +378,7 @@ If necessary, you can even repeat channels in the registration parameters. For e
 ![Affine elastix registration multi channel other](/assets/img/fiji_elastix_affine_registration_multichannel_other.png)
 
 A few extra options are available:
-* `Registration re-sampling (micrometers)` specified in micrometer, is the pixel size of the images that will be send to Elastix for the registration task. Check  `Show registration results as ImagePlus` to see how the resampled images look like.
+* `Registration re-sampling (micrometers)` specified in micrometer, is the pixel size of the images that will be sent to Elastix for the registration task. Check  `Show registration results as ImagePlus` to see how the resampled images look like.
 * `Show registration results as ImagePlus`, if checked, will display the raw data used for elastix registration
 * `Background offset value` this parameter is obsolete, thus not taken into account anymore.
 
@@ -459,16 +459,16 @@ This takes about 10 minutes for 50 slices on a laptop.
 
 At each step of the workflow, you can save the current state of your work (as long as no job is being processed).
 
-To save your project, you can click, in the top menu bar `File > Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file in fact a set of text files zipped together.
+To save your project, you can click, in the top menu bar `File > Save State (+View)`. An `.abba` extension will be automatically added to the filename. This abba file is in fact a set of text files zipped together.
 
 All files are text files, which are fast to save and rather small (in comparison to the images...). So do not hesitate to save multiple successive files all along your workflow. Consider your work done when you have obtained regions in QuPath, but the ABBA state file has less guarantee on the long term.
 
 To open a project where you left it, it is compulsory to close ABBA session and restart it. Once restarted, click in the top menu bar `File > Load State (+View)`, and select your previously saved `.abba` file.
 
-:::{info}
-You can also directly drag an drop a `.abba` project file into ABBA's viewer panel to open it.
+:::{tip}
+You can also directly drag and drop a `.abba` project file into ABBA's viewer panel to open it.
 :::
 
 :::{warning}
-If you move your image files, your QuPath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file path are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.
+If you move your image files, your QuPath project, or the other files associated to the state file, ABBA may not be able to find your images because absolute file paths are used. If you opened images from a QuPath project, fix URIs in QuPath first before reopening ABBA.
 :::

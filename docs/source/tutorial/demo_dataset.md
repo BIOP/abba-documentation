@@ -1,6 +1,6 @@
 # Demo dataset
 
-If you want to test ABBA, you can download one of the following dataset:
+If you want to test ABBA, you can download one of the following datasets:
 
 ## Dataset 1, provided by Lucie Dixsaut, [Johannes Gräff lab](https://www.epfl.ch/labs/graefflab/), EPFL
 One animal, 85 serial sections, 3 fluorescent channels (DAPI - nuclei, FITC - autofluorescence, mCherry - labelled sparse cells)
