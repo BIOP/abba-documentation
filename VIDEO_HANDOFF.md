@@ -107,6 +107,15 @@ A first preview render (fiji-auto-tuto `npm run preview-render`, 960 x 540 at 6 
 `F:\code\github\fiji-auto-tuto\out\abba-tutorial\preview.mp4`. Raw clips:
 `F:\code\github\fiji-auto-tuto\raw-assets\AbbaTutorialDemo\`.
 
+Determinism, two full runs compared: 10 of the 14 clips byte-identical, and `timeline.json` and
+`youtube-description.md` too. The others differ inside what follows real time: the timelapses of the save and of
+the two exports (ABBA's messages), and the Quick Search of the first chapter (its results come asynchronously: faint
+differences, invisible).
+
+**Privacy, before publishing**: Quick Search shows the location of the ABBA jar, here
+`/C:/Users/chiarutt/.m2/repository/...` (the Maven classpath of abba-doc-assets, with the user name), not what a Fiji
+user sees. To decide: run the generator on the jars of a Fiji installation, or hide the details of Quick Search.
+
 Open, for Nicolas: the narration (written from the pages, to be reviewed; no voice yet), the pace (fiji-auto-tuto
 adds reading freezes where the captions outlast the action), the size of the ABBA window in the frame (1600 x 1000
 in 1920 x 1080, at 1x), chapters of the 2022 video still missing (manual affine editor, BigWarp, region of
