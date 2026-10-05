@@ -45,9 +45,11 @@ On macOS, use `cmd` instead of `ctrl`.
 
 To register slices, you need to see them well: show the channels that matter for the registration and adjust their contrast.
 
-Slices are displayed with all their channels when they are imported. In the table of the `Slices Display` card, the header row acts on all the selected slices at once: toggle the visibility of each channel, and set its color and its minimum and maximum displayed values (pay attention to where you click in the column headers). Each row customizes the display of a single slice.
+Slices are displayed with all their channels when they are imported. In the table of the `Slices Display` card, the header row acts on all the selected slices at once. Each channel has two columns: a click on the header of the first one (`Ch_0`, `Ch_1`...) shows or hides the channel; a click on the header of the second one, untitled, whose cells show the display range in the color of the channel, opens a dialog to set its color and its minimum and maximum displayed values. To change a single slice, select it alone first.
 
 ![All slices selected, with only their channel 0 (DAPI) shown and its display range set to 0 - 1185: crossed eyes for the hidden channels, the range in the colored cells](/assets/abba/guide/select_display_slices/slices_table_display.png)
+
+![All slices selected: a click on the untitled header next to `Ch_0` opens the display settings of channel 0; the maximum is set to 600 and the color to magenta, for all the selected slices](/assets/abba/guide/select_display_slices/slices_display_settings.gif)
 
 {menuselection}`Slices --> Set Slices Display Range` sets the minimum and maximum displayed values of channels of all the selected slices at once.
 
