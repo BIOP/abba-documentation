@@ -66,3 +66,68 @@ My recommendation is painted: everything it needs exists or is close. Check firs
 
 The session `abba-documentation-54` built the pictures, the GIFs and the fiji-robot film classes, and is available for
 technical questions: message it.
+
+## Status (2026-10-05, evening): the raw assets, painted
+
+Decided with Nicolas: **painted** clips (no screen, no real mouse), covering the Getting started tutorial **and** the
+user guide topics it points to.
+
+* **fiji-robot** (branch `painted-video`, on top of `painted-motion`, 0.1.4-SNAPSHOT installed locally):
+  `Timeline.clock` (the film's time instead of the wall clock; `startedAt` left out, so two runs write the same
+  file) and `Timeline.recordingBounds`; public `Timeline.recordClick` / `recordDrag` / `recordKey`;
+  `StopMotion.onDesktop` (the window filmed whole on a desktop of the chroma-key color, under a drawn title bar, or
+  as printed with its native one for AWT windows), `cut` (the next clip), menu-bar cascades painted where they open,
+  combo-box lists painted next to their combo box as the film shows it, AWT windows shown in the film (an ImageJ
+  image); `VirtualPointer` records its gestures on the timeline, `chooseInMenuBar`, `chooseInCombo`, `wheel`,
+  `setKeyTarget`; `PaintedDialog` fills a SciJava dialog by its labels (the painted twin of `Harvester`);
+  `Film.writeMp4` lasts exactly the film. Tests: `PaintedVideoTest`.
+* **abba-doc-assets**: `AbbaVideo` (camera, clock, gestures on menus, dialogs, viewer, cards, file choosers) and
+  `GenerateTutorialVideo` (the chapters and their narration). Raw assets in
+  `target/video-assets/AbbaTutorialDemo/`: `NNN-<chapter>.mp4` (1920 x 1080, 30 fps, violet desktop),
+  `timeline.json` (v4), `youtube-description.md`. See its README, *The tutorial video*.
+* **fiji-auto-tuto**: the video `abba-tutorial` registered (`src/videos/registry.ts`); `npm run manifest abba-tutorial`
+  with `DEMO_ASSETS_DIR` reads the painted assets as they are (clicks, drags and keys from the timeline). Its
+  `CLAUDE.md` said timeline version 3: the build script reads version 4.
+* **What fiji-auto-tuto reads**: version 4 already; `x`/`y` divided by `recordingBounds.w`/`h` (the painted canvas
+  is `{0,0,1920,1080}`); `focus.*` events ignored; freeze detection works on painted clips (still frames are
+  identical, they are trimmed cleanly).
+
+The 14 chapters (8 min 20 s rendered, cards included): start ABBA (Fiji's search bar, Open Atlas, ABBA Start),
+the ABBA window (pan, zoom, Atlas Display card), open the demo slices, remove unwanted slices (table + right-click),
+select slices, adjust the display (table header, display settings dialog), check the orientation (review mode, zoom,
+Edit Selected Slices card), position by hand (drag, key slice, Distribute Spacing, undo), DeepSlice (and the Atlas
+Slicing card), Elastix affine and spline, review the registrations (P / N), save the state, export to QuPath, export
+to ImageJ (stack with the regions overlay).
+
+Commits (not pushed): fiji-robot `painted-video` (c1acefc), abba-doc-assets `main` (bde0b57), fiji-auto-tuto
+`abba-tutorial` (5d7a7ca), this repo `docs-0.24.1`. `run-all.sh` after the fiji-robot changes: every picture and
+GIF byte-identical, but the registration timelapse (real time).
+
+A first preview render (fiji-auto-tuto `npm run preview-render`, 960 x 540 at 6 fps):
+`F:\code\github\fiji-auto-tuto\out\abba-tutorial\preview.mp4`. Raw clips:
+`F:\code\github\fiji-auto-tuto\raw-assets\AbbaTutorialDemo\`.
+
+Open, for Nicolas: the narration (written from the pages, to be reviewed; no voice yet), the pace (fiji-auto-tuto
+adds reading freezes where the captions outlast the action), the size of the ABBA window in the frame (1600 x 1000
+in 1920 x 1080, at 1x), chapters of the 2022 video still missing (manual affine editor, BigWarp, region of
+interest, Remove Last Registration, exports to the ROI Manager).
+
+Gotchas met:
+
+* A class referring to `ij.*` must not be the `main` class: the verifier loads `ij.ImageJ` before
+  `LegacyInjector.preinit` patches it (`LinkageError: duplicate class definition`). The Fiji-window code is in
+  `AbbaVideo`.
+* Fiji focuses its search bar: its blinking caret keeps the window from ever being stable (`paintWhenStable` times
+  out). `AbbaVideo.steadyCarets`.
+* `Save State` and folder inputs open native `FileDialog`s, which can be neither painted nor filled:
+  `ij.Prefs.useJFileChooser = true` for the run makes them Swing file choosers (in the Windows look).
+* The menu items are clicked with `invokeLater` (an item opening a modal dialog must not block the film).
+* `-Ddoc.video.chapters=a,b` films only those chapters; the others run unfilmed (programmatically).
+
+Findings in ABBA 0.24.1 (proposals, nothing changed):
+
+* The dialog of the display settings (a click on a header of the slices table) is titled
+  `command:ch.epfl.biop.atlas.aligner.command.DisplaySettingsCommand`: `DisplaySettingsCommand` has no `label`.
+* Not a bug, a documentation fix: from the ABBA window menu, `DeepSlice Registration` presets the model from the atlas
+  (`BdvMultislicePositionerView`), so its dialog has no `DeepSlice model`; the tutorial said to choose it (fixed in
+  `first_registration.md` and `position_along_atlas.md`).

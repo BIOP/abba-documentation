@@ -37,7 +37,7 @@ Switch to review mode with `R`, and browse the slices with the left and right ar
 
 ## 5. Position the slices with DeepSlice
 
-Select all slices (`ctrl + A`) and click {menuselection}`Register --> DeepSlice --> DeepSlice Registration`. Choose the `mouse` model, the DAPI channel as `Slice channels`, keep `Adjust atlas slicing angle` checked and `Keep order` as post-processing, then click `OK`.
+Select all slices (`ctrl + A`) and click {menuselection}`Register --> DeepSlice --> DeepSlice Registration`. Choose the DAPI channel as `Slice channels`, keep `Adjust atlas slicing angle` checked and `Keep order` as post-processing, then click `OK`.
 
 The first time, ABBA installs DeepSlice, which takes a few minutes. DeepSlice then positions each slice along the atlas, adjusts the atlas slicing angles, and adds a first affine registration (see [Automated positioning with DeepSlice](#deepslice)).
 

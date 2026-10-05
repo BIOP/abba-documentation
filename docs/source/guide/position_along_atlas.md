@@ -94,7 +94,7 @@ To run DeepSlice, select the slices to register and click {menuselection}`Regist
 
 ![DeepSlice Registration dialog](/assets/dialogs/register-slices-deepslice-appose.png){.dialog}
 
-* `DeepSlice model`: `mouse` or `rat`, matching the atlas.
+* `DeepSlice model`: `mouse` or `rat`, matching the atlas. From the menu of the ABBA window, the model follows the atlas and the dialog does not ask for it.
 * `Slice channels`: the channels sent to DeepSlice, for instance `0` for a nuclear staining only, `0,2` for the first and third channels, or `*` for all channels. The selected channels are merged into an RGB image with their display settings.
 * `Adjust atlas slicing angle`: if checked, the atlas slicing angles are set to the median angle found by DeepSlice. Uncheck it to keep the current angles.
 * `Pixel size sent to DeepSlice`: the slices are downsampled to this pixel size before being sent.
