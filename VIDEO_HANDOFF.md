@@ -140,3 +140,25 @@ Findings in ABBA 0.24.1 (proposals, nothing changed):
 * Not a bug, a documentation fix: from the ABBA window menu, `DeepSlice Registration` presets the model from the atlas
   (`BdvMultislicePositionerView`), so its dialog has no `DeepSlice model`; the tutorial said to choose it (fixed in
   `first_registration.md` and `position_along_atlas.md`).
+
+## Status (2026-10-06): chapters, states, timing overhaul
+
+* **One folder and one timeline per chapter**, assembled at the end of every run
+  (`target/video-assets/chapters/<chapter>/`, then `AbbaTutorialDemo/`). The session is saved before each chapter
+  (`states/<chapter>.abba`): `-Ddoc.video.chapters=<chapter>` films that chapter alone from its state, in two to
+  three minutes, and the assembled video gets the new chapter. A state keeps no display settings and no card
+  layout: the run applies the display of the video again, and every chapter starts with the cards as ABBA opens them.
+* **Timing bugs found and fixed**: (1) the clip of every step after the first started a whole clip late on the
+  timeline's clock, so every event and narration line of the chapters after the first was clamped to 0 (all the
+  clicks at the very beginning); (2) `ScreenRecorder.start` arms fiji-robot's `EventRecorder` even when recording is
+  off, and it recorded every synthetic gesture a second time, at screen coordinates, and the real keyboard too: the
+  pointer's events are now hidden from it, and the video turns it off.
+* **Pacing overhaul**: fiji-auto-tuto was made for screen recordings: it cut every still stretch longer than 2 s
+  and froze the picture at the start of every narration line for its whole reading time, then played the action.
+  The painted video now paces itself (a narration line lasts at least its reading time, the last frame of its
+  action held if needed), and fiji-auto-tuto takes its clips as they are (`paced: true` in its registry). The video
+  went from 8 min 20 s to 6 min 28 s.
+* **Checks**: every event inside its clip and its frame, none duplicated (`check-timeline`), and the drawn pointer
+  where the timeline says at the time it says, for all 80 events (`check-sync`; with the times shifted by 3 s, 36
+  fail). Clicks on what the film does not show now throw (a card scrolled out of the panel, a table row below the
+  window): two such clicks had gone unnoticed.
