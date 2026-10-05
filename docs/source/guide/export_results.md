@@ -97,7 +97,7 @@ A periodic LUT is applied to each channel, which makes the warping easy to see. 
 
 ![Export Regions To File dialog](/assets/dialogs/export-regions-to-roiset-file.png){.dialog}
 
-![A demo slice (original image, DAPI) with the regions exported to the ROI Manager, drawn in their atlas colors: the finest regions only, as the larger ones contain them](/assets/abba/guide/export_results/regions_roi_manager.png)
+![A demo slice (original image, DAPI) with the regions exported to the ROI Manager, drawn in their atlas colors](/assets/abba/guide/export_results/regions_roi_manager.png)
 
 ## Export to BigDataViewer
 

@@ -174,7 +174,7 @@ fiji-robot on its branch `painted-pictures` (0.1.4-SNAPSHOT, installed locally; 
 * **Open question for the maintainer**: the size and scale of the whole-window pictures (1600 x 1000, painted at
   1x). Cards and menus are painted at 1x: Swing text painted bigger than its layout gets cut.
 * **Findings in ABBA 0.24.1** (proposals, nothing changed): the regions overlay of `Export Registered Slices To
-  ImageJ` is drawn by ImageJ as horizontal stripes (the picture leaves it out); a manual registration whose editor is
+  ImageJ` is drawn by ImageJ as horizontal stripes (the picture leaves it out; a JDK bug, see below); a manual registration whose editor is
   open shows as waiting (red), not running (yellow); the manual affine editor shows a `100 undefined` scale bar;
   after deleting the current slice, the `Slices Display` card still names it.
 
@@ -198,7 +198,10 @@ branch `painted-motion`, on top of `painted-pictures`):
   five 0.11 GIFs are deleted; no `TODO GIF phase` is left.
 * **Not done**: the tutorial video (fiji-auto-tuto, visible launchers through the menu bar of the ABBA window), and
   MP4 instead of GIF in the pages (`Film.writeMp4` exists; Sphinx would need a video extension).
-* **Finding in ABBA 0.24.1**: the regions exported to the ROI Manager are made of horizontal bands. A parent region
-  (`grey`: 1030 sub-paths) shows as stripes over its whole extent, and the finest regions show seams at regular
-  intervals. This is probably also what makes the stripes of the regions overlay of `Export Registered Slices To ImageJ`.
-  `regions_roi_manager.png` draws only the finest regions, its seams visible.
+* **Not an ABBA bug, a JDK one**: the regions exported to the ROI Manager came out in horizontal bands (parent
+  regions striped, seams in the others), and so did the regions overlay of `Export Registered Slices To ImageJ`.
+  The cause is `java.awt.geom.Area` in OpenJDK 21.0.11 to 21.0.13 (JDK-8386576, fixed in 21.0.14), through which
+  `CompositeFloatPoly.getRoi()` (ijl-utilities-wrappers) builds every region; found by a session in
+  ijp-imagetoatlas. The generators now run on the Java bundled with Fiji (Zulu 21.0.7), and the picture shows all
+  the regions. Proposal for ABBA users on those JDKs: build the region as one even-odd path instead of through
+  `Area`.

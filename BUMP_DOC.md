@@ -94,6 +94,8 @@ git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<
 * Without a change in ABBA, a rerun writes byte-identical pictures: `git status` lists exactly the pictures the
   new release changes. Look at each of them, and at the framing of the views.
 * `.abba` states of the key steps are saved in `../abba-doc-assets/target/states/`.
+* The generators run on the Java bundled with Fiji, the one users run (`FIJI_DIR`, or `DOC_JAVA_HOME`). Not on a JDK
+  21.0.11 to 21.0.13: their `java.awt.geom.Area` cuts the atlas regions into horizontal bands (JDK-8386576).
 * The GIFs of the pages (`<page>/*.gif`) are filmed by the `Generate<Page>Films` generators, also run by
   `run-all.sh` (ffmpeg on the `PATH`): synthetic mouse events, frames painted, no screen recording. They are
   byte-identical from run to run, except the timelapse of the registrations (`registration_progress.gif`).
