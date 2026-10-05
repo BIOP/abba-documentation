@@ -177,3 +177,28 @@ fiji-robot on its branch `painted-pictures` (0.1.4-SNAPSHOT, installed locally; 
   ImageJ` is drawn by ImageJ as horizontal stripes (the picture leaves it out); a manual registration whose editor is
   open shows as waiting (red), not running (yellow); the manual affine editor shows a `100 undefined` scale bar;
   after deleting the current slice, the `Slices Display` card still names it.
+
+## Status (2026-10-05, afternoon): phase 2 started, the GIFs of the guide
+
+The motion is filmed without the real mouse or the screen, so it runs over remote desktop like phase 1 (fiji-robot
+branch `painted-motion`, on top of `painted-pictures`):
+
+* **fiji-robot**: `widgets.VirtualPointer` sends synthetic mouse events to one component, and key events to its key
+  listeners (and to BigDataViewer's global key dispatcher, `BdvViewer.keyEventDispatcher`, which tracks shift and
+  the keys of `ctrl A`); it picks items of a context menu. `widgets.StopMotion` paints a region frame by frame,
+  draws the pointer, a ring while a button is pressed, the keys held and the popup menu open. `widgets.Film`
+  encodes the frames with ffmpeg into a GIF (one palette) or an MP4.
+* **abba-doc-assets**: `AbbaFilm` (a film of the viewer; rectangle selection, drag along the axis, timelapse) and
+  three generators: `GenerateSelectDisplaySlicesFilms`, `GeneratePositionAlongAtlasFilms`,
+  `GenerateInplaneRegistrationFilms`. `run-all.sh` runs them after the pictures.
+* **In the pages**: `select_slices.gif` (rectangle, shift, ctrl, ctrl + A), `slices_drag.gif`,
+  `atlas_drag_then_key.gif` (adjust a slice, right-click, `Set as Key Slice(s)`), `registration_progress.gif` (Elastix
+  affine and spline on the 12 demo slices, timelapse). The ROI Manager GIF became a still picture,
+  `regions_roi_manager.png` (the regions drawn over the original slice; the ROI Manager itself is an AWT window). The
+  five 0.11 GIFs are deleted; no `TODO GIF phase` is left.
+* **Not done**: the tutorial video (fiji-auto-tuto, visible launchers through the menu bar of the ABBA window), and
+  MP4 instead of GIF in the pages (`Film.writeMp4` exists; Sphinx would need a video extension).
+* **Finding in ABBA 0.24.1**: the regions exported to the ROI Manager are made of horizontal bands. A parent region
+  (`grey`: 1030 sub-paths) shows as stripes over its whole extent, and the finest regions show seams at regular
+  intervals. This is probably also what makes the stripes of the regions overlay of `Export Registered Slices To ImageJ`.
+  `regions_roi_manager.png` draws only the finest regions, its seams visible.

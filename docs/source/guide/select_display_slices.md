@@ -20,9 +20,9 @@ Draw rectangles around slice handles to select them. Modifier keys add or remove
 Press the modifier keys before drawing the rectangle, or they won't take effect.
 :::
 
-Here is a demonstration of adding slices with `shift + rectangle`, removing slices with `ctrl + rectangle`, and selecting all slices with `ctrl + A`.
+Here is a demonstration on the demo slices: a rectangle selects three slices, `shift + rectangle` adds three others, `ctrl + rectangle` removes one, and `ctrl + A` selects all slices.
 
-![Selecting slices in the viewer](/assets/gif/fiji_select_slices.gif)
+![Selecting slices with rectangles in positioning mode: selected slices are green, the others yellow](/assets/abba/guide/select_display_slices/select_slices.gif)
 
 ### The slice table
 
@@ -40,8 +40,6 @@ Additional shortcuts:
 On macOS, use `cmd` instead of `ctrl`.
 
 {menuselection}`Slices --> Select Slices` and {menuselection}`Slices --> Deselect Slices` select or deselect slices by their index.
-
-<!-- TODO GIF phase: re-record the rectangle selection GIF with ABBA 0.24.1 and the demo slices. -->
 
 ## Display slices
 

@@ -15,9 +15,9 @@ All manual positioning is done in positioning mode, where the slices are display
 
 ### Drag selected slices
 
-If your slices are not sorted correctly along the atlas, select the slices that are out of place and drag their handles along the axis. You can create gaps between slices to make room for others.
+If your slices are not sorted correctly along the atlas, select the slices that are out of place and drag them along the axis by the small square of one of them, on the line below the atlas: all the selected slices move together. You can create gaps between slices to make room for others.
 
-![Drag slices along axis](/assets/gif/fiji_slices_drag.gif)
+![The last slices selected, then dragged along the axis by their squares: twice, leaving gaps](/assets/abba/guide/position_along_atlas/slices_drag.gif)
 
 ### Distribute spacing between selected slices
 
@@ -45,7 +45,7 @@ A recommended workflow to position slices along the atlas is:
 The displayed slicing of the atlas does not affect the registration. Internally, slices are positioned with a precision of 10 micrometers, the highest resolution of the atlas.
 :::
 
-![Finding correspondence and key slice](/assets/gif/fiji_atlas_drag_then_key.gif)
+![A slice selected alone and adjusted along the axis, then set as key slice with a right-click: its handle grows, and a magenta square marks its position](/assets/abba/guide/position_along_atlas/atlas_drag_then_key.gif)
 
 Key slices keep their position along the axis when other slices are dragged or distributed: the slices between two key slices are stretched along the axis while keeping their spacing ratio. You can still drag a key slice itself if you need to move it. Two or three key slices, usually the ones with the most recognizable features, are typically enough.
 
@@ -68,8 +68,6 @@ Use slices with easily identifiable features to set the slicing angles.
 :::{note}
 The atlas slicing angles are the same for all sections: you can tilt the atlas, but you cannot "bend" it.
 :::
-
-<!-- TODO GIF phase: re-record dragging slices and setting a key slice with ABBA 0.24.1 and the demo slices. -->
 
 (deepslice)=
 ## Automated positioning with DeepSlice

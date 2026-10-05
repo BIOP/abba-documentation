@@ -97,9 +97,7 @@ A periodic LUT is applied to each channel, which makes the warping easy to see. 
 
 ![Export Regions To File dialog](/assets/dialogs/export-regions-to-roiset-file.png){.dialog}
 
-![Exporting regions to the ROI Manager](/assets/gif/fiji_export_ij1_roi_manager.gif)
-
-<!-- TODO GIF phase: re-record with ABBA 0.24.1 (the ROI Manager is an AWT window, which abba-doc-assets does not paint). -->
+![A demo slice (original image, DAPI) with the regions exported to the ROI Manager, drawn in their atlas colors: the finest regions only, as the larger ones contain them](/assets/abba/guide/export_results/regions_roi_manager.png)
 
 ## Export to BigDataViewer
 

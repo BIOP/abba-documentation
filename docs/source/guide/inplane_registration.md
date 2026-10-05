@@ -28,15 +28,11 @@ When a registration starts on a slice, an indicator appears below its handle. It
 
 ABBA runs several registrations in parallel, from 4 to 128 at once depending on your computer. You can monitor the memory and CPU usage with {menuselection}`View --> Cards --> Add Resources Monitor`.
 
-The following sequence shows the registration of 80 sections, with these automated steps for each slice:
+The following sequence shows the twelve demo slices, positioned by DeepSlice (the first marker, done), when an Elastix affine registration and then an Elastix spline registration are started on all of them: the markers of both registrations appear at once, waiting, then each one runs and is done in turn.
 
-* affine registration (DAPI vs. Nissl);
-* spline registration (16 control points, DAPI vs. Nissl);
-* spline registration (16 control points, autofluorescence vs. autofluorescence).
+![The slice handles in review mode, with the markers of the registrations of each slice, from waiting to running to done](/assets/abba/guide/inplane_registration/registration_progress.gif)
 
-![Multi slice registration sequence](/assets/gif/fiji_progression_registration.gif)
-
-(real time ~ 10 min)
+(sped up 5 times: about 30 seconds of real time)
 
 Registrations add up: you usually start with an affine registration, followed by one or two spline registrations. Here is the top right quarter of a demo slice, with the borders of the atlas regions only, after DeepSlice, after an Elastix affine registration, and after an Elastix spline registration:
 

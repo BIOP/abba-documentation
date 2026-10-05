@@ -85,7 +85,7 @@ one generator per page runs the demo registration in a real Fiji and paints the 
 cd ../abba-doc-assets
 # pom.xml: abba.version to <NEW>, and the version overrides copied again from ABBA's own pom:
 git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<\/properties>/p'
-./run-all.sh                    # every generator, about 25 minutes; see its README for one page at a time
+./run-all.sh                    # every generator, about 40 minutes; see its README for one page at a time
 ```
 
 * A Fiji and the ABBA window open on screen while a generator runs: leave them, nothing depends on the mouse,
@@ -94,6 +94,9 @@ git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<
 * Without a change in ABBA, a rerun writes byte-identical pictures: `git status` lists exactly the pictures the
   new release changes. Look at each of them, and at the framing of the views.
 * `.abba` states of the key steps are saved in `../abba-doc-assets/target/states/`.
+* The GIFs of the pages (`<page>/*.gif`) are filmed by the `Generate<Page>Films` generators, also run by
+  `run-all.sh` (ffmpeg on the `PATH`): synthetic mouse events, frames painted, no screen recording. They are
+  byte-identical from run to run, except the timelapse of the registrations (`registration_progress.gif`).
 
 ## 5. Update the pages
 
