@@ -175,3 +175,20 @@ Findings in ABBA 0.24.1 (proposals, nothing changed):
   the display chapter shows what it fixes; slices are clicked by their name in the table; the selection chapter
   recalls the table; the orientation chapter clicks both rotations, undoes them, and names
   `View > Display Mode > Positioning Mode`.
+
+## Status (2026-10-06, evening): dark, titled, the second list of remarks
+
+* FlatLaf Dark for the video (`-Ddoc.laf`, light for the pictures); chapter cards with a title and a line saying
+  what the chapter teaches (`title` of the steps of `timeline.json`, read by fiji-auto-tuto). Fiji's main window
+  and the ImageJ windows stay light: AWT windows drawn by Windows.
+* fiji-auto-tuto's quick preview had not re-timed the drags and keys to its fps (none showed); a drag's release
+  (`endMs`) is recorded, its highlight follows it.
+* Captions: fiji-auto-tuto pages a line of more than 20 words over its whole duration, its end shown after its
+  action. One short line per action, just before it (`scripts/check-video-narration.js` in abba-doc-assets).
+* Real mouse and keyboard events are dropped while filming (`VirtualPointer.blockRealInput`): a menu opening
+  under the real pointer, resting there, selected an item of its own (the DeepSlice menu glitch).
+* The video departs from the Getting started page on two settings, at Nicolas's request: DeepSlice with
+  `Keep order + ensure regular spacing`, Elastix with atlas channels 0,1 against slice channels 0,1. To align the
+  page (and its pictures, `Tutorial.elastix`) if wanted.
+* The ImageJ export chapter is dropped: the end of the QuPath chapter shows the Export menu and names the others.
+* Open: the path of the ABBA jar shown by Quick Search (privacy), see above.
