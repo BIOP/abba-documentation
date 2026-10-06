@@ -162,3 +162,16 @@ Findings in ABBA 0.24.1 (proposals, nothing changed):
   where the timeline says at the time it says, for all 80 events (`check-sync`; with the times shifted by 3 s, 36
   fail). Clicks on what the film does not show now throw (a card scrolled out of the panel, a table row below the
   window): two such clicks had gone unnoticed.
+
+## Status (2026-10-06, morning): Nicolas's first remarks
+
+* The orange click ripple and the drag arrow of fiji-auto-tuto came 0.65 s after their event
+  (`CLICK_HIGHLIGHT_OFFSET_SECONDS`, for screen recordings): a paced video writes `highlightOffsetSeconds: 0` in its
+  manifest. Right-button drags are tagged `meta`, as fiji-auto-tuto reads them ("Right").
+* Read before acting: the first action after a narration line waits until the line is read (1.5 s and a third of
+  a second per word), and each action is followed by a beat (`VirtualPointer.setActionHooks`). The video went from
+  6 min 28 s to 11 min 17 s.
+* The slices are imported saturated (DAPI up to 256, set as each slice is created, never shown otherwise), so that
+  the display chapter shows what it fixes; slices are clicked by their name in the table; the selection chapter
+  recalls the table; the orientation chapter clicks both rotations, undoes them, and names
+  `View > Display Mode > Positioning Mode`.
