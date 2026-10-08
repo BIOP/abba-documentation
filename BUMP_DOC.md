@@ -100,6 +100,26 @@ git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<
   `run-all.sh` (ffmpeg on the `PATH`): synthetic mouse events, frames painted, no screen recording. They are
   byte-identical from run to run, except the timelapse of the registrations (`registration_progress.gif`).
 
+### The tutorial video
+
+The video (`resources/video_tuto.md` links to it) is filmed by abba-doc-assets too, then rendered by
+fiji-auto-tuto (`../fiji-auto-tuto`, video `abba-tutorial`):
+
+```bash
+cd ../abba-doc-assets
+./run.sh GenerateTutorialVideo   # all chapters, long: DeepSlice and Elastix run in real time
+# one chapter, from the state saved before it: -Ddoc.video.chapters=<slug>; see its README
+rm -rf ../fiji-auto-tuto/raw-assets/AbbaTutorialDemo
+cp -r target/video-assets/AbbaTutorialDemo ../fiji-auto-tuto/raw-assets/
+cd ../fiji-auto-tuto
+npm run manifest abba-tutorial
+npm run preview-render -- abba-tutorial-preview out/abba-tutorial/preview.mp4   # quick check, about 15 minutes
+npx remotion render abba-tutorial out/abba-tutorial/abba-tutorial.mp4           # final, 1 to 1.5 hours
+```
+
+Upload it with `out/abba-tutorial/youtube-description.md` (its chapters), then update the links and times of
+`resources/video_tuto.md` and `guide/inplane_registration.md`.
+
 ## 5. Update the pages
 
 * User guide: `docs/source/guide/`, task oriented, GUI first. Link to commands with their menu path,
@@ -108,8 +128,7 @@ git -C $ABBA show ImageToAtlasRegister-<NEW>:pom.xml | sed -n '/<properties>/,/<
 * Dialog images are referenced as `![<title> dialog](/assets/dialogs/<slug>.png){.dialog}`: for the
   `.dialog` class, `conf.py` sets the display width of these 2x images from their PNG size, and the theme
   shrinks the widest ones to the text column.
-* Pictures of the ABBA window: add them to a generator of abba-doc-assets (section 4). Motion (GIFs,
-  videos) is not generated yet: mark outdated ones with `<!-- TODO GIF phase: ... -->`.
+* Pictures and GIFs of the ABBA window: add them to a generator of abba-doc-assets (section 4).
 
 ## 6. Version, build, publish
 

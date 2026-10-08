@@ -28,7 +28,8 @@ may come later.
 
 Follow [BUMP_DOC.md](BUMP_DOC.md).
 
-Pictures of the ABBA window (not the dialogs): see [ASSETS_HANDOFF.md](ASSETS_HANDOFF.md), the plan for generating them from Java.
+Pictures and GIFs of the ABBA window (not the dialogs), and the tutorial video, are generated from Java by the
+sibling repository abba-doc-assets: see sections 4 and 5 of [BUMP_DOC.md](BUMP_DOC.md).
 
 ## Build
 
