@@ -25,7 +25,7 @@ The sections of the slide appear below the atlas, selected. The slide label and 
 
 ## 3. Adjust the display
 
-In the `Slices Display` card, select all slices (`ctrl + A`), then use the header row of the table to show the nuclear (DAPI) channel and adjust its minimum and maximum displayed values: the tissue should be clearly visible, but not saturated (see [Display slices](../guide/select_display_slices.md#display-slices)). This matters for DeepSlice, which works on the displayed images.
+In the `Slices Display` card, select all slices (`ctrl + A`), then use the header row of the table to show the nuclear (DAPI) channel and adjust its minimum and maximum displayed values: the tissue should be clearly visible, but not saturated (see [Display slices](../guide/select_display_slices.md#display-slices)). This matters for DeepSlice, which receives the channels with their display settings: color, minimum and maximum.
 
 ![The 12 sections, all selected, with only their DAPI channel displayed](/assets/abba/getting_started/first_registration/03_display_adjusted.png)
 
@@ -37,26 +37,34 @@ Switch to review mode with `R`, and browse the slices with the left and right ar
 
 ## 5. Position the slices with DeepSlice
 
-Select all slices (`ctrl + A`) and click {menuselection}`Register --> DeepSlice --> DeepSlice Registration`. Choose the DAPI channel as `Slice channels`, keep `Adjust atlas slicing angle` checked and `Keep order` as post-processing, then click `OK`.
+Select all slices (`ctrl + A`) and click {menuselection}`Register --> DeepSlice --> DeepSlice Registration`:
+
+* keep the `mouse` model, for this mouse atlas;
+* set `Slice channels` to `0,1`: the DAPI channel, and channel 1, mostly autofluorescence, which outlines the sections well;
+* keep `Adjust atlas slicing angle` checked;
+* choose `Keep order + ensure regular spacing` as `Position post-processing`: the sections of the slide were cut at a regular interval, a prior knowledge DeepSlice can use;
+* click `OK`.
 
 The first time, ABBA installs DeepSlice, which takes a few minutes. DeepSlice then positions each slice along the atlas, adjusts the atlas slicing angles, and adds a first affine registration (see [Automated positioning with DeepSlice](#deepslice)).
 
-![After DeepSlice, positioning mode: the sections are spread along the atlas, an R marker under each handle](/assets/abba/getting_started/first_registration/05_after_deepslice.png)
+Run DeepSlice a second time, with the same settings: the second run refines the result a bit more.
+
+![After the two DeepSlice runs, positioning mode: the sections are evenly spaced along the atlas, a marker under each handle for each run](/assets/abba/getting_started/first_registration/05_after_deepslice.png)
 
 Check the result in review mode. If a slice is badly positioned, drag it in positioning mode, or correct the atlas slicing angles in the `Atlas Slicing` card (see [Manual positioning](../guide/position_along_atlas.md#manual-positioning)).
 
-![After DeepSlice, review mode: the same section over the atlas section at its new position](/assets/abba/getting_started/first_registration/05_review_after_deepslice.png)
+![After the two DeepSlice runs, review mode: the same section over the atlas section at its new position](/assets/abba/getting_started/first_registration/05_review_after_deepslice.png)
 
 ## 6. Register the slices in plane
 
 With all slices selected:
 
-1. Click {menuselection}`Register --> Affine --> Elastix Registration (Affine)`. Set `Atlas channels` to `0` (the atlas Nissl staining) and `Slice channels` to the DAPI channel, keep the registration pixel size to 40 micrometers, and click `OK`.
-2. Click {menuselection}`Register --> Spline --> Elastix Registration (Spline)`, with the same channels, 10 control points and a 20 micrometers pixel size.
+1. Click {menuselection}`Register --> Affine --> Elastix Registration (Affine)`. Set `Atlas channels` to `0,1` and `Slice channels` to `0,1`: the channels are paired in order. Channel 0 pairs the Nissl staining of the atlas with DAPI, which look alike; channel 1 pairs their autofluorescence. Using both pairs improves the registration. Keep the registration pixel size to 40 micrometers, fast and enough for an affine registration, and click `OK`.
+2. Click {menuselection}`Register --> Spline --> Elastix Registration (Spline)`, with the same channels, 10 control points along X and a 20 micrometers pixel size, finer, for the local deformations. The number of control points along Y follows the aspect ratio of the region of interest: about 100 control points in all.
 
 The indicators below the slice handles turn green when the registrations are done (see [Refine the in-plane registration](../guide/inplane_registration.md)). The first registration takes a moment longer, while ABBA installs elastix.
 
-![The slice handles, in review mode: under each one, three green markers for its three registrations, DeepSlice, Elastix affine and Elastix spline, all done](/assets/abba/getting_started/first_registration/06_registration_markers.png){.dialog}
+![The slice handles, in review mode: under each one, four green markers for its four registrations, the two DeepSlice runs, Elastix affine and Elastix spline, all done](/assets/abba/getting_started/first_registration/06_registration_markers.png){.dialog}
 
 Check the result in review mode: press `P` and `N` to step back and forth through the registrations of the slices. A registration that went wrong can be removed with {menuselection}`Register --> Remove Last Registration`, or edited by hand with {menuselection}`Register --> Edit Last Registration`.
 
