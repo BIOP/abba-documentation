@@ -8,9 +8,8 @@ https://abba-documentation.readthedocs.io. Readers are bio-image analysts using 
 
 Currently documented release: see `release` in `docs/source/conf.py`.
 
-Not covered for now, on purpose: abba_python, the ABBA MCP server (abba-fiji), and the installation
-procedure (`installation/installation.md` carries an "in progress" note). Write GUI first; scripting tabs
-may come later.
+Not covered for now, on purpose: abba_python, and the ABBA MCP server (abba-fiji), which is underway:
+`installation/installation.md` only announces it. Write GUI first; scripting tabs may come later.
 
 ## Layout
 
