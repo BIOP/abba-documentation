@@ -1,14 +1,39 @@
-# Video lecture
+# Video tutorial
+
+## ABBA 0.24.1
+
+[Watch the video tutorial](https://mediaserver.unige.ch/play/313121) on the media server of the University of Geneva (22 minutes, captions, no voice-over).
+
+It follows the [Getting started tutorial](../getting_started/first_registration.md) on the demo slides, with ABBA 0.24.1, the version this documentation describes: from starting ABBA to the export to QuPath. Two chapters go further: editing a registration with BigWarp, and positioning all the slices by hand, for when DeepSlice cannot.
+
+| Chapter | In the user guide |
+|---|---|
+| [0:00 Introduction](https://mediaserver.unige.ch/play/313121/0) |  |
+| [0:14 Start ABBA](https://mediaserver.unige.ch/play/313121/14) | [Start ABBA](../guide/start_and_import.md#start-abba) |
+| [1:47 The ABBA Window](https://mediaserver.unige.ch/play/313121/107) | [The ABBA window](../guide/abba_window.md) |
+| [3:25 Open the Demo Slices](https://mediaserver.unige.ch/play/313121/205) | [Open demo slices](../guide/start_and_import.md#open-demo-slices) |
+| [3:59 Remove Unwanted Slices](https://mediaserver.unige.ch/play/313121/239) | [Remove unwanted slices](../guide/select_display_slices.md#remove-unwanted-slices) |
+| [4:39 Select Slices](https://mediaserver.unige.ch/play/313121/279) | [Select slices](../guide/select_display_slices.md#select-slices) |
+| [5:24 Adjust the Display](https://mediaserver.unige.ch/play/313121/324) | [Display slices](../guide/select_display_slices.md#display-slices) |
+| [6:28 Check the Orientation](https://mediaserver.unige.ch/play/313121/388) | [Orient slices](../guide/orient_slices.md) |
+| [8:14 Position Slices by Hand](https://mediaserver.unige.ch/play/313121/494) | [Manual positioning](../guide/position_along_atlas.md#manual-positioning) |
+| [9:26 Position Slices with DeepSlice](https://mediaserver.unige.ch/play/313121/566) | [Automated positioning with DeepSlice](#deepslice) |
+| [11:11 Register in Plane with Elastix](https://mediaserver.unige.ch/play/313121/671) | [Affine](../guide/inplane_registration.md#affine-registration-automated) and [spline](../guide/inplane_registration.md#spline-registration-automated) registrations |
+| [12:32 Review the Registrations](https://mediaserver.unige.ch/play/313121/752) | [Browse registration steps](../guide/inplane_registration.md#browse-registration-steps) |
+| [13:33 Edit a Registration with BigWarp](https://mediaserver.unige.ch/play/313121/813) | [Edit a registration](../guide/inplane_registration.md#edit-a-registration) |
+| [16:00 Save Your Work](https://mediaserver.unige.ch/play/313121/960) | [Save, load and share your work](../guide/save_load_share.md) |
+| [16:26 Export to QuPath](https://mediaserver.unige.ch/play/313121/986) | [Export to QuPath](../guide/export_results.md#export-to-qupath) |
+| [17:20 Extra: Position the Slices by Hand](https://mediaserver.unige.ch/play/313121/1040) | [Key slices](../guide/position_along_atlas.md#key-slices) and [atlas slicing angles](../guide/position_along_atlas.md#correct-the-atlas-slicing-angles) |
+| [22:02 Resources & wrap-up](https://mediaserver.unige.ch/play/313121/1322) |  |
+
+## Video lecture (March 2022)
 
 :::{warning}
 This video was recorded in March 2022, with an early version of ABBA. The workflow is the same, but many menus and dialogs have changed since then: rely on the [user guide](../guide/prepare_qupath_project.md) for the details.
 :::
 
-## Youtube
-
-A video tutorial is nice to see ABBA in action, and to check the little details which may have been missed in other documentation forms. However, be aware that, while not very different, the version presented in the video tutorial is not up-to-date with this documentation.
-
-Also, there's no information about DeepSlice neither QuPath post-processing in the video. Here are some links with timestamps:
+Longer and narrated, it also shows the QuPath side of the workflow: defining the dataset in QuPath, and importing the results back. It has no DeepSlice.
+### YouTube
 
 [Youtube video tutorial (March 2022)](https://www.youtube.com/watch?v=sERGONVw4zE).
 
@@ -50,7 +75,7 @@ Also, there's no information about DeepSlice neither QuPath post-processing in t
 - [42:14 How to correct a registration result with BigWarp](https://youtu.be/sERGONVw4zE?t=2534s)
 - [46:42 Conclusion](https://youtu.be/sERGONVw4zE?t=2802s)
 
-## Mediaspace - video without ads
+### EPFL Mediaspace, without ads
 
 A copy of this video is available in https://mediaspace.epfl.ch
 

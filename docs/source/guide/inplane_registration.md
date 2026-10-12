@@ -109,7 +109,7 @@ If many slices are selected, the registration of each slice opens for editing, o
 
 ![Edit Last Registration on an Elastix spline registration: the two BigWarp windows, the moving slice (left) and the atlas (right), with the landmarks of the registration in magenta](/assets/abba/guide/inplane_registration/bigwarp_edit.png)
 
-You can check the [BigWarp documentation](https://imagej.net/plugins/bigwarp), or the [relevant part of the video tutorial](https://youtu.be/sERGONVw4zE?t=2534s), for more information about its interface. After editing a registration, export it again (to QuPath for instance) to update the results.
+You can check the [BigWarp documentation](https://imagej.net/plugins/bigwarp), or the [BigWarp chapter of the video tutorial](https://mediaserver.unige.ch/play/313121/813), for more information about its interface. After editing a registration, export it again (to QuPath for instance) to update the results.
 
 ## Remove a registration
 

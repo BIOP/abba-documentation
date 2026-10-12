@@ -4,6 +4,10 @@ This tutorial registers demo mouse brain sections to the Allen Brain atlas, from
 
 You need Fiji with ABBA installed (see [Installation](../installation/installation.md)), an internet connection, a mouse, and about 2 GB of free disk space.
 
+:::{tip}
+Prefer to watch first? The [video tutorial](../resources/video_tuto.md) follows these steps on the same demo slides.
+:::
+
 ## 1. Start ABBA
 
 In Fiji, type `ABBA Start` in the search bar and press `Enter`.
