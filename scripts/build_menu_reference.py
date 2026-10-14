@@ -30,6 +30,25 @@ NO_WIDGET_TYPES = {"MultiSlicePositioner", "BdvMultislicePositionerView", "Image
 # Top-level menus whose entries are not documented: replaced by newer commands.
 SKIPPED_PREFIXES = ("Edit>Obsolete>",)
 
+# Phrases of the command descriptions meant for scripts and agents, removed from the page: they
+# point to 'ABBA - Wait', which is not in the menus of the ABBA window. A mention left over fails the build.
+SCRIPTING_PHRASES = [
+    ", after the command returns - follow it with 'ABBA - Wait'",  # DeepSlice
+    " Only queues the registrations: follow with 'ABBA - Wait'.",  # Elastix affine and spline
+]
+SCRIPTING_ONLY = "ABBA - Wait"
+
+
+def without_scripting_phrases(text, where):
+    if not text:
+        return text
+    for phrase in SCRIPTING_PHRASES:
+        text = text.replace(phrase, "")
+    if SCRIPTING_ONLY in text:
+        sys.exit(f"{where}: '{SCRIPTING_ONLY}' in a description, add the phrase to SCRIPTING_PHRASES:\n{text}")
+    return text
+
+
 # Menu entries that are plain actions, not SciJava commands: they have no dialog and no
 # description in the snapshot, so they are described here.
 ACTIONS = {
@@ -227,6 +246,7 @@ class Builder:
             pm = re.search(r"@Plugin\s*\(", source)
             if pm:
                 description = string_attr(annotation_args(source, pm.end() - 1)[0], "description")
+        description = without_scripting_phrases(description, simple_name)
         by_name = {i["name"]: i for i in snap.get("input", [])} if snap else {}
         params = []
         for p in declared:  # declaration order = dialog order
@@ -239,6 +259,8 @@ class Builder:
         for s in by_name.values():  # inherited parameters, not in this file
             if s["type"] not in NO_WIDGET_TYPES:
                 params.append(s)
+        for p in params:
+            p["description"] = without_scripting_phrases(p.get("description"), f"{simple_name}.{p['name']}")
         return fqn, description, params
 
     def emit_entry(self, path, cls, depth):

@@ -24,6 +24,8 @@ When a registration starts on a slice, an indicator appears below its handle. It
 - yellow: registration in progress;
 - green: registration done.
 
+If a registration fails, its indicator disappears and an error message tells which registration failed, on which slice, and why. The actions queued after it on the same slice are not started, and are reported too.
+
 ![The slice handles in review mode, each with its markers: all the slices have their DeepSlice and Elastix affine registrations done (green), except 10x_06, whose manual registration is open in the editor, and whose Elastix affine registration waits behind it (light red)](/assets/abba/guide/inplane_registration/registration_status.png)
 
 ABBA runs several registrations in parallel, from 4 to 128 at once depending on your computer. You can monitor the memory and CPU usage with {menuselection}`View --> Cards --> Add Resources Monitor`.
@@ -128,7 +130,7 @@ To review the registration steps of the slices, use the `Browse Registrations` b
 * `View Previous [P]`: go back to the previous registration step;
 * `View Next [N]`: move to the next registration step.
 
-The registration indicators turn from green to gray as you step back through the registrations.
+The registration indicators turn from green to gray as you step back through the registrations. While you are stepped back, a line at the bottom left of the viewer reminds it, for instance `View Previous: last 1 registration(s) hidden (current slice: 2/3 shown)`.
 
 ## Registration workflow example
 

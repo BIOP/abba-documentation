@@ -106,7 +106,9 @@ To run DeepSlice, select the slices to register and click {menuselection}`Regist
   * `No post-processing`: the raw DeepSlice positions, slices may be reordered;
   * `Keep current slice positions (in-plane registration only)`: the slices are not moved, only registered in plane, for instance after you positioned them manually.
 
-DeepSlice runs on your computer. The first time it is used, ABBA installs it, with the Python environment it needs: this takes a few minutes and requires an internet connection. The following runs start much faster.
+  Order and spacing only consider the selected slices: to re-register a few slices without moving them past their neighbours, use `Keep current slice positions`. With a single selected slice, no order or spacing applies.
+
+DeepSlice runs on your computer. The first time it is used, ABBA installs it, with the Python environment it needs: this takes a few minutes and requires an internet connection. A `Loading DeepSlice...` window is shown meanwhile, and Fiji remains usable. The following runs start much faster. If DeepSlice fails, an error message gives the reason, the Python error included.
 
 **Before**
 

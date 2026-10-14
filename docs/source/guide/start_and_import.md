@@ -87,7 +87,7 @@ To try ABBA without your own data, click {menuselection}`Import --> Open Demo Sl
 
 The label and overview images of each slide are imported as extra slices: remove them before registering (see [Remove unwanted slices](#remove-unwanted-slices)).
 
-Another demo dataset, a whole mouse brain (25 or 97 sections), can be streamed from a public OMERO server with {menuselection}`Import --> Open Demo Slices From OMERO`. It comes as a QuPath project, so registrations can be exported to it. This requires an internet connection and the OMERO dependencies of Fiji.
+Another demo dataset, a whole mouse brain (25 or 97 sections), can be streamed from the German BioImaging OMERO server with {menuselection}`Import --> Open Demo Slices From OMERO`, through a shared read-only demo account: no credentials are needed. It comes as a QuPath project, so registrations can be exported to it: to keep the project, give a `QuPath project folder`, created if missing; otherwise a temporary folder is used. This requires an internet connection and the OMERO dependencies of Fiji.
 
 ### Import a QuickNII project
 

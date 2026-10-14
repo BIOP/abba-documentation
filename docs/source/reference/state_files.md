@@ -56,7 +56,7 @@ This file contains essentially, a serialized form of the sequence of actions tha
 The `actions` that can be performed are of several kinds.
 The major kinds are presented in the list below. These actions are Java classes which are automatically serialized by using the gson library.
 
-#### [CreateSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.24.1/src/main/java/ch/epfl/biop/atlas/aligner/CreateSliceAction.java):
+#### [CreateSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.25.0/src/main/java/ch/epfl/biop/atlas/aligner/CreateSliceAction.java):
 ```
 {
     "type": "CreateSliceAction",
@@ -73,7 +73,7 @@ The major kinds are presented in the list below. These actions are Java classes 
 }
 ```
 
-#### [MoveSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.24.1/src/main/java/ch/epfl/biop/atlas/aligner/MoveSliceAction.java):
+#### [MoveSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.25.0/src/main/java/ch/epfl/biop/atlas/aligner/MoveSliceAction.java):
 
 ```
 {
@@ -81,7 +81,7 @@ The major kinds are presented in the list below. These actions are Java classes 
     "location": 2.4
 }
 ```
-#### [RegisterSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.24.1/src/main/java/ch/epfl/biop/atlas/aligner/RegisterSliceAction.java):
+#### [RegisterSliceAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.25.0/src/main/java/ch/epfl/biop/atlas/aligner/RegisterSliceAction.java):
 
 ```
 {
@@ -163,7 +163,7 @@ The major kinds are presented in the list below. These actions are Java classes 
         }
 ```
 
-#### [KeySliceOnAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.24.1/src/main/java/ch/epfl/biop/atlas/aligner/action/KeySliceOnAction.java):
+#### [KeySliceOnAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.25.0/src/main/java/ch/epfl/biop/atlas/aligner/action/KeySliceOnAction.java):
 
 ```
 {
@@ -171,7 +171,7 @@ The major kinds are presented in the list below. These actions are Java classes 
 }
 ```
 
-#### [KeySliceOffAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.24.1/src/main/java/ch/epfl/biop/atlas/aligner/action/KeySliceOffAction.java):
+#### [KeySliceOffAction](https://github.com/BIOP/ijp-imagetoatlas/blob/ImageToAtlasRegister-0.25.0/src/main/java/ch/epfl/biop/atlas/aligner/action/KeySliceOffAction.java):
 
 ```
 {
