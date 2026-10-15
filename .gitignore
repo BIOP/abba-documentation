@@ -157,3 +157,6 @@ cython_debug/
 .idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
+
+# Release announcement drafts (working notes, not published with the docs)
+announcements/
