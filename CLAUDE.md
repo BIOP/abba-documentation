@@ -8,8 +8,10 @@ https://abba-documentation.readthedocs.io. Readers are bio-image analysts using 
 
 Currently documented release: see `release` in `docs/source/conf.py`.
 
-Not covered for now, on purpose: abba_python, and the ABBA MCP server (abba-fiji), which is underway:
-`installation/installation.md` only announces it. Write GUI first; scripting tabs may come later.
+`installation/installation.md` is the one installation page of ABBA, for all its ways: abba-mcp (the MCP
+server, repository abba-fiji), the ABBA installer, Fiji's update site, abba_python. The READMEs of these
+repositories link to it instead of repeating it. Beyond installation, abba_python and abba-mcp are not covered
+for now, on purpose. Write GUI first; scripting tabs may come later.
 
 ## Layout
 

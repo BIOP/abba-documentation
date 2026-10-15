@@ -6,7 +6,7 @@ You will need a mouse: navigating with a trackpad can be frustrating!
 
 ## Start ABBA
 
-Start Fiji, or launch the ABBA application if you used the Windows installer, then start ABBA: type `ABBA Start` in Fiji's search bar, or click {menuselection}`Plugins --> BIOP --> Atlas --> ABBA - ABBA Start`.
+Start Fiji (if you used the [ABBA installer](#install-installer), click its **ABBA** shortcut, then **Start ABBA**), then start ABBA: type `ABBA Start` in Fiji's search bar, or click {menuselection}`Plugins --> BIOP --> Atlas --> ABBA - ABBA Start`.
 
 ### Choose an atlas
 

@@ -129,6 +129,11 @@ Upload it with `out/abba-tutorial/youtube-description.md` (its chapters), then u
   `.dialog` class, `conf.py` sets the display width of these 2x images from their PNG size, and the theme
   shrinks the widest ones to the text column.
 * Pictures and GIFs of the ABBA window: add them to a generator of abba-doc-assets (section 4).
+* `installation/installation.md` names versions: the release and the zips of the ABBA installer, its Fiji
+  version (`FIJI_VERSION` in abba-installer's `launcher.py`), the QuPath version of the ABBA extension, and
+  `uvx abba-mcp@<NEW>`. It is the one installation page: the READMEs of ijp-imagetoatlas, abba-installer,
+  abba_python and abba-mcp link to its labels (`#install-assistant`, `#install-installer`, `#install-fiji`,
+  `#install-python`, `#install-qupath`), so keep them, and put installation steps here, not in the READMEs.
 
 ## 6. Version, build, publish
 
